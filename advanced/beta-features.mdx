@@ -1,11 +1,11 @@
 ---
 title: Beta Features
-description: Understand how Relay beta features work, when to use them, and how to test them safely.
+description: Understand the actual beta-only tools, modules, and workflows currently exposed in Relay builds.
 sidebarTitle: Beta Features
 icon: "flask-conical"
 ---
 
-## What beta means in Relay
+## What beta means in Relay today
 
 Beta features are early or evolving parts of Relay that are available for testing before they are considered stable for every user and every production environment.
 
@@ -17,6 +17,128 @@ In practice, that means beta features may:
 - be best suited for testing environments before live use
 
 <Warning>Do not assume a beta feature is ready for a mission-critical show just because it appears in the app. Test it in your actual workflow first.</Warning>
+
+## Where beta shows up in the app
+
+Based on the current Relay codebase, beta behavior is not just a general concept. There are real places where the app exposes beta-only modules, node types, device models, and testing tools.
+
+The main surfaces are:
+
+- the `Beta` page in `Relay > Settings`
+- beta-badged modules in the module catalog
+- beta-badged devices or models in External Devices
+- beta-gated automation graph features and destinations
+- beta or debug-only wireless diagnostics controls
+
+## Beta tools in Settings
+
+The `Beta` settings page is only shown in beta or debug builds.
+
+That page currently includes tools for:
+
+- sending wireless diagnostics to Sentry
+- sending beta feedback to Sentry
+- toggling verbose wireless logging for Shure and Sennheiser families
+- viewing status for beta update behavior
+
+Important detail:
+
+- verbose wireless tracing is only active in beta and debug builds
+- release builds fall back to non-verbose logging even if those toggles exist in stored preferences
+- beta builds always receive beta updates
+
+## Beta modules in the module picker
+
+The current module catalog marks these modules as beta:
+
+- **Shure**
+- **Live Transcription**
+
+In debug or beta builds, the catalog also inserts:
+
+- **Sennheiser**
+
+What that means in practice:
+
+- Shure and Live Transcription are available but should still be tested carefully before relying on them live
+- Sennheiser appears only in beta or debug builds, so it should be treated as even more test-focused
+
+## Beta device and model support
+
+Some device support is beta-only even when the surrounding feature area already exists.
+
+Examples from the current code:
+
+- Shure `ANX4`
+- Shure `ADTD`
+- Shure `ADTQ`
+
+These models are only available in beta or debug builds.
+
+The External Devices area can also show beta badges for:
+
+- Sennheiser wireless devices
+- certain audio console models marked beta in the device model list
+
+## Beta automation features
+
+Automation has a few clearly beta-sensitive areas right now.
+
+The current graph code enables these beta or beta-gated pieces:
+
+- **Vista** destination node, shown as beta
+- **If / Else** utility node, enabled only in beta or debug builds
+- **Variable** utility node, enabled only in beta or debug builds
+
+Those features matter because they affect how the graph runtime evaluates and routes actions.
+
+If you are testing automation in beta, focus especially on:
+
+- trigger firing consistency
+- condition branching behavior
+- variable reuse across graph paths
+- repeatability of downstream actions
+- whether the same graph behaves the same way after reopening the dashboard
+
+## Text module behavior to test carefully
+
+One specific area worth treating as beta-sensitive during evaluation is the newer text-module behavior.
+
+Based on the current `TextModuleModel` code:
+
+- rich text formatting is stored inside the attributed content itself
+- older legacy formatting fields are still decoded for backward compatibility
+- rendering paths differ between macOS read-only rich text display, standard text rendering, and LAN snapshot rendering
+
+If you are testing newer text-module behavior, verify all of these:
+
+- formatting survives saving and reopening the dashboard
+- legacy dashboards still render the way you expect
+- alignment and line spacing still look right in Live Mode
+- LAN snapshot rendering still matches the editable/live view closely enough
+
+This is especially important if you are using text-heavy tiles for notes, lyrics, instructions, or highly formatted operator content.
+
+## Graph runtime behavior to test carefully
+
+Another area that deserves focused beta testing is graph runtime behavior.
+
+Based on the current graph runtime and graph feature gating:
+
+- time triggers poll and fire based on in-memory runtime state
+- wireless trigger conditions rely on live device state and cooldown behavior
+- trigger firing order is deterministic, but still worth validating in real-world chains
+- conditionals and variables are intentionally gated to beta or debug builds
+
+When testing graph-runtime-heavy workflows, validate:
+
+- cooldown timing
+- repeated trigger behavior
+- disconnect edge cases
+- action ordering
+- whether reopening the dashboard changes behavior in subtle ways
+
+This matters most when an automation is controlling consoles, wireless destinations, or other downstream production systems.
 
 ## When to use beta features
 
@@ -54,17 +176,6 @@ When evaluating a beta tool, pay close attention to:
 - whether it depends on permissions, networking, or other services that could fail independently
 - whether operators can understand and recover from errors quickly
 
-## Beta-only workflows
-
-Some workflows may be intentionally kept beta-only while they are being refined. If a feature touches advanced editing behavior, automation logic, experimental modules, or new interaction patterns, plan on treating it as test-first until it graduates into the stable experience.
-
-That is especially true for features that can affect:
-
-- text rendering or text-module behavior
-- automation graph behavior and runtime execution
-- live-updating production views
-- complex network or device control flows
-
 ## Before using beta live
 
 Run through this checklist:
@@ -85,6 +196,16 @@ Check:
 - whether the feature depends on another connection, permission, or service
 - whether the behavior is repeatable on demand or only occasional
 - whether the issue happens only in Live Mode or only while editing
+
+### A beta feature is missing entirely
+
+Check whether the feature is:
+
+- only available in beta or debug builds
+- gated behind a beta-only device model
+- only shown when the required hardware or integration is present
+
+Examples include Sennheiser module availability, beta-only Shure models, and beta-gated graph utilities.
 
 ### I am not sure whether a feature is safe to use live
 
