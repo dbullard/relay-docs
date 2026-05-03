@@ -1,0 +1,76 @@
+---
+title: Troubleshooting
+description: Work through the most common Relay setup and runtime issues.
+sidebarTitle: Troubleshooting
+icon: "triangle-alert"
+---
+
+## Start with the simplest check
+
+When Relay is not behaving the way you expect, start here:
+
+1. Confirm you are on the expected tab.
+2. Confirm the module or integration is configured.
+3. Confirm the outside device or service is reachable.
+4. Confirm macOS permissions are allowed.
+5. Test again in Live Mode if the feature depends on it.
+
+## Common issue patterns
+
+### A module is blank
+
+Usually means one of these:
+
+- The module is added but not configured
+- The connected service has no data for the active tab
+- The target device is offline or unreachable
+- Live Mode is required for updates
+
+### A network integration will not connect
+
+Check:
+
+- Host or IP address
+- Port
+- Credentials if the system requires them
+- Same-network access
+- Local Network permission on macOS
+
+### Automation does not fire
+
+Check:
+
+- The trigger type matches what you are sending
+- The correct source device is selected
+- Nodes are connected and configured
+
+### A Pro feature looks locked
+
+Check your license or subscription status in settings and refresh it if needed.
+
+## When to export logs
+
+Export logs when:
+
+- A device or service repeatedly fails to connect
+- Relay behaves differently than expected after an update
+- Support asks for deeper troubleshooting data
+
+You can export logs from `Help > Export Logs` or use the tools in `Relay > Settings > Help`.
+
+## Contact support
+
+If you work through the checks above and still need help, contact `support@ondeckapps.com`.
+
+Include as much of this as you can:
+
+- What you expected to happen
+- What actually happened
+- Screenshots
+- App version
+- Device or service involved
+- Diagnostic summary or exported logs if available
+
+## Best support mindset
+
+<Tip>When testing a problem, change one thing at a time. That makes it much easier to tell whether the issue is with Relay, the device, the network, or the surrounding environment.</Tip>

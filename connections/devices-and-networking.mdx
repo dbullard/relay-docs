@@ -1,0 +1,129 @@
+---
+title: Devices and Networking
+description: Set up external devices, OSC, MIDI, and LAN-based Relay workflows.
+sidebarTitle: Devices and Networking
+icon: "radio-tower"
+---
+
+## What lives here
+
+This part of Relay covers the systems around your dashboard:
+
+- External devices
+- Audio consoles
+- Shure wireless hardware
+- OSC
+- MIDI
+- LAN sharing and browser view-only links
+
+<Note>LAN features depend on devices being on the same local network and on macOS Local Network permission being enabled for Relay.</Note>
+
+## External Devices
+
+Use `Relay > Settings > External Devices` to store the hardware Relay should talk to.
+
+Typical setup flow:
+
+1. Add a device manually or scan the network.
+2. Choose the device type and model.
+3. Enter the required host, IP, and port details.
+4. Save the device.
+5. Use the device in modules or automation.
+
+Relay can work with categories such as:
+
+- Audio consoles
+- Shure wireless devices
+- Other supported production hardware
+
+## Audio consoles
+
+Consoles can support workflows like:
+
+- Channel-name sync
+- Scene or snapshot recall
+- Sending Planning Center assignments to channels
+- Automation destinations
+
+Some console families require model-specific setup choices, so double-check the selected model, connection method, and port details.
+
+## Shure wireless
+
+Shure devices can be added manually or discovered on the network.
+
+Once configured, modules can show details like:
+
+- Device name
+- Channel name
+- Frequency
+- Battery
+- RF or audio meter information
+
+## OSC
+
+Use `Relay > Settings > OSC` when you want Relay to receive or send OSC over the network.
+
+Common uses:
+
+- Triggering automation from incoming OSC
+- Sending OSC actions from automations
+- Sending OSC from a button module
+
+When enabling OSC receive, confirm the listen port and make sure the sender is targeting this Mac's IP address.
+
+## MIDI
+
+Use `Relay > Settings > MIDI` when you want Relay to receive or send MIDI on Mac.
+
+Common uses:
+
+- MIDI-triggered automation
+- MIDI-based scene recall workflows
+- MIDI output from automations or supported modules
+
+If a device was connected recently, refresh the MIDI device list before testing.
+
+## LAN sharing and browser view-only
+
+Use `Relay > Settings > LAN` for local network sharing workflows.
+
+Relay supports:
+
+- Relay-to-Relay sharing for discovery and import
+- Browser view-only links for local viewing on the same network
+
+If pairing is required, make sure both devices are using the same pairing code.
+
+## Troubleshooting
+
+### Device discovery finds nothing
+
+Check:
+
+- Local Network permission is enabled
+- Devices are on the same subnet
+- The device type supports discovery
+
+### OSC messages do not arrive
+
+Check:
+
+- The sender is targeting the correct Mac IP
+- The UDP port matches Relay's OSC settings
+- Another app is not already using the port
+
+### MIDI triggers do not fire
+
+Check:
+
+- The expected input source is selected
+- Relay is enabled to receive MIDI globally
+- The sender is transmitting the message type you expect
+
+### LAN peers do not appear
+
+Check:
+
+- Both devices are on the same network
+- Relay has Local Network permission
+- Pairing codes match if pairing is enabled

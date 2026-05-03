@@ -1,0 +1,63 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Relay Docs",
+  "description": "Documentation for Relay for Mac.",
+  "theme": "mint",
+  "logo": "/images/relay-mark.png",
+  "favicon": "/images/relay-mark.png",
+  "colors": {
+    "primary": "#3C63EF",
+    "light": "#34C8EE",
+    "dark": "#3B2FE0"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Start Here",
+        "icon": "rocket",
+        "root": "index",
+        "pages": [
+          "guides/quickstart",
+          "guides/first-dashboard"
+        ]
+      },
+      {
+        "group": "Build Your Dashboard",
+        "icon": "layout-dashboard",
+        "pages": [
+          "workspace/workspace-and-editing",
+          "workspace/live-mode"
+        ]
+      },
+      {
+        "group": "Connections",
+        "icon": "plug-zap",
+        "pages": [
+          "connections/planning-center",
+          "connections/presentation-tools",
+          "connections/devices-and-networking"
+        ]
+      },
+      {
+        "group": "Advanced",
+        "icon": "workflow",
+        "pages": [
+          "advanced/automation-overview",
+          "advanced/transcription-and-audio"
+        ]
+      },
+      {
+        "group": "Support",
+        "icon": "life-buoy",
+        "pages": [
+          "help/troubleshooting",
+          "help/logs-and-permissions",
+          "help/license-and-updates"
+        ]
+      }
+    ]
+  }
+}

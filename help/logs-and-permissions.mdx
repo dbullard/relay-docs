@@ -1,0 +1,87 @@
+---
+title: Logs and Permissions
+description: Export support logs, copy diagnostics, and review the macOS permissions Relay needs.
+sidebarTitle: Logs and Permissions
+icon: "shield-check"
+---
+
+## Export logs
+
+Relay can export logs and diagnostic information to help investigate issues.
+
+To export logs:
+
+1. Open Relay.
+2. Choose `Help > Export Logs`.
+3. Save the log archive.
+4. Share it with support if requested.
+
+You can also find these tools in `Relay > Settings > Help`.
+
+## Copy diagnostic summary
+
+If you need a faster support-friendly snapshot:
+
+1. Open `Relay > Settings > Help`.
+2. Click `Copy Diagnostic Summary`.
+3. Paste the result into your support message.
+
+The diagnostic summary is often the fastest way to share current state without sending a full archive first.
+
+## What logs may include
+
+Support logs can include:
+
+- Connection endpoints
+- Device names
+- LAN activity
+- OSC paths
+- Wireless diagnostics
+- App errors
+- Update-related details
+
+<Warning>Review logs before sharing if your environment includes sensitive device names, addresses, or other production details.</Warning>
+
+## Permissions to review
+
+Relay may need several macOS permissions depending on the features you use.
+
+### Microphone
+
+Needed for SPL Meter and microphone-based transcription workflows.
+
+### Speech Recognition
+
+Needed for Live Transcription.
+
+### Local Network
+
+Needed for:
+
+- Device discovery
+- LAN sharing
+- ProPresenter discovery
+- OSC and MIDI network workflows
+- Other networked integrations
+
+### Screen or system audio capture
+
+May be needed when system audio transcription workflows are enabled.
+
+## Where to check permissions
+
+1. Open `Relay > Settings`.
+2. Select `Access`.
+3. Review the current permission states.
+
+You can also review them in macOS under `System Settings > Privacy & Security`.
+
+## Troubleshooting
+
+### I changed a permission but Relay still acts like it is missing
+
+Quit and reopen Relay, then test again.
+
+### I am not sure whether I should send logs or only the summary
+
+Start with the diagnostic summary when support needs a quick overview. Send the full log archive when support asks for deeper investigation.

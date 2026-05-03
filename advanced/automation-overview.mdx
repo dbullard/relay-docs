@@ -1,0 +1,90 @@
+---
+title: Automation Overview
+description: Build automations in Relay using triggers, actions, utilities, and device destinations.
+sidebarTitle: Automation
+icon: "workflow"
+---
+
+## What Automation View does
+
+Automation View is Relay's node-based workspace for making things happen automatically.
+
+It lets you connect:
+
+- Triggers that start a workflow
+- Actions that do something
+- Utilities like delays or repeaters
+- Destinations such as consoles or supported devices
+
+<Tip>The easiest way to trust automation live is to earn that trust in layers. Build one reliable trigger and one reliable action first.</Tip>
+
+## Open Automation View
+
+Use `View > Automation View` or `Command-2`.
+
+Automation View requires Relay Pro.
+
+## Common trigger types
+
+Relay can use triggers such as:
+
+- OSC receive
+- MIDI receive
+- Time-based triggers
+- dB threshold
+- Wireless status
+- Manual trigger
+- Planning Center-related events
+- Word triggers from live transcription
+
+## Common action and destination types
+
+Relay can perform actions such as:
+
+- Show a notification
+- Send a LAN notification
+- Run an in-app action
+- Send OSC
+- Send MIDI
+- Trigger ProPresenter actions
+- Send actions to supported consoles or wireless destinations
+
+Utilities such as Delay and Repeater nodes help shape timing and repetition between the trigger and destination.
+
+## Build a first automation
+
+1. Add one trigger node.
+2. Add one action or destination node.
+3. Drag from the trigger output to the target node.
+4. Configure each node.
+5. Test the result before adding more branches.
+
+## Best practices
+
+- Start small
+- Test one path at a time
+- Add delays only after the basic path is reliable
+- Name nodes clearly when a graph grows beyond a few connections
+
+## Troubleshooting
+
+### The automation does not fire
+
+Check:
+
+- The trigger type matches the signal you are sending
+- The source device or service is selected correctly
+- The expected input format is being received
+- The nodes are actually connected
+
+### The trigger fires but the action does nothing
+
+Check:
+
+- The destination device is online
+- The action parameters are valid
+- The integration behind the action is configured
+
+### The graph became too hard to follow
+
+Break larger flows into smaller patterns. A few reliable automations are easier to trust than one giant graph full of conditionals and retries.

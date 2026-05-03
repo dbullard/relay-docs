@@ -1,0 +1,87 @@
+---
+title: ProPresenter and Resolume
+description: Connect presentation and playback tools to display status inside Relay.
+sidebarTitle: Presentation Tools
+icon: "monitor-play"
+---
+
+## Supported workflows
+
+Relay can connect to presentation and playback systems so their current status is visible on your dashboard.
+
+The most common setups are:
+
+- ProPresenter for current and next slide status
+- Resolume for composition, layers, and clip visibility
+
+## ProPresenter setup
+
+Before connecting, make sure ProPresenter has the required network or remote-control features enabled.
+
+Typical setup:
+
+1. Open `Relay > Settings`.
+2. Go to `External Connections`.
+3. Select `ProPresenter`.
+4. Add a profile with the correct host, port, and credentials if needed.
+5. Save the profile.
+6. Confirm Relay can connect before placing the module in a live layout.
+
+The ProPresenter module can show items such as:
+
+- Current slide
+- Next slide
+- Presentation status
+- Presentation name or arrangement
+- Timer, message, text, or thumbnail data depending on your setup
+
+## Resolume setup
+
+For Resolume, make sure the REST API or web server is enabled first.
+
+Typical setup:
+
+1. Open `Relay > Settings`.
+2. Go to the Resolume settings area.
+3. Add a profile with the correct host and port.
+4. Enable the profile and save it.
+
+Depending on the module configuration, Relay can show composition-level, layer-level, or clip-related information.
+
+## Best practices
+
+- Name profiles clearly so operators know which machine they are targeting.
+- Confirm both apps are on the same network as the Mac running Relay.
+- Test the module view before relying on it in Live Mode.
+
+## Automation tie-ins
+
+If your workflow needs it, Automation View can use actions that interact with ProPresenter. This is useful for responding to triggers without relying on a manual click during a live moment.
+
+## Troubleshooting
+
+### ProPresenter will not connect
+
+Check:
+
+- Host or IP address
+- Port
+- Password or token if required
+- Local Network permission on macOS
+- Whether ProPresenter network control is enabled
+
+### The ProPresenter module is blank
+
+Check:
+
+- A connection profile is selected
+- ProPresenter has an active presentation
+- The chosen display mode matches the data you expect
+
+### Resolume will not connect
+
+Check:
+
+- Host and port
+- Whether the API or web server is enabled
+- Whether both systems are on the same network

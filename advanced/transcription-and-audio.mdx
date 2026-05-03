@@ -1,0 +1,79 @@
+---
+title: Live Transcription and Audio Tools
+description: Use Live Transcription and SPL Meter inside Relay for live monitoring workflows.
+sidebarTitle: Transcription and Audio
+icon: "audio-lines"
+---
+
+## Live Transcription
+
+Live Transcription converts a selected audio input into text that can appear on the dashboard.
+
+Typical setup:
+
+1. Add a Live Transcription module to a tile.
+2. Choose the input source in the inspector.
+3. Review quality or behavior settings.
+4. Enter Live Mode to run transcription.
+
+Depending on your Mac and permissions, Relay may be able to use microphone input and supported system audio capture paths.
+
+Useful transcript tools can include:
+
+- Showing live transcript entries
+- Copying the transcript
+- Exporting transcript text
+- Clearing the transcript
+- Jumping to the most recent entry
+
+Live Transcription can also support word-trigger automation workflows.
+
+## SPL Meter
+
+The SPL Meter module displays sound level data from a Mac audio input.
+
+Typical setup:
+
+1. Add an SPL Meter module.
+2. Choose the input source and channel.
+3. Select weighting and response settings.
+4. Enter Live Mode when your workflow expects live updates.
+
+Common options include:
+
+- A, C, or flat weighting
+- Fast or slow response
+- Calibration using a known reference
+- Logging SPL history in Live Mode when configured
+
+<Warning>If transcription does not start or SPL data looks frozen, check permissions before changing the whole dashboard. The issue is often at the macOS level.</Warning>
+
+## Permissions that matter
+
+These tools commonly depend on:
+
+- Microphone access
+- Speech Recognition access
+- A usable audio input source
+
+If system audio transcription is part of the workflow, screen or system-audio capture permissions may also matter depending on the capture path.
+
+## Troubleshooting
+
+### Transcription does not start
+
+Check:
+
+- Microphone permission
+- Speech Recognition permission
+- Whether another app is already using the same input
+- Whether Live Mode is required for your current setup
+
+### SPL Meter is paused or flat
+
+Check:
+
+- The selected input source
+- Microphone permission
+- Whether Live Mode is enabled
+- Whether calibration assumptions are reasonable
