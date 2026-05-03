@@ -1,0 +1,103 @@
+---
+title: Beta Features
+description: Understand how Relay beta features work, when to use them, and how to test them safely.
+sidebarTitle: Beta Features
+icon: "flask-conical"
+---
+
+## What beta means in Relay
+
+Beta features are early or evolving parts of Relay that are available for testing before they are considered stable for every user and every production environment.
+
+In practice, that means beta features may:
+
+- change faster than the rest of the app
+- receive UI or behavior updates between builds
+- have rough edges, missing workflows, or incomplete documentation
+- be best suited for testing environments before live use
+
+<Warning>Do not assume a beta feature is ready for a mission-critical show just because it appears in the app. Test it in your actual workflow first.</Warning>
+
+## When to use beta features
+
+Beta features are a good fit when:
+
+- you want early access to a capability the team is still refining
+- you can test the feature ahead of a live event
+- you are comfortable giving feedback when something feels unclear or unstable
+
+Beta features are a poor fit when:
+
+- the workflow is business-critical and cannot fail
+- the team has no time to test before going live
+- the feature sits in the middle of a complex automation or routing chain that would be hard to recover from quickly
+
+## A safe testing workflow
+
+If you want to try a beta feature without creating avoidable risk:
+
+1. Test it on a non-critical dashboard first.
+2. Keep the rest of the dashboard simple while evaluating it.
+3. Verify its behavior in both Canvas View and Live Mode if relevant.
+4. Test with the real device, service, or data source it will depend on.
+5. Have a fallback plan before using it in production.
+
+<Tip>The safest way to roll out a beta feature is to isolate it. One beta variable at a time is much easier to evaluate than a whole chain of new behavior.</Tip>
+
+## What to watch for
+
+When evaluating a beta tool, pay close attention to:
+
+- whether it updates reliably in Live Mode
+- whether its configuration survives closing and reopening the dashboard
+- whether it behaves differently across tabs or dashboards
+- whether it depends on permissions, networking, or other services that could fail independently
+- whether operators can understand and recover from errors quickly
+
+## Beta-only workflows
+
+Some workflows may be intentionally kept beta-only while they are being refined. If a feature touches advanced editing behavior, automation logic, experimental modules, or new interaction patterns, plan on treating it as test-first until it graduates into the stable experience.
+
+That is especially true for features that can affect:
+
+- text rendering or text-module behavior
+- automation graph behavior and runtime execution
+- live-updating production views
+- complex network or device control flows
+
+## Before using beta live
+
+Run through this checklist:
+
+- confirm the feature solves a real problem you have today
+- test it with your real devices and real data
+- make sure another team member can understand the setup
+- verify you can disable or work around it quickly if needed
+- decide whether the gain is worth the extra risk
+
+## Troubleshooting
+
+### A beta feature behaves inconsistently
+
+Check:
+
+- whether you are on a beta build
+- whether the feature depends on another connection, permission, or service
+- whether the behavior is repeatable on demand or only occasional
+- whether the issue happens only in Live Mode or only while editing
+
+### I am not sure whether a feature is safe to use live
+
+If you cannot test it thoroughly ahead of time, assume it is not ready for a critical live workflow yet.
+
+### I found a beta issue
+
+Document:
+
+- what you expected to happen
+- what actually happened
+- the exact steps to reproduce it
+- whether it happens every time or only sometimes
+- screenshots, logs, or diagnostics if available
+
+Then contact `support@ondeckapps.com` so the team can review it.

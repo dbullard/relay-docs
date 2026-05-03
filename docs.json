@@ -46,7 +46,8 @@
         "icon": "workflow",
         "pages": [
           "advanced/automation-overview",
-          "advanced/transcription-and-audio"
+          "advanced/transcription-and-audio",
+          "advanced/beta-features"
         ]
       },
       {
