@@ -1,18 +1,13 @@
 ---
-title: ProPresenter and Resolume
-description: Connect presentation and playback tools to display status inside Relay.
+title: ProPresenter
+description: Connect ProPresenter to display presentation status inside Relay.
 sidebarTitle: Presentation Tools
 icon: "monitor-play"
 ---
 
 ## Supported workflows
 
-Relay can connect to presentation and playback systems so their current status is visible on your dashboard.
-
-The most common setups are:
-
-- ProPresenter for current and next slide status
-- Resolume for composition, layers, and clip visibility
+Relay can connect to ProPresenter so current presentation status is visible on your dashboard.
 
 ## ProPresenter setup
 
@@ -34,19 +29,6 @@ The ProPresenter module can show items such as:
 - Presentation status
 - Presentation name or arrangement
 - Timer, message, text, or thumbnail data depending on your setup
-
-## Resolume setup
-
-For Resolume, make sure the REST API or web server is enabled first.
-
-Typical setup:
-
-1. Open `Relay > Settings`.
-2. Go to the Resolume settings area.
-3. Add a profile with the correct host and port.
-4. Enable the profile and save it.
-
-Depending on the module configuration, Relay can show composition-level, layer-level, or clip-related information.
 
 ## Best practices
 
@@ -77,11 +59,3 @@ Check:
 - A connection profile is selected
 - ProPresenter has an active presentation
 - The chosen display mode matches the data you expect
-
-### Resolume will not connect
-
-Check:
-
-- Host and port
-- Whether the API or web server is enabled
-- Whether both systems are on the same network
