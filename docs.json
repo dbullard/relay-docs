@@ -122,12 +122,6 @@
     ]
   },
   "navbar": {
-    "links": [
-      {
-        "href": "https://www.ondeckapps.com/downloads",
-        "label": "Download Relay"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Download Relay",
