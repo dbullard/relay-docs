@@ -1,64 +1,151 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Relay Docs",
-  "description": "Documentation for Relay for Mac.",
   "theme": "mint",
-  "logo": "/images/relay-mark.png",
-  "favicon": "/images/relay-mark.png",
+  "name": "Relay",
+  "description": "Documentation for Relay - a Mac dashboard app for live production teams.",
   "colors": {
     "primary": "#3C63EF",
     "light": "#34C8EE",
     "dark": "#3B2FE0"
   },
+  "favicon": "/images/relay-mark.png",
+  "logo": "/images/relay-mark.png",
   "icons": {
     "library": "lucide"
   },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
+  },
   "navigation": {
-    "groups": [
+    "directory": "card",
+    "anchors": [
       {
-        "group": "Start Here",
-        "icon": "rocket",
-        "root": "index",
-        "pages": [
-          "guides/quickstart",
-          "guides/first-dashboard"
-        ]
-      },
-      {
-        "group": "Build Your Dashboard",
-        "icon": "layout-dashboard",
-        "pages": [
-          "workspace/workspace-and-editing",
-          "workspace/live-mode"
-        ]
-      },
-      {
-        "group": "Connections",
-        "icon": "plug-zap",
-        "pages": [
-          "connections/planning-center",
-          "connections/presentation-tools",
-          "connections/devices-and-networking"
-        ]
-      },
-      {
-        "group": "Advanced",
-        "icon": "workflow",
-        "pages": [
-          "advanced/automation-overview",
-          "advanced/transcription-and-audio",
-          "advanced/beta-features"
-        ]
-      },
-      {
-        "group": "Support",
-        "icon": "life-buoy",
-        "pages": [
-          "help/troubleshooting",
-          "help/logs-and-permissions",
-          "help/license-and-updates"
+        "anchor": "Home",
+        "icon": "house",
+        "color": {
+          "light": "#3C63EF",
+          "dark": "#34C8EE"
+        },
+        "products": [
+          {
+            "product": "Get Started",
+            "icon": "rocket",
+            "description": "Install Relay, learn the core concepts, and build your first dashboard.",
+            "groups": [
+              {
+                "group": "Get Started",
+                "expanded": true,
+                "root": "introduction",
+                "pages": [
+                  "quickstart",
+                  "core-concepts"
+                ]
+              }
+            ]
+          },
+          {
+            "product": "Building Dashboards",
+            "icon": "layout-dashboard",
+            "description": "Create tiles, add modules, use Live Mode, and automate your workflow.",
+            "groups": [
+              {
+                "group": "Building Dashboards",
+                "expanded": true,
+                "root": "dashboards/overview",
+                "pages": [
+                  "dashboards/tiles",
+                  "dashboards/modules",
+                  "dashboards/live-mode",
+                  "dashboards/automation"
+                ]
+              }
+            ]
+          },
+          {
+            "product": "Integrations",
+            "icon": "plug",
+            "description": "Connect Planning Center, ProPresenter, consoles, and wireless devices.",
+            "groups": [
+              {
+                "group": "Integrations",
+                "expanded": true,
+                "root": "integrations/overview",
+                "pages": [
+                  "integrations/planning-center",
+                  "integrations/propresenter",
+                  "integrations/audio-consoles",
+                  "integrations/wireless-devices"
+                ]
+              }
+            ]
+          },
+          {
+            "product": "Protocols & Devices",
+            "icon": "network",
+            "description": "Set up OSC, MIDI, LAN sharing, audio metering, and transcription tools.",
+            "groups": [
+              {
+                "group": "Protocols & Devices",
+                "expanded": true,
+                "root": "protocols/overview",
+                "pages": [
+                  "protocols/osc",
+                  "protocols/midi",
+                  "protocols/lan-sharing"
+                ]
+              }
+            ]
+          },
+          {
+            "product": "Account, Support & Beta",
+            "icon": "circle-user",
+            "description": "Manage your license, permissions, updates, support, and beta workflows.",
+            "groups": [
+              {
+                "group": "Account, Support & Beta",
+                "expanded": true,
+                "root": "account/license",
+                "pages": [
+                  "account/permissions",
+                  "account/updates",
+                  "account/support",
+                  "account/beta-features"
+                ]
+              }
+            ]
+          }
         ]
       }
     ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "https://www.ondeckapps.com/downloads",
+        "label": "Download Relay"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download Relay",
+      "href": "https://www.ondeckapps.com/downloads"
+    }
+  },
+  "footer": {
+    "socials": {}
+  },
+  "background": {
+    "decoration": "grid"
+  },
+  "fonts": {
+    "family": "Inter",
+    "weight": 400
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
   }
 }

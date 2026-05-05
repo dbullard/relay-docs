@@ -1,0 +1,39 @@
+---
+title: "macOS permissions Relay needs"
+description: "Review which macOS permissions Relay requires and why they matter."
+sidebarTitle: "Permissions"
+---
+
+Relay requests a small set of macOS permissions for audio monitoring, live transcription, and local network discovery.
+
+## Review permissions inside Relay
+
+Open `Relay > Settings > Access` to see the status of each permission.
+
+## Main permissions
+
+### Microphone
+
+Needed for SPL Meter and microphone-based transcription workflows.
+
+### Speech Recognition
+
+Needed for Live Transcription.
+
+### Local Network
+
+Needed for:
+
+- device discovery
+- LAN sharing
+- ProPresenter discovery
+- OSC and MIDI network workflows
+- other network integrations
+
+### Screen and system audio capture
+
+May be required for system-audio transcription workflows depending on how audio is sourced.
+
+## After changing a permission
+
+Quit and reopen Relay, then test again.

@@ -1,0 +1,38 @@
+---
+title: "Connecting audio consoles to Relay for scene control"
+description: "Connect supported mixing consoles to Relay to sync channel names, recall scenes, and send assignments."
+sidebarTitle: "Audio Consoles"
+---
+
+Relay can connect to supported digital mixing consoles over your network, turning your dashboard into a control and monitoring surface for audio workflows.
+
+## What audio console integration provides
+
+- Channel-name sync
+- Scene and snapshot recall
+- Planning Center assignments to console channels
+- Rundown cues and snapshots
+- MIDI-based scene mapping on supported models
+- Automation destinations
+
+## Add an audio console
+
+1. Open `Relay > Settings > External Devices`.
+2. Click `Add Device`.
+3. Set the device type to `Audio Console`.
+4. Choose the model or family.
+5. Enter the host, IP, and port.
+6. Configure any model-specific options.
+7. Save the device.
+
+## Common model notes
+
+- X32/M32: OSC-based workflows, channel-name sync, cue or snippet sending
+- Allen and Heath Qu: MIDI over TCP/IP
+- dLive and Avantis: MixRack or Surface target selection
+- Yamaha: MIDI input and output plus Program Change mappings
+- DiGiCo: show RTF import for channel mapping when needed
+
+## Troubleshooting
+
+If the console does not respond, verify the model, IP, port, network path, and any MIDI-specific prerequisites for that console family.

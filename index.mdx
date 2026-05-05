@@ -1,74 +1,134 @@
 ---
-title: Relay Docs
-description: Build dashboards, connect your tools, and run Relay confidently in live production.
-icon: "/images/relay-mark.png"
+title: Relay Documentation
+description: Everything you need to build dashboards, configure integrations, and run your production with Relay for Mac.
+mode: custom
 ---
 
-## Start here
+<div data-product-guide-index className="flex w-full flex-col gap-8">
+  <div className="flex max-w-[540px] flex-col gap-2 self-center text-center">
+    <h1 className="font-serif text-[30px] font-medium leading-9 tracking-tight text-gray-900 dark:text-gray-50">
+      Relay Documentation
+    </h1>
+    <p className="text-balance text-sm leading-relaxed tracking-tight text-gray-600 dark:text-gray-400">
+      Build dashboards, connect production tools, and run live workflows confidently with Relay for Mac.
+    </p>
+  </div>
 
-<Columns cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/guides/quickstart">
-    Go from first launch to a usable Relay setup in a few minutes.
-  </Card>
-  <Card title="Create your first dashboard" icon="layout-template" href="/guides/first-dashboard">
-    Build a simple dashboard with tiles, modules, and a clean live view.
-  </Card>
-</Columns>
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <Card
+      title={<span className="product-guide-feature-card-title">Get Started</span>}
+      icon="rocket"
+      href="/introduction"
+      className="product-guide-feature-card"
+      size={64}
+    >
+      <span className="product-guide-feature-card-description">Learn the Relay workflow, set up your first dashboard, and get ready for Live Mode.</span>
+    </Card>
 
-## Learn the core workflow
+    <a
+      href="/dashboards/overview"
+      className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+    >
+      <Icon icon="layout-dashboard" color="rgb(var(--primary))" size={18} className="shrink-0" />
+      <div className="flex flex-col gap-1">
+        <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Building Dashboards</span>
+        <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+          Create tiles, add modules, organize tabs, and operate in Live Mode.
+        </span>
+      </div>
+    </a>
+    <a
+      href="/integrations/overview"
+      className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+    >
+      <Icon icon="plug" color="rgb(var(--primary))" size={18} className="shrink-0" />
+      <div className="flex flex-col gap-1">
+        <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Integrations</span>
+        <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+          Connect Planning Center, ProPresenter, audio consoles, and wireless systems.
+        </span>
+      </div>
+    </a>
+  </div>
 
-<Columns cols={2}>
-  <Card title="Workspace and editing" icon="panel-left" href="/workspace/workspace-and-editing">
-    Understand the canvas, tabs, inspector, and how dashboards are organized.
-  </Card>
-  <Card title="Live Mode" icon="play-circle" href="/workspace/live-mode">
-    Switch from editing to operating mode when you are ready to go live.
-  </Card>
-</Columns>
+  <hr className="border-0 border-t border-border" />
 
-## Connect the tools around your production
+  <div className="flex flex-col gap-4">
+    <h2 className="font-serif text-xl font-medium leading-normal text-gray-900 dark:text-gray-50">Common tasks</h2>
 
-<Columns cols={3}>
-  <Card title="Planning Center" icon="calendar-range" href="/connections/planning-center">
-    Sync plans, people, and service data into your dashboard.
-  </Card>
-  <Card title="ProPresenter" icon="monitor-play" href="/connections/presentation-tools">
-    Show current and next slide status inside Relay.
-  </Card>
-  <Card title="Devices and networking" icon="radio-tower" href="/connections/devices-and-networking">
-    Set up external devices, OSC, MIDI, LAN sharing, and local discovery.
-  </Card>
-</Columns>
-
-## Go deeper
-
-<Columns cols={2}>
-  <Card title="Automation" icon="workflow" href="/advanced/automation-overview">
-    Use triggers and actions to make Relay react automatically.
-  </Card>
-  <Card title="Live transcription and audio tools" icon="audio-lines" href="/advanced/transcription-and-audio">
-    Configure transcription, SPL Meter, and audio-related features.
-  </Card>
-</Columns>
-
-<Columns cols={1}>
-  <Card title="Beta features" icon="flask-conical" href="/advanced/beta-features">
-    Learn what beta tools are for, how to test them safely, and when to keep them out of mission-critical workflows.
-  </Card>
-</Columns>
-
-## Need help fast?
-
-<Columns cols={3}>
-  <Card title="Troubleshooting" icon="triangle-alert" href="/help/troubleshooting">
-    Start here if a connection, module, or workflow is not behaving as expected.
-  </Card>
-  <Card title="Logs and permissions" icon="shield-check" href="/help/logs-and-permissions">
-    Export logs, copy diagnostics, and review required macOS permissions.
-  </Card>
-  <Card title="License and updates" icon="badge-check" href="/help/license-and-updates">
-    Manage your Pro access and keep Relay current.
-  </Card>
-</Columns>
-
-<Tip>The strongest first version of a Relay setup is usually simple: one dashboard, a few clear tiles, one or two integrations, and a quick pass through Live Mode before adding automation.</Tip>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <a
+        href="/dashboards/tiles"
+        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+      >
+        <Icon icon="square-dashed" color="rgb(var(--primary))" size={18} className="shrink-0" />
+        <div className="flex flex-col gap-1">
+          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Add and arrange tiles</span>
+          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Place, resize, align, and group tiles on your dashboard canvas.
+          </span>
+        </div>
+      </a>
+      <a
+        href="/integrations/planning-center"
+        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+      >
+        <Icon icon="calendar-check" color="rgb(var(--primary))" size={18} className="shrink-0" />
+        <div className="flex flex-col gap-1">
+          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Connect Planning Center</span>
+          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Show plans, assignments, service times, and Services Live on your dashboard.
+          </span>
+        </div>
+      </a>
+      <a
+        href="/dashboards/automation"
+        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+      >
+        <Icon icon="workflow" color="rgb(var(--primary))" size={18} className="shrink-0" />
+        <div className="flex flex-col gap-1">
+          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Build automations</span>
+          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Connect triggers, actions, and destinations in Automation View.
+          </span>
+        </div>
+      </a>
+      <a
+        href="/protocols/lan-sharing"
+        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+      >
+        <Icon icon="share-2" color="rgb(var(--primary))" size={18} className="shrink-0" />
+        <div className="flex flex-col gap-1">
+          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Share over LAN</span>
+          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Mirror tabs to other Relay clients or share a browser view-only link.
+          </span>
+        </div>
+      </a>
+      <a
+        href="/protocols/osc"
+        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+      >
+        <Icon icon="radio" color="rgb(var(--primary))" size={18} className="shrink-0" />
+        <div className="flex flex-col gap-1">
+          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Set up OSC</span>
+          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Receive and send OSC messages for control and automation workflows.
+          </span>
+        </div>
+      </a>
+      <a
+        href="/account/beta-features"
+        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
+      >
+        <Icon icon="flask-conical" color="rgb(var(--primary))" size={18} className="shrink-0" />
+        <div className="flex flex-col gap-1">
+          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Beta workflows</span>
+          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Understand beta-only modules, graph features, diagnostics, and safe testing practices.
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
