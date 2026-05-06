@@ -5,12 +5,33 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const dataPath = path.join(repoRoot, "data", "changelog.json");
-const changelogPath = path.join(repoRoot, "changelog.mdx");
-const releaseNotesDir = path.join(repoRoot, "public", "sparkle", "release-notes");
+const betaDataPath = path.join(repoRoot, "data", "beta-changelog.json");
 
 const sectionOrder = ["New", "Improved", "Fixed", "Known Issues", "Notes"];
 
-const data = JSON.parse(await readFile(dataPath, "utf8"));
+const changelogConfigs = [
+  {
+    dataPath,
+    changelogPath: path.join(repoRoot, "changelog.mdx"),
+    releaseNotesDir: path.join(repoRoot, "public", "sparkle", "release-notes"),
+    title: "Relay changelog",
+    description: "User-facing release notes for Relay.",
+    sidebarTitle: "Changelog",
+    intro:
+      "Relay release notes are organized by version. Sparkle update feeds can link to each version directly using the per-version anchors on this page.",
+  },
+  {
+    dataPath: betaDataPath,
+    changelogPath: path.join(repoRoot, "beta-changelog.mdx"),
+    releaseNotesDir: path.join(repoRoot, "public", "sparkle", "beta-release-notes"),
+    title: "Relay beta changelog",
+    description: "Beta release notes for Relay.",
+    sidebarTitle: "Beta Changelog",
+    intro:
+      "Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.",
+    optional: true,
+  },
+];
 
 function versionAnchor(version) {
   return `version-${version.replace(/\./g, "")}`;
@@ -68,7 +89,7 @@ function renderHtmlListItem(item) {
   return `<li><strong>${escapeHtml(item.title)}</strong><ul>${childItems}</ul></li>`;
 }
 
-function renderHtmlRelease(release) {
+function renderHtmlRelease(data, release) {
   const fullChangelogUrl = `${data.baseUrl}/changelog#${versionAnchor(release.version)}`;
   const sections = orderedSections(release.sections)
     .map((section) => {
@@ -104,28 +125,42 @@ function renderHtmlRelease(release) {
 `;
 }
 
-function renderChangelog() {
+function renderChangelog(config, data) {
   const releases = data.releases.map(renderMdxRelease).join("\n\n");
 
   return `---
-title: "Relay changelog"
-description: "User-facing release notes for Relay."
-sidebarTitle: "Changelog"
+title: "${config.title}"
+description: "${config.description}"
+sidebarTitle: "${config.sidebarTitle}"
 ---
 
-Relay release notes are organized by version. Sparkle update feeds can link to each version directly using the per-version anchors on this page.
+${config.intro}
 
 ${releases}
 `;
 }
 
-await mkdir(releaseNotesDir, { recursive: true });
-await writeFile(changelogPath, renderChangelog(), "utf8");
+for (const config of changelogConfigs) {
+  let data;
+  try {
+    data = JSON.parse(await readFile(config.dataPath, "utf8"));
+  } catch (error) {
+    if (config.optional && error.code === "ENOENT") {
+      continue;
+    }
+    throw error;
+  }
 
-for (const release of data.releases) {
-  const htmlPath = path.join(releaseNotesDir, `${release.version}.html`);
-  await writeFile(htmlPath, renderHtmlRelease(release), "utf8");
+  await mkdir(config.releaseNotesDir, { recursive: true });
+  await writeFile(config.changelogPath, renderChangelog(config, data), "utf8");
+
+  for (const release of data.releases) {
+    const htmlPath = path.join(config.releaseNotesDir, `${release.version}.html`);
+    await writeFile(htmlPath, renderHtmlRelease(data, release), "utf8");
+  }
+
+  console.log(`Generated ${path.relative(repoRoot, config.changelogPath)}`);
+  console.log(
+    `Generated ${data.releases.length} Sparkle release note files in ${path.relative(repoRoot, config.releaseNotesDir)}`,
+  );
 }
-
-console.log(`Generated ${path.relative(repoRoot, changelogPath)}`);
-console.log(`Generated ${data.releases.length} Sparkle release note files in ${path.relative(repoRoot, releaseNotesDir)}`);

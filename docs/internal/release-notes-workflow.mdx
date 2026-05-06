@@ -8,7 +8,7 @@ Relay release notes are generated from one structured data file so the Mintlify 
 
 ## Add a new release
 
-1. Open `data/changelog.json`.
+1. Open `data/changelog.json` for public releases, or `data/beta-changelog.json` for beta releases.
 2. Add the new release at the top of the `releases` array.
 3. Use these section names when they apply: `New`, `Improved`, `Fixed`, `Known Issues`, and `Notes`.
 4. Keep wording concise and user-facing. Use Relay terms consistently: dashboard, tab, canvas, tile, module, Live Mode, Automation View, Relay Pro, External Connections, External Devices, and LAN Sharing.
@@ -24,7 +24,9 @@ node scripts/generate-sparkle-release-notes.mjs
 This updates:
 
 - `changelog.mdx`
+- `beta-changelog.mdx`
 - `public/sparkle/release-notes/<version>.html`
+- `public/sparkle/beta-release-notes/<version>.html`
 
 ## Sparkle appcast links
 
@@ -38,6 +40,13 @@ Use the full Mintlify changelog for the complete release history:
 
 ```xml
 <sparkle:fullReleaseNotesLink>https://docs.ondeckapps.com/changelog</sparkle:fullReleaseNotesLink>
+```
+
+For beta builds, use the beta release note directory and beta changelog:
+
+```xml
+<sparkle:releaseNotesLink>https://docs.ondeckapps.com/sparkle/beta-release-notes/1.0.8-beta.1.html</sparkle:releaseNotesLink>
+<sparkle:fullReleaseNotesLink>https://docs.ondeckapps.com/beta-changelog</sparkle:fullReleaseNotesLink>
 ```
 
 When linking to a specific version in docs or support replies, use the generated changelog anchor:

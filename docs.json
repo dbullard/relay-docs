@@ -127,6 +127,7 @@
                 "expanded": true,
                 "root": "changelog",
                 "pages": [
+                  "beta-changelog",
                   "docs/internal/release-notes-workflow"
                 ]
               }
