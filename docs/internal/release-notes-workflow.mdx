@@ -1,0 +1,47 @@
+---
+title: "Release notes workflow"
+description: "How to update the Relay changelog and Sparkle release note links."
+sidebarTitle: "Release Notes Workflow"
+---
+
+Relay release notes are generated from one structured data file so the Mintlify changelog and Sparkle release note HTML stay in sync.
+
+## Add a new release
+
+1. Open `data/changelog.json`.
+2. Add the new release at the top of the `releases` array.
+3. Use these section names when they apply: `New`, `Improved`, `Fixed`, `Known Issues`, and `Notes`.
+4. Keep wording concise and user-facing. Use Relay terms consistently: dashboard, tab, canvas, tile, module, Live Mode, Automation View, Relay Pro, External Connections, External Devices, and LAN Sharing.
+
+## Regenerate files
+
+Run the generator from the repo root:
+
+```bash
+node scripts/generate-sparkle-release-notes.mjs
+```
+
+This updates:
+
+- `changelog.mdx`
+- `public/sparkle/release-notes/<version>.html`
+
+## Sparkle appcast links
+
+Use the per-version Sparkle HTML file for the update window:
+
+```xml
+<sparkle:releaseNotesLink>https://docs.ondeckapps.com/sparkle/release-notes/1.0.7.html</sparkle:releaseNotesLink>
+```
+
+Use the full Mintlify changelog for the complete release history:
+
+```xml
+<sparkle:fullReleaseNotesLink>https://docs.ondeckapps.com/changelog</sparkle:fullReleaseNotesLink>
+```
+
+When linking to a specific version in docs or support replies, use the generated changelog anchor:
+
+```text
+https://docs.ondeckapps.com/changelog#version-107
+```

@@ -116,6 +116,21 @@
                 ]
               }
             ]
+          },
+          {
+            "product": "Resources",
+            "icon": "newspaper",
+            "description": "Review Relay release notes and internal publishing workflows.",
+            "groups": [
+              {
+                "group": "Resources",
+                "expanded": true,
+                "root": "changelog",
+                "pages": [
+                  "docs/internal/release-notes-workflow"
+                ]
+              }
+            ]
           }
         ]
       }

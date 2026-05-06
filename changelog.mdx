@@ -1,0 +1,145 @@
+---
+title: "Relay changelog"
+description: "User-facing release notes for Relay."
+sidebarTitle: "Changelog"
+---
+
+Relay release notes are organized by version. Sparkle update feeds can link to each version directly using the per-version anchors on this page.
+
+## Version 1.0.7 <a id="version-107"></a>
+
+### New
+
+- **Planning Center module updates**
+  - Added more rundown columns, including song and item details and notes sections.
+  - Added a new Team Assignments UI to make it easier to sort teams and see who is scheduled for each position, service time, and status.
+- **Tab schedules**
+  - Added tab schedules so tabs can automatically switch based on date and time.
+  - Useful for teams with multiple events or services on the same day.
+  - Open `Tab Settings > Schedule` to set schedule rules.
+
+### Fixed
+
+- Fixed bugs that could select modules and nodes while working in different views, causing unwanted editing or deletion.
+- Fixed Text module issues.
+- Improved data fetching performance.
+- Fixed UI issues.
+
+### Notes
+
+- Tab schedules are a Relay Pro feature because the free version supports one tab.
+
+## Version 1.0.6 <a id="version-106"></a>
+
+### New
+
+- **Tab schedules**
+  - Added tab schedules so tabs can automatically switch based on date and time.
+  - Useful for teams with multiple events or services on the same day.
+  - Open `Tab Settings > Schedule` to set schedule rules.
+- **Keyboard shortcuts**
+  - Added quick keys to navigate tabs more easily.
+  - Added a new option in the Help menu to see all keyboard shortcuts available in Relay.
+
+### Fixed
+
+- Fixed a bug where dashboards with many Shure modules could freeze or crash after running for a while in Live Mode.
+- Added a possible fix for a Text module bug that caused random characters and line breaks.
+- Fixed UI issues.
+
+## Version 1.0.5 <a id="version-105"></a>
+
+### New
+
+- Added the ability to use cached console and wireless channel names as sources for Automation nodes.
+- Expanded in-app commands for the Button module and in-app action nodes.
+- **LAN Sharing update**
+  - Added a view-only web view of your active tab so non-Relay devices can view it in a browser using the URL from LAN Sharing settings.
+  - Useful for viewing Relay on mobile and other non-Mac devices.
+  - Added LAN peer-to-peer notifications for peers and HTTP web view devices.
+
+### Fixed
+
+- Tightened how Relay saves and recalls dashboards, with a new autosave option in General settings.
+- Fixed a Person module bug where a position could not be assigned if more than one person was assigned to that position.
+- Fixed a bug where the Shure module did not show the channel name in edit mode.
+- Improved External Device scanning reliability.
+
+### Notes
+
+- The LAN Sharing browser view is included in the free version. LAN imports remain a Relay Pro feature.
+- The LAN Sharing browser view is still in progress, so there may be bugs to fix.
+- One instance of Relay must be running on a Mac for the LAN Sharing browser view to work.
+
+## Version 1.0.4 <a id="version-104"></a>
+
+### New
+
+- **Image module**
+  - Added the Image module so you can load a custom logo or image into a tile.
+- **LAN Sharing update**
+  - Added a view-only web view of your active tab so non-Relay devices can view it in a browser using the URL from LAN Sharing settings.
+  - Useful for viewing Relay on mobile and other non-Mac devices.
+
+### Fixed
+
+- Added ProPresenter slide notes as a display option.
+- Fixed ProPresenter connection hang errors.
+- Fixed Countdown and Timer modules not starting in Live Mode, and added new toggles for auto-starting in Live Mode.
+- Optimized connections to Shure devices.
+- Fixed system Light Mode UI elements that were not legible or visible.
+
+### Notes
+
+- The LAN Sharing browser view is included in the free version. LAN imports remain a Relay Pro feature.
+- The LAN Sharing browser view is still in progress, so there may be bugs to fix.
+- One instance of Relay must be running on a Mac for the LAN Sharing browser view to work.
+
+## Version 1.0.3 <a id="version-103"></a>
+
+### New
+
+- **Live Transcription module**
+  - Added support for up to four concurrent transcriptions per tab, either in the same tile or across separate tiles.
+
+### Fixed
+
+- Fixed the OSC Send node so custom ports pass data correctly.
+- Fixed the Word Trigger node so it can send more than one command per Live Mode session.
+- Added new bug and error reporting so the team can review more crash and hang data.
+
+## Version 1.0.2 <a id="version-102"></a>
+
+### Fixed
+
+- Fixed issues with Shure TCP connections.
+- Fixed a ProPresenter module bug where entering Live Mode caused data to stop updating.
+- Improved the UI.
+
+### Known Issues
+
+- Shure ANX4 and ADTD/Q devices still are not connecting correctly.
+
+## Version 1.0.1 <a id="version-101"></a>
+
+### New
+
+- **Rosters**
+  - Added Rosters as an alternative for teams without Planning Center.
+  - Rosters is included in the free version, with no paid subscription required.
+  - Rosters is a local database that lets you create lists to call back to and assign through the Picker module.
+  - Rosters settings are available in the new Tab Settings area, where the old Planning Center toolbar button was located.
+- **Documents module**
+  - Added the Documents module for preview-only views of PDF or Word documents, useful for rundowns or stage plots without opening separate apps.
+
+### Fixed
+
+- Fixed the export logs action with more detailed logs.
+- Fixed app signing issues that were likely causing in-app updates to fail.
+- Improved the UI.
+
+## Version 1.0 <a id="version-10"></a>
+
+### Notes
+
+- Initial release.

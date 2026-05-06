@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "generate:changelog": "node scripts/generate-sparkle-release-notes.mjs"
+  }
+}
