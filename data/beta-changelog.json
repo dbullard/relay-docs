@@ -4,16 +4,16 @@
     {
       "version": "1.1.0",
       "sections": {
-        "Notes": [
-          "No commits were detected between beta/1.0.7 and beta/1.1.0. Confirm the version tag points to the intended release commit."
+        "Improved": [
+          "Updated Planning Center: 5/6 Evening 1.1 Beta push"
         ]
       },
       "diagnostics": {
         "base_tag": "beta/1.0.7",
         "target_ref": "beta/1.1.0",
         "range": "beta/1.0.7..beta/1.1.0",
-        "commit_count": 0,
-        "base_sha": "cf71d53",
+        "commit_count": 1,
+        "base_sha": "e5ea06e",
         "target_sha": "cf71d53"
       }
     }
