@@ -126,10 +126,7 @@
                 "group": "Resources",
                 "expanded": true,
                 "root": "changelog",
-                "pages": [
-                  "beta-changelog",
-                  "docs/internal/release-notes-workflow"
-                ]
+                "pages": ["beta-changelog"]
               }
             ]
           }
