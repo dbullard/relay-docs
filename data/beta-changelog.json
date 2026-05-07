@@ -1,11 +1,31 @@
 {
-  "baseUrl": "https://docs.ondeckapps.com",
+  "baseUrl": "https://help.ondeckapps.com",
   "releases": [
     {
       "version": "1.1.0",
       "sections": {
+        "New": [
+          "Added a dedicated Planning Center Team Assignments module.",
+          "Added support for multiple commands on one Button.",
+          "Added Button triggers in Automation, so canvas buttons can fire graph actions.",
+          "Added richer dynamic text tokens for variables, console channels, and wireless channels.",
+          "Added early support for shared document rosters."
+        ],
         "Improved": [
-          "Updated Planning Center: 5/6 Evening 1.1 Beta push"
+          "Planning Center team assignment tiles can now show avatars, statuses, filtered teams, and cleaner multi-column layouts.",
+          "Team assignments can now track assigned mic and IEM channels from cached Shure or Sennheiser devices.",
+          "Button settings now include an expandable command list with add and remove controls.",
+          "Text tiles can now insert live values like graph variables, console channel names, and wireless channel names.",
+          "Automation view now shows when a canvas Button is linked, including press count and last fired time.",
+          "Existing single-command buttons automatically migrate to the new multi-command format."
+        ],
+        "Fixed and Cleaned Up": [
+          "Removed old embedded HelpScout documentation files from the app repository.",
+          "Improved save and load handling for automatically mirrored Button automation triggers.",
+          "Preserved compatibility with existing dashboards and legacy Button configurations."
+        ],
+        "Build": [
+          "Updated build number from 39 to 40."
         ]
       },
       "diagnostics": {

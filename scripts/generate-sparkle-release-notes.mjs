@@ -14,6 +14,8 @@ const changelogConfigs = [
     dataPath,
     changelogPath: path.join(repoRoot, "changelog.mdx"),
     releaseNotesDir: path.join(repoRoot, "public", "sparkle", "release-notes"),
+    fullChangelogPath: "changelog",
+    releaseTitleSuffix: "",
     title: "Relay changelog",
     description: "User-facing release notes for Relay.",
     sidebarTitle: "Changelog",
@@ -24,6 +26,8 @@ const changelogConfigs = [
     dataPath: betaDataPath,
     changelogPath: path.join(repoRoot, "beta-changelog.mdx"),
     releaseNotesDir: path.join(repoRoot, "public", "sparkle", "beta-release-notes"),
+    fullChangelogPath: "beta-changelog",
+    releaseTitleSuffix: " Beta",
     title: "Relay beta changelog",
     description: "Beta release notes for Relay.",
     sidebarTitle: "Beta Changelog",
@@ -89,8 +93,9 @@ function renderHtmlListItem(item) {
   return `<li><strong>${escapeHtml(item.title)}</strong><ul>${childItems}</ul></li>`;
 }
 
-function renderHtmlRelease(data, release) {
-  const fullChangelogUrl = `${data.baseUrl}/changelog#${versionAnchor(release.version)}`;
+function renderHtmlRelease(config, data, release) {
+  const fullChangelogUrl = `${data.baseUrl}/${config.fullChangelogPath}#${versionAnchor(release.version)}`;
+  const releaseTitle = `Relay ${release.version}${config.releaseTitleSuffix}`;
   const sections = orderedSections(release.sections)
     .map((section) => {
       const items = release.sections[section].map(renderHtmlListItem).join("");
@@ -103,7 +108,7 @@ function renderHtmlRelease(data, release) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relay ${escapeHtml(release.version)} Release Notes</title>
+  <title>${escapeHtml(releaseTitle)} Release Notes</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
@@ -117,7 +122,7 @@ function renderHtmlRelease(data, release) {
   </style>
 </head>
 <body>
-  <h1>Relay ${escapeHtml(release.version)}</h1>
+  <h1>${escapeHtml(releaseTitle)}</h1>
   ${sections}
   <p class="footer"><a href="${escapeHtml(fullChangelogUrl)}">View the full Relay changelog</a></p>
 </body>
@@ -156,7 +161,7 @@ for (const config of changelogConfigs) {
 
   for (const release of data.releases) {
     const htmlPath = path.join(config.releaseNotesDir, `${release.version}.html`);
-    await writeFile(htmlPath, renderHtmlRelease(data, release), "utf8");
+    await writeFile(htmlPath, renderHtmlRelease(config, data, release), "utf8");
   }
 
   console.log(`Generated ${path.relative(repoRoot, config.changelogPath)}`);
