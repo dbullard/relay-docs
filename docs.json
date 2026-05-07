@@ -118,15 +118,15 @@
             ]
           },
           {
-            "product": "Resources",
+            "product": "Release Notes",
             "icon": "newspaper",
-            "description": "Review Relay release notes and internal publishing workflows.",
+            "description": "Review the latest Relay release notes and beta release notes.",
             "groups": [
               {
-                "group": "Resources",
+                "group": "Release Notes",
                 "expanded": true,
                 "root": "changelog",
-                "pages": ["beta-changelog"]
+                "pages": ["changelog", "beta-changelog"]
               }
             ]
           }
