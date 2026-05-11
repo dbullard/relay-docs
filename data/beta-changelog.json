@@ -5,13 +5,12 @@
       "version": "1.1.0",
       "sections": {
         "Improved": [
-          "Updated Relay. Review this draft and adjust wording before shipping.",
-          "Updated app updates. Review this draft and adjust wording before shipping.",
-          "Updated Automation View. Review this draft and adjust wording before shipping.",
-          "Updated dashboards and canvases. Review this draft and adjust wording before shipping.",
-          "Updated document and webpage modules. Review this draft and adjust wording before shipping.",
-          "Updated Shure devices. Review this draft and adjust wording before shipping.",
-          "Updated Planning Center. Review this draft and adjust wording before shipping."
+          "Improved Relay.",
+          "Improved Automation View.",
+          "Improved dashboards and canvases.",
+          "Improved document and webpage modules.",
+          "Improved Shure devices.",
+          "Improved Planning Center."
         ]
       },
       "diagnostics": {
