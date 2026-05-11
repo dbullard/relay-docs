@@ -4,21 +4,17 @@
     {
       "version": "1.1.0",
       "sections": {
-        "Improved": [
-          "Improved Relay.",
-          "Improved Automation View.",
-          "Improved dashboards and canvases.",
-          "Improved document and webpage modules.",
-          "Improved Shure devices.",
-          "Improved Planning Center."
+        "New": [
+          "Added Planning Center team assignment modules.",
+          "Added roster management in dashboard settings."
         ]
       },
       "diagnostics": {
-        "base_tag": "beta/1.1.0.41",
+        "base_tag": "beta/1.0.7",
         "target_ref": "beta/1.1.0",
-        "range": "beta/1.1.0.41..beta/1.1.0",
-        "commit_count": 0,
-        "base_sha": "f02335a",
+        "range": "beta/1.0.7..beta/1.1.0",
+        "commit_count": 1,
+        "base_sha": "e5ea06e",
         "target_sha": "cf71d53"
       }
     }
