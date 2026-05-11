@@ -5,17 +5,31 @@
       "version": "1.1.0",
       "sections": {
         "New": [
-          "Added Planning Center team assignment modules.",
-          "Added roster management in dashboard settings."
+          "Added a dedicated Roster Team Assignments module and expanded Planning Center team assignment workflows.",
+          "Added a new DAW Transport module for sending and monitoring transport-style controls in dashboards.",
+          "Added a basic Relay test target."
+        ],
+        "Improved": [
+          "Improved Planning Center assignment tiles with richer wireless assignment handling, roster-backed assignment options, role defaults, and cleaner persistence.",
+          "Improved Shure Wireless live telemetry, including better RF, battery, transmitter presence, mute, audio-level, and channel-name handling across supported receiver models.",
+          "Added large-graph performance mode in Automation Graph view, with simplified node cards for busy graphs and more diagnostic coverage for graph layout and undo performance.",
+          "Reworked External Control settings into a combined MIDI/OSC monitor page with live message status, source selection, counters, and setup guidance.",
+          "Improved dashboard tile resizing, canvas persistence, graph collision handling, and live/flip rendering behavior.",
+          "Expanded diagnostics exports with performance summaries, event counters, active canvas composition, active graph composition, and more runtime context."
+        ],
+        "Fixed": [
+          "Fixed pan/zoom issues.",
+          "Fixed drag resize issues.",
+          "Fixed tutorial view issues."
         ]
       },
       "diagnostics": {
-        "base_tag": "beta/1.0.7",
-        "target_ref": "beta/1.1.0",
-        "range": "beta/1.0.7..beta/1.1.0",
-        "commit_count": 1,
-        "base_sha": "e5ea06e",
-        "target_sha": "cf71d53"
+        "base_tag": "cf71d53",
+        "target_ref": "f02335a",
+        "range": "cf71d53..f02335a",
+        "commit_count": 2,
+        "base_sha": "cf71d53",
+        "target_sha": "f02335a"
       }
     }
   ]
