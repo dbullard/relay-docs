@@ -58,6 +58,9 @@
                 "pages": [
                   "dashboards/tiles",
                   "dashboards/modules",
+                  "dashboards/ndi-feed",
+                  "dashboards/team-assignments",
+                  "dashboards/daw-transport",
                   "dashboards/live-mode",
                   "dashboards/automation"
                 ]

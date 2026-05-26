@@ -48,8 +48,9 @@ Relay can perform actions such as:
 - Send MIDI
 - Trigger ProPresenter actions
 - Send actions to supported consoles or wireless destinations
+- Export or trigger supported Vista workflows
 
-Utilities such as Delay and Repeater nodes help shape timing and repetition between the trigger and destination.
+Utilities such as `Delay`, `Repeater`, `If / Else`, and `Variable` nodes help shape timing, branching, repetition, and reusable values between the trigger and destination.
 
 ## Build a first automation
 
@@ -65,6 +66,8 @@ Utilities such as Delay and Repeater nodes help shape timing and repetition betw
 - Test one path at a time
 - Add delays only after the basic path is reliable
 - Name nodes clearly when a graph grows beyond a few connections
+- Use `If / Else` only after the trigger and happy path already work
+- Use `Variable` nodes when you want text or inbound values reused across more than one action
 
 ## Troubleshooting
 
@@ -88,3 +91,5 @@ Check:
 ### The graph became too hard to follow
 
 Break larger flows into smaller patterns. A few reliable automations are easier to trust than one giant graph full of conditionals and retries.
+
+Relay `1.1.0` also improves larger graph handling, so dense automation views should feel more manageable than earlier releases.
