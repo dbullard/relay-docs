@@ -68,8 +68,23 @@ function renderMdxItem(item) {
   return `- **${mdxText(item.title)}**\n${childItems}`;
 }
 
+function releaseHeadingLabel(release) {
+  if (release.app_version && release.build) {
+    return `${release.app_version} (build ${release.build})`;
+  }
+  if (release.build) {
+    return `${release.version} (build ${release.build})`;
+  }
+  return release.version;
+}
+
 function renderMdxRelease(release) {
-  const lines = [`## Version ${release.version} <a id="${versionAnchor(release.version)}"></a>`];
+  const lines = [`## Version ${releaseHeadingLabel(release)} <a id="${versionAnchor(release.version)}"></a>`];
+
+  if (release.html) {
+    lines.push("", release.html.trim());
+    return lines.join("\n");
+  }
 
   for (const section of orderedSections(release.sections)) {
     lines.push("", `### ${section}`, "");
@@ -95,13 +110,16 @@ function renderHtmlListItem(item) {
 
 function renderHtmlRelease(config, data, release) {
   const fullChangelogUrl = `${data.baseUrl}/${config.fullChangelogPath}#${versionAnchor(release.version)}`;
-  const releaseTitle = `Relay ${release.version}${config.releaseTitleSuffix}`;
-  const sections = orderedSections(release.sections)
-    .map((section) => {
-      const items = release.sections[section].map(renderHtmlListItem).join("");
-      return `<section><h2>${escapeHtml(section)}</h2><ul>${items}</ul></section>`;
-    })
-    .join("\n");
+  const releaseLabel = releaseHeadingLabel(release);
+  const releaseTitle = `Relay ${releaseLabel}${config.releaseTitleSuffix}`;
+  const sections = release.html
+    ? release.html.trim()
+    : orderedSections(release.sections)
+        .map((section) => {
+          const items = release.sections[section].map(renderHtmlListItem).join("");
+          return `<section><h2>${escapeHtml(section)}</h2><ul>${items}</ul></section>`;
+        })
+        .join("\n");
 
   return `<!doctype html>
 <html lang="en">

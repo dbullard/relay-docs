@@ -8,53 +8,41 @@ Relay beta release notes are organized by version. Beta Sparkle update feeds can
 
 ## Version 1.1.1 (build 43) <a id="version-11143"></a>
 
-<h2 style="font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#555;margin:0 0 12px;">What's New</h2>
+### New
 
-<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">Home Screen &amp; Launch Experience</p>
-<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
-  <li>New home screen with a sidebar, recent files grid, and canvas size picker when creating a new dashboard</li>
-  <li><strong>Startup file</strong> — right-click any file to pin it as always-open on launch; bypasses the home screen and save dialog automatically. Pinned files show a blue pin badge in the grid</li>
-</ul>
+- **Home Screen & Launch Experience**
+  - New home screen with a sidebar, recent files grid, and canvas size picker when creating a new dashboard.
+  - Startup file: right-click any file to pin it as always-open on launch. This bypasses the home screen and save dialog automatically, and pinned files show a blue pin badge in the grid.
+- **Auto-Save**
+  - Saving/Saved status indicator in the toolbar.
+  - Auto-save is now enabled by default for files with a known save location.
+  - First-time auto-save users see a one-time modal with an inline toggle to disable it.
+- **Canvas Size Per Tab**
+  - Set a per-tab canvas size via right-click on the tab. A badge appears in the toolbar when an override is active.
+  - Canvas size now travels with the document, so tiles no longer auto-scale unexpectedly on file open.
+- **DiGiCo Integration**
+  - DiGiCo OSC sync lets you sync channel names directly from the console with one tap.
+  - DiGiCo trigger actions are now available in the automation graph to recall macros and send OSC commands.
+  - Added nested variable sub-menus, name-based channel pickers for all channel types, and a Brand/Model split in console settings.
+- **YouTube Live Stream Monitor (Beta)**
+  - New module to display live broadcast stats on your dashboard.
+  - The broadcast picker now loads faster with a single API call and filters out ended streams.
+  - Previously-selected broadcasts are preserved in the picker even if they are not in the current results.
 
-<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">Auto-Save</p>
-<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
-  <li>Saving/Saved status indicator in the toolbar</li>
-  <li>Auto-save now enabled by default for files with a known save location</li>
-  <li>First-time auto-save users see a one-time modal with an inline toggle to disable it</li>
-</ul>
+### Improved
 
-<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">Canvas Size Per Tab</p>
-<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
-  <li>Set a per-tab canvas size via right-click on the tab; a badge appears in the toolbar when an override is active</li>
-  <li>Canvas size now travels with the document — tiles no longer auto-scale unexpectedly on file open</li>
-</ul>
+- Automation graph node deletion now supports Undo.
+- The floating Delete button now works in graph mode.
+- Help messages when a node can't be added now include a clear title and explanation.
+- The Shure module now respects the global live mode toggle and shows a "Live data paused" banner with placeholder values when live mode is off.
+- Thumbnails now live in `~/Library/Caches/Relay/thumbnails/` to keep project folders tidy.
+- System CPU usage reading is now significantly more accurate.
 
-<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">DiGiCo Integration <span style="display:inline-block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:20px;background:#dbeafe;color:#1d4ed8;margin-left:6px;">New</span></p>
-<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
-  <li><strong>DiGiCo OSC sync</strong> — sync channel names directly from the console with one tap</li>
-  <li><strong>DiGiCo trigger actions</strong> in the automation graph — recall macros and send OSC commands</li>
-  <li>Nested variable sub-menus, name-based channel pickers for all channel types, and Brand/Model split in console settings</li>
-</ul>
+### Fixed
 
-<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">YouTube Live Stream Monitor <span style="display:inline-block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:20px;background:#fef9c3;color:#854d0e;margin-left:6px;">Beta</span></p>
-<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
-  <li>New module to display live broadcast stats on your dashboard</li>
-  <li>Broadcast picker loads faster with a single API call and filters out ended streams</li>
-  <li>Previously-selected broadcasts are preserved in the picker even if not in the current results</li>
-</ul>
-
-<hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;" />
-
-<h2 style="font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#555;margin:0 0 12px;">Fixes &amp; Improvements</h2>
-<ul style="margin:0;padding-left:20px;line-height:1.6;">
-  <li><strong>Automation graph:</strong> Node deletion now supports Undo; the floating Delete button now works in graph mode; help messages when a node can't be added include a clear title and explanation</li>
-  <li><strong>Shure module:</strong> Respects the global live mode toggle — shows a "Live data paused" banner and placeholder values when live mode is off</li>
-  <li>Thumbnails moved to <code style="font-family:monospace;font-size:0.85em;background:#f3f4f6;padding:1px 5px;border-radius:4px;">~/Library/Caches/Relay/thumbnails/</code> to keep project folders tidy</li>
-  <li>Fixed spurious unsaved-changes dialogs when opening files into a blank document or on launch with a startup file</li>
-  <li>Fixed new dashboard sheet not applying the selected canvas size</li>
-  <li>System CPU usage reading is now significantly more accurate</li>
-  <li>Various DiGiCo channel token, icon, and layout fixes</li>
-</ul>
+- Fixed spurious unsaved-changes dialogs when opening files into a blank document or on launch with a startup file.
+- Fixed the new dashboard sheet so it correctly applies the selected canvas size.
+- Fixed various DiGiCo channel token, icon, and layout issues.
 
 ## Version 1.1.0 (build 42) <a id="version-11042"></a>
 
