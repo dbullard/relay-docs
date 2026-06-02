@@ -6,6 +6,14 @@ sidebarTitle: "Beta Features"
 
 Relay exposes a few beta-only or beta-sensitive surfaces that should be tested carefully before you rely on them in a mission-critical workflow.
 
+## Release features vs beta features
+
+Relay `1.1.1` includes shipped features like the new home screen, startup file pinning, auto-save improvements, per-tab canvas sizing, and DiGiCo workflow upgrades.
+
+Those are part of the main release track.
+
+Beta features stay separate. In the current `1.1.1` cycle, the biggest example is the **YouTube Live Stream Monitor**, which should still be treated as test-only until it moves into the main release set.
+
 ## Where beta shows up
 
 - the `Beta` page in `Relay > Settings`
@@ -17,6 +25,7 @@ Relay exposes a few beta-only or beta-sensitive surfaces that should be tested c
 ## Current beta-sensitive areas
 
 - NDI Feed remains a beta-sensitive module and should be validated on the real production network
+- YouTube Live Stream Monitor is currently beta-only and should be tested with your real account, stream state, and dashboard persistence flow
 - Shure and Live Transcription modules carry beta sensitivity in current builds
 - Sennheiser module availability is limited to beta or debug builds
 - beta-only Shure models include `ANX4`, `ADTD`, and `ADTQ`

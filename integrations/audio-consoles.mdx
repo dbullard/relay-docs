@@ -31,7 +31,17 @@ Relay can connect to supported digital mixing consoles over your network, turnin
 - Allen and Heath Qu: MIDI over TCP/IP
 - dLive and Avantis: MixRack or Surface target selection
 - Yamaha: MIDI input and output plus Program Change mappings
-- DiGiCo: show RTF import for channel mapping when needed
+- DiGiCo: show RTF import for channel mapping when needed, plus Relay `1.1.1` adds direct OSC channel-name sync, DiGiCo automation actions, and a clearer Brand/Model split in console settings
+
+## DiGiCo in Relay 1.1.1
+
+Relay `1.1.1` expands DiGiCo workflows in a few practical ways:
+
+- sync channel names from the console directly into Relay
+- use DiGiCo trigger actions in the automation graph for macros and OSC commands
+- pick channels by name across supported channel types
+
+If you already use Relay for console-linked dashboard cues, `1.1.1` makes DiGiCo setup and automation much easier to maintain.
 
 ## Troubleshooting
 

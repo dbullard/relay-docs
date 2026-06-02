@@ -34,6 +34,18 @@ Useful Canvas View commands often include:
 - Resize dashboard canvas
 - Bringing all tiles back into view when they drift outside the visible area
 
+## Home screen and startup flow
+
+Relay `1.1.1` adds a more structured launch flow before you even enter Canvas View.
+
+You can now:
+
+- start from a home screen with recent files
+- choose a canvas size while creating a new dashboard
+- right-click a file and pin it as the startup file so Relay opens it automatically on launch
+
+If a startup file is pinned, Relay can skip the normal home-screen decision and jump straight into that document.
+
 ## Tabs
 
 Tabs let you organize multiple dashboard views in one file.
@@ -49,6 +61,12 @@ Good tab patterns:
 - One tab per service or event segment
 - One tab for prep and another for live operation
 - One tab per operator role if multiple people use the same dashboard file
+
+## Canvas size per tab
+
+Relay `1.1.1` lets you set a canvas size per tab.
+
+Use this when one tab needs a different layout footprint than another. The override stays with the document, and Relay shows a toolbar badge when a tab-specific canvas size is active.
 
 ## Tiles and modules
 
@@ -90,6 +108,14 @@ Use it to:
 - Configure module-specific settings
 - Adjust what content is shown
 - Refine grouped layouts inside a tile
+
+## Saving behavior
+
+Relay `1.1.1` also improves how save state is communicated while you work.
+
+- files with a known save location now auto-save by default
+- the toolbar shows whether the current document is saving or already saved
+- first-time auto-save users see a one-time prompt with an inline disable toggle
 
 ## Grouping and repeated layouts
 
