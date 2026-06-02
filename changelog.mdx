@@ -6,6 +6,50 @@ sidebarTitle: "Changelog"
 
 Relay release notes are organized by version. Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
+## Version 1.1.1 <a id="version-111"></a>
+
+<h2 style="font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#555;margin:0 0 12px;">What's New</h2>
+
+<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">Home Screen &amp; Launch Experience</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
+  <li>New home screen with a sidebar, recent files grid, and canvas size picker when creating a new dashboard</li>
+  <li><strong>Startup file</strong> — right-click any file to pin it as always-open on launch; bypasses the home screen and save dialog automatically. Pinned files show a blue pin badge in the grid</li>
+</ul>
+
+<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">Auto-Save</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
+  <li>Saving/Saved status indicator in the toolbar</li>
+  <li>Auto-save now enabled by default for files with a known save location</li>
+  <li>First-time auto-save users see a one-time modal with an inline toggle to disable it</li>
+</ul>
+
+<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">Canvas Size Per Tab</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
+  <li>Set a per-tab canvas size via right-click on the tab; a badge appears in the toolbar when an override is active</li>
+  <li>Canvas size now travels with the document — tiles no longer auto-scale unexpectedly on file open</li>
+</ul>
+
+<p style="font-size:1.05rem;font-weight:600;margin:20px 0 6px;">DiGiCo Integration <span style="display:inline-block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:20px;background:#dbeafe;color:#1d4ed8;margin-left:6px;">New</span></p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.6;">
+  <li><strong>DiGiCo OSC sync</strong> — sync channel names directly from the console with one tap</li>
+  <li><strong>DiGiCo trigger actions</strong> in the automation graph — recall macros and send OSC commands</li>
+  <li>Nested variable sub-menus, name-based channel pickers for all channel types, and Brand/Model split in console settings</li>
+</ul>
+
+
+<hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;" />
+
+<h2 style="font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#555;margin:0 0 12px;">Fixes &amp; Improvements</h2>
+<ul style="margin:0;padding-left:20px;line-height:1.6;">
+  <li><strong>Automation graph:</strong> Node deletion now supports Undo; the floating Delete button now works in graph mode; help messages when a node can't be added include a clear title and explanation</li>
+  <li><strong>Shure module:</strong> Respects the global live mode toggle — shows a "Live data paused" banner and placeholder values when live mode is off</li>
+  <li>Thumbnails moved to <code style="font-family:monospace;font-size:0.85em;background:#f3f4f6;padding:1px 5px;border-radius:4px;">~/Library/Caches/Relay/thumbnails/</code> to keep project folders tidy</li>
+  <li>Fixed spurious unsaved-changes dialogs when opening files into a blank document or on launch with a startup file</li>
+  <li>Fixed new dashboard sheet not applying the selected canvas size</li>
+  <li>System CPU usage reading is now significantly more accurate</li>
+  <li>Various DiGiCo channel token, icon, and layout fixes</li>
+</ul>
+
 ## Version 1.1.0 <a id="version-110"></a>
 
 <h1>A BIG UPDATE</h1>
