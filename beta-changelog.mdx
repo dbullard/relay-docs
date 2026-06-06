@@ -6,6 +6,60 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
+## Version 1.1.2 (build 44) <a id="version-11244"></a>
+
+<h2 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;margin:0 0 16px;">What's New</h2>
+
+<p style="font-size:1rem;font-weight:600;margin:20px 0 6px;">10 New Automation Nodes</p>
+<p style="margin:0 0 8px;font-size:0.9rem;color:#ccc;">The automation graph gets a big expansion. New nodes you can drop onto the canvas:</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.7;font-size:0.9rem;">
+  <li><strong>HTTP Request</strong> — trigger any web endpoint or API from an automation</li>
+  <li><strong>Set Variable</strong> — store and reuse values across your automation flow</li>
+  <li><strong>App State Trigger</strong> — fire automations on app launch, live mode toggle, or tab switch</li>
+  <li><strong>PCO Plan Updated</strong> — trigger when your Planning Center plan changes, with a live item picker to filter exactly what you care about</li>
+  <li><strong>Toggle</strong> — flip a value on/off each time it's triggered</li>
+  <li><strong>Counter</strong> — increment or reset a count</li>
+  <li><strong>Sequence</strong> — step through a list of outputs one at a time</li>
+  <li><strong>Latch/Gate</strong> — hold a signal open until explicitly released</li>
+  <li><strong>Merge</strong> — combine multiple signals into one</li>
+  <li><strong>Current Time</strong> — use the current time as a value in your flow</li>
+</ul>
+
+<p style="font-size:1rem;font-weight:600;margin:20px 0 6px;">Console Node Improvements</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.7;font-size:0.9rem;">
+  <li>You can now add <strong>multiple graph nodes for the same console</strong>, useful when you need to send different trigger actions to the same device from different parts of your graph</li>
+  <li><strong>Trigger bindings</strong> have moved from the trigger node to the console node, making it much clearer which console handles which trigger action</li>
+  <li>Console nodes now show a <strong>capability mismatch warning</strong> if you connect a source that the console doesn't support</li>
+</ul>
+
+<p style="font-size:1rem;font-weight:600;margin:20px 0 6px;">Live Mode Button</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.7;font-size:0.9rem;">
+  <li>The live mode button is now its own standalone control in the toolbar, no longer grouped with other buttons</li>
+</ul>
+
+<p style="font-size:1rem;font-weight:600;margin:20px 0 6px;">Network Pairs Indicator</p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.7;font-size:0.9rem;">
+  <li>The connected network pairs pill has moved into the System Status overlay, keeping it alongside CPU, memory, OSC, and MIDI activity where it belongs</li>
+</ul>
+<p style="font-size:1rem;font-weight:600;margin:20px 0 6px;">Smart Light Control <span style="display:inline-block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:20px;background:#fef9c3;color:#854d0e;margin-left:6px;">Beta</span></p>
+<ul style="margin:0 0 16px;padding-left:20px;line-height:1.7;font-size:0.9rem;">
+  <li>New automation node to control smart lights directly from your dashboard automations — set colors, brightness, and scenes as part of any trigger flow</li>
+</ul>
+<hr style="border:none;border-top:1px solid #333;margin:24px 0;" />
+
+<h2 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;margin:0 0 16px;">Fixes &amp; Improvements</h2>
+<ul style="margin:0;padding-left:20px;line-height:1.7;font-size:0.9rem;">
+  <li><strong>PCO Auto-Advance</strong> redesigned as a weekly checkpoint coordinator for more reliable and predictable behavior</li>
+  <li><strong>ProPresenter</strong> quick-add devices directly from discovered devices on your network; settings UI polished throughout</li>
+  <li>All 10 new automation nodes support duplicate and remove actions</li>
+  <li>Latch/Gate, Toggle, and Sequence node UI polished</li>
+  <li>Console nodes now correctly name and distinguish between trigger nodes in the binding picker</li>
+  <li>Console node state is properly cleaned up on deletion and correctly copied on duplication</li>
+  <li>Node collapse state now persists when switching between automation modes</li>
+  <li>Significant automation graph performance improvements — cache rebuilds now happen off the main thread, reducing UI stutter when opening large dashboards</li>
+  <li>Various automation node stability fixes</li>
+</ul>
+
 ## Version 1.1.1 (build 43) <a id="version-11143"></a>
 
 ### New
