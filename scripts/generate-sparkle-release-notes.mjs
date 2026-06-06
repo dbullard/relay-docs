@@ -78,11 +78,56 @@ function releaseHeadingLabel(release) {
   return release.version;
 }
 
+function decodeHtmlEntities(value) {
+  return value
+    .replaceAll("&nbsp;", " ")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#39;", "'")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">");
+}
+
+function htmlInlineToMarkdown(value) {
+  return decodeHtmlEntities(value)
+    .replace(/<strong[^>]*>(.*?)<\/strong>/gis, "**$1**")
+    .replace(/<code[^>]*>(.*?)<\/code>/gis, "`$1`")
+    .replace(/<span[^>]*>(.*?)<\/span>/gis, "$1")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/?[^>]+>/g, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function htmlBlockToMdx(value) {
+  let mdx = value.trim();
+
+  mdx = mdx.replace(/<hr[^>]*\/?>/gi, "\n\n---\n\n");
+  mdx = mdx.replace(/<h1[^>]*>(.*?)<\/h1>/gis, (_match, text) => `\n\n## ${htmlInlineToMarkdown(text)}\n\n`);
+  mdx = mdx.replace(/<h2[^>]*>(.*?)<\/h2>/gis, (_match, text) => `\n\n### ${htmlInlineToMarkdown(text)}\n\n`);
+  mdx = mdx.replace(/<h3[^>]*>(.*?)<\/h3>/gis, (_match, text) => `\n\n#### ${htmlInlineToMarkdown(text)}\n\n`);
+  mdx = mdx.replace(/<p[^>]*>(.*?)<\/p>/gis, (_match, text) => `\n\n${htmlInlineToMarkdown(text)}\n\n`);
+  mdx = mdx.replace(/<ul[^>]*>(.*?)<\/ul>/gis, (_match, listBody) => {
+    const items = [...listBody.matchAll(/<li[^>]*>(.*?)<\/li>/gis)]
+      .map((itemMatch) => `- ${htmlInlineToMarkdown(itemMatch[1])}`)
+      .join("\n");
+    return items ? `\n\n${items}\n\n` : "\n\n";
+  });
+  mdx = mdx.replace(/<\/?[^>]+>/g, "");
+  mdx = decodeHtmlEntities(mdx)
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+  return mdx;
+}
+
 function renderMdxRelease(release) {
   const lines = [`## Version ${releaseHeadingLabel(release)} <a id="${versionAnchor(release.version)}"></a>`];
 
   if (release.html) {
-    lines.push("", release.html.trim());
+    lines.push("", htmlBlockToMdx(release.html));
     return lines.join("\n");
   }
 
