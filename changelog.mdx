@@ -6,6 +6,53 @@ sidebarTitle: "Changelog"
 
 Relay release notes are organized by version. Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
+## Version 1.1.2 <a id="version-112"></a>
+
+### What's New
+
+10 New Automation Nodes
+
+The automation graph gets a big expansion. New nodes you can drop onto the canvas:
+
+- **HTTP Request** — trigger any web endpoint or API from an automation
+- **Set Variable** — store and reuse values across your automation flow
+- **App State Trigger** — fire automations on app launch, live mode toggle, or tab switch
+- **PCO Plan Updated** — trigger when your Planning Center plan changes, with a live item picker to filter exactly what you care about
+- **Toggle** — flip a value on/off each time it's triggered
+- **Counter** — increment or reset a count
+- **Sequence** — step through a list of outputs one at a time
+- **Latch/Gate** — hold a signal open until explicitly released
+- **Merge** — combine multiple signals into one
+- **Current Time** — use the current time as a value in your flow
+
+Console Node Improvements
+
+- You can now add **multiple graph nodes for the same console**, useful when you need to send different trigger actions to the same device from different parts of your graph
+- **Trigger bindings** have moved from the trigger node to the console node, making it much clearer which console handles which trigger action
+- Console nodes now show a **capability mismatch warning** if you connect a source that the console doesn't support
+
+Live Mode Button
+
+- The live mode button is now its own standalone control in the toolbar, no longer grouped with other buttons
+
+Network Pairs Indicator
+
+- The connected network pairs pill has moved into the System Status overlay, keeping it alongside CPU, memory, OSC, and MIDI activity where it belongs
+
+---
+
+### Fixes & Improvements
+
+- **PCO Auto-Advance** redesigned as a weekly checkpoint coordinator for more reliable and predictable behavior
+- **ProPresenter** quick-add devices directly from discovered devices on your network; settings UI polished throughout
+- All 10 new automation nodes support duplicate and remove actions
+- Latch/Gate, Toggle, and Sequence node UI polished
+- Console nodes now correctly name and distinguish between trigger nodes in the binding picker
+- Console node state is properly cleaned up on deletion and correctly copied on duplication
+- Node collapse state now persists when switching between automation modes
+- Significant automation graph performance improvements — cache rebuilds now happen off the main thread, reducing UI stutter when opening large dashboards
+- Various automation node stability fixes
+
 ## Version 1.1.1 <a id="version-111"></a>
 
 ### New
