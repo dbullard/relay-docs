@@ -34,8 +34,9 @@ Relay can use triggers such as:
 - dB threshold
 - Wireless status
 - Manual trigger
-- Planning Center-related events
+- Planning Center-related events (including PCO Plan Updated)
 - Word triggers from live transcription
+- App State Trigger (on launch, live mode toggle, or tab switch)
 
 ## Common action and destination types
 
@@ -49,8 +50,10 @@ Relay can perform actions such as:
 - Trigger ProPresenter actions
 - Send actions to supported consoles or wireless destinations
 - Export or trigger supported Vista workflows
+- HTTP Request (trigger web endpoints or APIs)
+- Smart Light Control (Beta)
 
-Utilities such as `Delay`, `Repeater`, `If / Else`, and `Variable` nodes help shape timing, branching, repetition, and reusable values between the trigger and destination.
+Utilities such as `Delay`, `Repeater`, `If / Else`, `Variable`, `Toggle`, `Counter`, `Sequence`, `Latch/Gate`, and `Merge` nodes help shape timing, branching, repetition, and reusable values between the trigger and destination.
 
 ## Build a first automation
 
