@@ -8,7 +8,10 @@
     "light": "#34C8EE",
     "dark": "#3B2FE0"
   },
-  "favicon": "/images/relay-mark.png",
+  "favicon": {
+    "light": "https://media.brand.dev/4f3699c0-f0f6-4f3f-9e6d-a05b91512d6f.svg",
+    "dark": "https://media.brand.dev/4f3699c0-f0f6-4f3f-9e6d-a05b91512d6f.svg"
+  },
   "logo": "/images/relay-mark.png",
   "icons": {
     "library": "lucide"
@@ -153,11 +156,7 @@
     ]
   },
   "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Download Relay",
-      "href": "https://www.ondeckapps.com/downloads"
-    }
+    "links": []
   },
   "footer": {
     "socials": {}
