@@ -363,7 +363,30 @@
       },
       "app_version": "1.1.2",
       "build": "45",
-      "html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Relay Release Notes</title>\n  <style>\n    :root { color-scheme: light dark; }\n    body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }\n    h1 { margin: 0 0 12px; font: -apple-system-headline; }\n    h2 { margin: 18px 0 8px; font: -apple-system-subheadline; }\n    ul { margin: 0 0 0 1.25em; padding: 0; }\n    li { margin: 6px 0; }\n    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }\n    a { color: -apple-system-link; }\n    .footer { margin-top: 20px; font-size: 0.9em; color: #666; }\n  </style>\n</head>\n<body>\n  <h1>What's New in Relay</h1>\n\n  <h2>New Features</h2>\n\n  <ul>\n    <li><strong>Real-Time Audio Analyzer:</strong> See your audio levels in real-time with a detailed frequency analyzer. Perfect for monitoring microphones and audio inputs during services.</li>\n    <li><strong>Audio Spectrograph:</strong> Visual representation of your audio across different frequencies, displayed as a scrolling waterfall for easy monitoring over time.</li>\n    <li><strong>SPL Logging:</strong> Automatically record audio level data to files for later review and analysis. Start and stop recording with a single tap.</li>\n    <li><strong>Per-Input Audio Settings:</strong> Fine-tune calibration for each individual audio input from a dedicated settings panel.</li>\n  </ul>\n\n  <h2>Improvements</h2>\n\n  <ul>\n    <li>Audio level calculations are now more accurate and responsive.</li>\n    <li>Settings changes take effect immediately without needing to restart.</li>\n    <li>Better handling of multiple audio inputs simultaneously.</li>\n    <li>Smoother performance when working with audio monitoring.</li>\n    <li>More reliable connection handling for wireless microphone systems.</li>\n  </ul>\n\n  <h2>Bug Fixes</h2>\n\n  <ul>\n    <li>Fixed audio level display showing incorrect values in some cases.</li>\n    <li>Fixed calibration settings being applied twice to audio levels.</li>\n    <li>Fixed crashes when switching between audio analysis views.</li>\n    <li>Fixed audio recording crashes with certain audio formats.</li>\n    <li>Reduced unnecessary error reports from wireless microphone connections.</li>\n    <li>Fixed Smart Light device authentication.</li>\n    <li>Improved overall stability and reliability.</li>\n  </ul>\n</body>\n</html>"
+      "sections": {
+        "New": [
+          "Real-Time Audio Analyzer: See your audio levels in real-time with a detailed frequency analyzer. Perfect for monitoring microphones and audio inputs during services.",
+          "Audio Spectrograph: Visual representation of your audio across different frequencies, displayed as a scrolling waterfall for easy monitoring over time.",
+          "SPL Logging: Automatically record audio level data to files for later review and analysis. Start and stop recording with a single tap.",
+          "Per-Input Audio Settings: Fine-tune calibration for each individual audio input from a dedicated settings panel."
+        ],
+        "Improved": [
+          "Audio level calculations are now more accurate and responsive.",
+          "Settings changes take effect immediately without needing to restart.",
+          "Better handling of multiple audio inputs simultaneously.",
+          "Smoother performance when working with audio monitoring.",
+          "More reliable connection handling for wireless microphone systems."
+        ],
+        "Fixed": [
+          "Fixed audio level display showing incorrect values in some cases.",
+          "Fixed calibration settings being applied twice to audio levels.",
+          "Fixed crashes when switching between audio analysis views.",
+          "Fixed audio recording crashes with certain audio formats.",
+          "Reduced unnecessary error reports from wireless microphone connections.",
+          "Fixed Smart Light device authentication.",
+          "Improved overall stability and reliability."
+        ]
+      }
     },
     {
       "version": "1.1.2.44",
