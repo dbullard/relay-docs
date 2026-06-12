@@ -8,21 +8,35 @@ icon: "bolt"
 Trigger nodes are the starting points of your automation graphs. When a trigger condition is met, a signal is sent down the graph to execute actions.
 
 ## App State Trigger
-Fires when specific application events occur, such as when Relay launches, when Live Mode is toggled on or off, or when you switch tabs.
+Fires when specific application events occur.
+- **Setup:** Add the node and select the state (e.g., App Launched, Live Mode Enabled, Tab Changed).
+- **Features:** Useful for resetting variables when entering Live Mode or sending initialization commands to consoles when Relay starts.
 
 ## PCO Plan Updated
-Triggers when your connected Planning Center plan changes. You can use the live item picker to filter for specific item changes (e.g., when a specific song starts).
+Triggers when your connected Planning Center plan changes.
+- **Setup:** Select your PCO Service Type and Plan.
+- **Features:** You can trigger on *any* update, or use the live item picker to filter for specific item changes (e.g., firing a lighting cue exactly when the "Sermon" item goes live).
 
 ## Time
-Triggers at a specific time of day or based on a recurring interval.
+Triggers based on the system clock.
+- **Setup:** Choose between a specific Time of Day or a recurring Interval (e.g., every 5 minutes).
+- **Features:** Great for automated health checks, network pings, or daily reset routines.
 
 ## dB Threshold
-Fires when an audio input (measured by an SPL Meter or Global Measurement input) crosses a specific decibel threshold. Useful for auto-muting or triggering visual alerts.
+Fires when an audio input crosses a specific decibel threshold.
+- **Setup:** Select a measurement input from your Global Audio Settings, set the target dB level, and choose whether to trigger when going *above* or *below* the threshold.
+- **Features:** Useful for auto-muting channels, triggering visual alerts on the dashboard, or logging loud events.
 
 ## Manual Trigger
-A trigger that fires when you manually click a bound Button module on your dashboard.
+Fires when an operator interacts with the dashboard.
+- **Setup:** Add a Button module to a dashboard tile. Then, add a Manual Trigger node and link it to that specific button.
+- **Features:** Allows operators to manually launch complex automation sequences (like a "Pre-Service Setup" macro) with a single click.
+
+---
 
 <Warning>BETA FEATURES</Warning>
 
 ## Word Triggers [BETA]
-Triggers an automation when a specific word or phrase is detected by the Live Transcription module.
+Triggers an automation when a specific word or phrase is detected.
+- **Setup:** Requires the Live Transcription module to be active. Enter the specific trigger word in the node inspector.
+- **Features:** Allows for voice-activated workflows (e.g., triggering a slide advance when a speaker says a specific phrase).

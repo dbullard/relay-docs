@@ -7,15 +7,45 @@ icon: "radio-tower"
 
 Monitor the health of your wireless audio systems, including RF strength, battery life, and audio levels.
 
-<Warning>BETA FEATURES</Warning>
-
-All wireless modules are currently beta-sensitive or restricted to beta builds. Test them in your actual environment before relying on them live.
+<Warning>BETA FEATURES: All wireless modules are currently beta-sensitive or restricted to beta builds.</Warning>
 
 ## Shure Overview [BETA]
-A centralized module for monitoring multiple Shure wireless devices at once. It uses dynamic polling tiers to efficiently surface warning states, low batteries, or offline channels without needing individual tiles for every mic.
+
+A centralized module for monitoring multiple Shure wireless devices at once.
+
+### Setup
+1. Ensure your Shure receivers are connected to the same network and discovered in **External Devices**.
+2. Add the **Shure Overview** module to a large tile.
+3. Select the specific receivers or channels you want to monitor.
+
+### Features
+- **High-Level Summary:** Perfect for catching issues at a glance without building individual tiles for every mic.
+- **Dynamic Polling:** Uses optimized `METER_RATE` tiers to efficiently surface warning states, low batteries, or offline channels while reducing network load.
+
+---
 
 ## Shure [BETA]
-A detailed module for monitoring a single Shure wireless channel, showing granular RF, battery, audio, and transmitter reporting. 
+
+A detailed module for monitoring a single Shure wireless channel.
+
+### Setup
+1. Add the **Shure** module to a tile.
+2. Select a specific discovered Shure receiver and channel.
+
+### Features
+- **Granular Data:** Displays detailed RF strength, exact battery percentage/runtime, and audio metering.
+- **Transmitter Info:** Shows the linked transmitter type and frequency band.
+
+---
 
 ## Sennheiser [BETA]
-Provides monitoring for Sennheiser wireless systems. *Note: This module is currently only available in beta or debug builds.*
+
+Provides monitoring for Sennheiser wireless systems. 
+
+### Setup
+1. Add the **Sennheiser** module to a tile.
+2. Select your networked Sennheiser receiver.
+
+### Features
+- **Status Monitoring:** Tracks battery life, RF, and AF levels for supported Sennheiser receivers.
+- **Beta Restriction:** *Note: This module is currently only available in beta or debug builds.*

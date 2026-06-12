@@ -8,26 +8,40 @@ icon: "play"
 Actions are the endpoints of your automation graphs. They receive signals from triggers and execute commands.
 
 ## System & LAN Notifications
-- **System Notification:** Displays a standard macOS notification banner.
-- **LAN Notification:** Broadcasts a notification alert to other Relay instances connected on your local network.
+Keep your team informed.
+- **Setup:** Add the node and define the message text.
+- **Features:** The **System Notification** action displays a standard macOS banner. The **LAN Notification** action broadcasts an alert to other Relay instances connected on your local network, displaying it directly over their dashboard.
 
 ## HTTP Request
-Triggers any web endpoint or API. Useful for integrating with custom services, triggering webhooks, or controlling smart home devices.
+Integrate with almost any web service.
+- **Setup:** Define the URL, HTTP Method (GET, POST, PUT, etc.), Headers, and Body content.
+- **Features:** Triggers web endpoints or APIs. Useful for custom webhooks, triggering IFTTT/Zapier flows, or controlling smart home devices.
 
 ## ProPresenter Action
-Triggers specific actions in ProPresenter, such as firing a specific slide, clearing layers, or starting a timer.
+Control your presentation software remotely.
+- **Setup:** Link the node to your configured ProPresenter instance.
+- **Features:** Trigger specific slides, clear layers (audio, video, props), or start/stop timers without leaving Relay.
 
 ## Protocol Sends
-- **OSC Send:** Transmits an Open Sound Control message to a specific IP and port.
-- **MIDI Send:** Sends a MIDI note or control change message to a connected MIDI destination.
+Communicate with standard show control protocols.
+- **OSC Send:** Transmits an Open Sound Control message to a specific IP and port. Define the address path and arguments (float, integer, string).
+- **MIDI Send:** Sends a MIDI Note On/Off or Control Change message to a connected MIDI destination.
 
 ## Console & Wireless Actions
-Send specific commands to connected audio consoles or wireless device receivers (e.g., muting a channel or recalling a snapshot).
+Control your hardware directly.
+- **Setup:** Select a configured audio console or wireless receiver from your External Devices list.
+- **Features:** Send specific commands like muting a wireless channel, recalling a console snapshot, or adjusting an input gain.
+
+---
 
 <Warning>BETA FEATURES</Warning>
 
 ## Smart Light Control [BETA]
-Directly control smart lights from your automations. Set colors, brightness, and scenes as part of any trigger flow.
+Control your environment's lighting.
+- **Setup:** Connect to a supported smart light bridge on your network.
+- **Features:** Set colors, adjust brightness, or recall lighting scenes as part of any automation flow (e.g., turning the booth lights red when a wireless mic battery dies).
 
 ## Vista Destination [BETA]
-Export or trigger supported Vista lighting console workflows directly from Relay.
+Trigger your lighting console.
+- **Setup:** Connect to a supported Vista lighting system.
+- **Features:** Export or trigger Vista workflows directly from Relay.

@@ -2,12 +2,12 @@
 title: "Audio & Visual Analysis Modules"
 description: "Modules for monitoring audio levels, visualizing frequencies, and transcribing speech."
 sidebarTitle: "Audio & Visual"
-icon: "waveform-lines"
+icon: "headphones"
 ---
 
 Relay provides deep audio integration for monitoring your production environment. These modules rely on inputs configured in your **Global Audio Settings**.
 
-## <Icon icon="volume-high" /> SPL Meter
+## SPL Meter
 
 The SPL Meter module displays sound level data from any Mac audio input.
 
@@ -22,7 +22,7 @@ The SPL Meter module displays sound level data from any Mac audio input.
 
 ---
 
-## <Icon icon="chart-bar" /> Real-Time Analyzer (RTA)
+## Real-Time Analyzer (RTA)
 
 A visual analysis module that breaks down your audio inputs into discrete frequency bands in real-time.
 
@@ -37,7 +37,7 @@ A visual analysis module that breaks down your audio inputs into discrete freque
 
 ---
 
-## <Icon icon="water" /> Spectrograph
+## Spectrograph
 
 A scrolling waterfall view that visualizes audio frequency distributions over time, helping you spot persistent feedback frequencies or structural imbalances.
 
@@ -51,9 +51,13 @@ A scrolling waterfall view that visualizes audio frequency distributions over ti
 
 ---
 
-## <Icon icon="play-pause" /> DAW Transport
+## DAW Transport
 
 Keep your dashboard in sync with your playback rigs by monitoring and controlling supported DAW (Digital Audio Workstation) transport workflows.
+
+### Setup
+1. Connect your DAW via MIDI or network protocol in the External Devices settings.
+2. Add the DAW Transport module to a tile.
 
 ### Features
 - **Transport Monitoring:** See exactly when your DAW is playing, stopped, or recording.
@@ -63,7 +67,7 @@ Keep your dashboard in sync with your playback rigs by monitoring and controllin
 
 <Warning>BETA FEATURES</Warning>
 
-## <Icon icon="message-captions" /> Live Transcription [BETA]
+## Live Transcription [BETA]
 
 Converts a selected audio input into scrolling text on the dashboard. This is incredibly useful for providing live cues or context to operators without an intercom.
 

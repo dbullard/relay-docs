@@ -5,28 +5,50 @@ sidebarTitle: "Utility Modules"
 icon: "wrench"
 ---
 
-Relay provides several utility modules that help you structure your dashboard, display static information, and execute simple commands without needing a full integration.
+Relay provides several utility modules that help you structure your dashboard, display static information, and execute simple commands.
 
 ## Informational Modules
 
-These modules let you present static content or embedded media directly on your canvas.
+### Text
+- **Setup:** Add the Text module and type your content. Use the inspector to adjust fonts, sizes, and colors.
+- **Features:** Supports rich text formatting. Use it to label sections, provide operator cues, or display static lyrics.
 
-- **Text:** Display static labels, notes, or instructions. You can use this to label sections of your dashboard or provide cues to operators.
-- **Image:** Load custom logos or graphics into a tile. Useful for branding your dashboard or displaying reference images.
-- **Document:** Provides a preview-only view of a PDF or Word document. Perfect for keeping rundowns, stage plots, or schedules visible without leaving the app.
-- **Webpage:** Embed a live web view. This is useful for displaying external resources, dashboards, or web-based tools alongside your Relay modules.
+### Image
+- **Setup:** Add the Image module and upload a file from your Mac.
+- **Features:** Supports standard image formats. Useful for branding your dashboard with a church logo or displaying reference stage plots.
+
+### Document
+- **Setup:** Add the Document module and select a PDF or Word document.
+- **Features:** Provides a scrollable, preview-only view. Perfect for keeping rundowns or schedules visible without leaving the app.
+
+### Webpage
+- **Setup:** Add the Webpage module and enter a valid URL.
+- **Features:** Embeds a live web view. Useful for displaying external resources, secondary dashboards, or web-based tools.
+
+---
 
 ## Structural and Action Modules
 
-These modules help you organize your tile layout and execute tasks.
+### Separator
+- **Setup:** Add the Separator module to a tile containing multiple other modules.
+- **Features:** Adds a visual break (horizontal or vertical line) to help you group related controls visually.
 
-- **Separator:** Adds a visual break (horizontal or vertical line) between other modules within the same tile, helping you group related controls visually.
-- **Button:** A simple push-button that can trigger in-app actions, like clearing transcriptions or starting SPL logging. Buttons can also be bound to trigger nodes in Automation View to execute complex workflows manually.
-- **Picker:** Used in conjunction with Rosters, this module lets you assign people or equipment to specific roles dynamically.
+### Button
+- **Setup:** Add a Button module. In the inspector, customize its label and color.
+- **Features:** A simple push-button that can trigger in-app actions (like clearing transcriptions). Buttons can also be bound to Manual Triggers in Automation View to execute complex workflows.
+
+### Picker
+- **Setup:** Add a Picker module and link it to a Roster or a static list of options.
+- **Features:** Lets operators dynamically assign people or equipment to specific roles directly from Live Mode.
+
+---
 
 ## Time and Clocks
 
-Keeping your team on schedule is critical in live production.
+### Time
+- **Setup:** Add the Time module and choose your preferred time format (12h/24h) and styling.
+- **Features:** Displays the current system time in a highly visible format to keep your team on schedule.
 
-- **Time:** Displays the current system time in a highly visible format.
-- **Timecode:** Monitors and displays incoming MIDI or OSC timecode data, ensuring operators stay synchronized with your timeline.
+### Timecode
+- **Setup:** Configure incoming MIDI or OSC timecode in your global settings, then add the Timecode module.
+- **Features:** Monitors and displays incoming timecode data, ensuring operators stay synchronized with your DAW or lighting timeline.

@@ -8,14 +8,41 @@ icon: "monitor-play"
 Keep an eye on your visual elements and presentation software directly from your dashboard.
 
 ## ProPresenter
-The ProPresenter module displays current and next slide text, timers, and stage messages. It connects directly to your ProPresenter instance over the local network.
+
+The ProPresenter module connects directly to your ProPresenter instance over the local network to display presentation data.
+
+### Setup
+1. Enable the ProPresenter Network API within ProPresenter's settings.
+2. Add the **ProPresenter** module to a Relay tile.
+3. Enter the IP address and port of your ProPresenter machine.
+
+### Features
+- **Slide Text:** View the current and next slide text directly on your dashboard.
+- **Stage Messages:** Monitor active stage messages being sent to the platform.
+- **Timers:** Keep track of active ProPresenter clocks and segment timers.
+
+---
 
 <Warning>BETA FEATURES</Warning>
 
 ## NDI Feed [BETA]
-The NDI Feed module brings low-latency video monitoring to your dashboard by capturing NDI sources on your network. This is a beta-sensitive module; always validate its performance on your actual production network.
+
+The NDI Feed module brings low-latency video monitoring to your dashboard by capturing NDI sources on your network.
+
+### Setup
+1. Ensure your Mac is on the same local network as your NDI sources.
+2. Add the **NDI Feed** module to a tile.
+3. Select the desired NDI stream from the dropdown list.
+
+### Features
+- **Low Latency:** Monitor cameras or presentation outputs with minimal delay.
+- **Bandwidth Management:** Adjust the feed quality if you are monitoring multiple streams to save network bandwidth.
+- **Beta Warning:** Always validate performance on your actual production network, as high NDI traffic can impact Wi-Fi stability.
+
+---
 
 ## YouTube Live Stream Monitor [BETA]
+
 Keep an eye on your live broadcasts directly from your dashboard, ensuring your stream is healthy and tracking viewer engagement.
 
 ### Setup
@@ -27,4 +54,3 @@ Keep an eye on your live broadcasts directly from your dashboard, ensuring your 
 - **Live Statistics:** View real-time metrics including concurrent viewers, total likes, and chat activity.
 - **Stream Health:** Monitor the incoming video bitrate and overall connection quality to ensure your stream doesn't drop.
 - **Fast Loading:** The broadcast picker is optimized to load results quickly and automatically filters out streams that have already ended.
-- **Persistence:** Your previously selected broadcast will remain in the picker even if it momentarily drops from the active results list.

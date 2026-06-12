@@ -8,19 +8,53 @@ icon: "sliders"
 Utility nodes sit between triggers and actions. They help you build complex logic, manage timing, and route signals appropriately.
 
 ## Flow Control
-- **Delay:** Pauses the signal for a specified amount of time before passing it to the next node.
-- **Repeater:** Takes a single incoming signal and fires it multiple times at a set interval.
-- **Sequence:** Steps through a list of outputs one at a time each time it receives a trigger.
-- **Merge:** Combines multiple incoming trigger signals into a single output path.
+
+### Delay
+- **Setup:** Define the delay duration in milliseconds or seconds.
+- **Features:** Pauses the signal before passing it to the next node. Crucial for sequencing actions that require hardware to process previous commands.
+
+### Repeater
+- **Setup:** Define the interval and the number of repetitions.
+- **Features:** Takes a single incoming signal and fires it multiple times. Useful for "pinging" a device or sending a warning flash multiple times.
+
+### Sequence
+- **Setup:** Add multiple output paths to the node.
+- **Features:** Steps through its list of outputs one at a time, advancing by one each time it receives a trigger. Perfect for building a "Next Cue" button that fires different commands in order.
+
+### Merge
+- **Setup:** Connect multiple triggers to the input side.
+- **Features:** Combines multiple incoming paths into a single output path, keeping your graph clean when several different triggers should result in the exact same action.
+
+---
 
 ## State Management
-- **Toggle:** Flips a boolean (on/off) value each time it's triggered.
-- **Counter:** Increments or resets a numerical count based on incoming triggers.
-- **Latch / Gate:** Holds a signal path open until explicitly released, or acts as a gate that only allows signals through when open.
-- **Current Time:** Injects the current system time as a value into your automation flow.
+
+### Toggle
+- **Setup:** Connect a trigger to the input.
+- **Features:** Flips a boolean state (On -> Off -> On) each time it's triggered. You can route the "On" and "Off" outputs to different actions (e.g., a single button that mutes and unmutes a console channel).
+
+### Counter
+- **Setup:** Define a starting value and a step amount.
+- **Features:** Increments or resets a numerical count based on incoming triggers. 
+
+### Latch / Gate
+- **Setup:** Connect a trigger to the "Open" input, and another to the "Close" input.
+- **Features:** Holds a signal path open until explicitly released, or acts as a gate that only allows signals through when it is currently in the "Open" state.
+
+### Current Time
+- **Setup:** Drop the node into your flow.
+- **Features:** Injects the current system time as a data value into your automation flow, which can be passed along to HTTP Requests or text variables.
+
+---
 
 <Warning>BETA FEATURES</Warning>
 
 ## Conditionals and Variables [BETA]
-- **If / Else:** A conditional branch that routes the signal based on whether a specific condition is true or false.
-- **Set Variable / Variable:** Store text or inbound values and reuse them across different parts of your automation flow.
+
+### If / Else
+- **Setup:** Define a logical condition (e.g., `Value > 5` or `Text == "Live"`).
+- **Features:** A conditional branch that routes the signal out the "True" path or the "False" path based on the evaluation.
+
+### Set Variable / Variable
+- **Setup:** Define a variable name and assign it a value.
+- **Features:** Store text or inbound numeric values in memory, and reuse those exact values later in different parts of your automation flow.
