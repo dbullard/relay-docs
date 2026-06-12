@@ -14,3 +14,17 @@ The ProPresenter module displays current and next slide text, timers, and stage 
 
 ## NDI Feed [BETA]
 The NDI Feed module brings low-latency video monitoring to your dashboard by capturing NDI sources on your network. This is a beta-sensitive module; always validate its performance on your actual production network.
+
+## YouTube Live Stream Monitor [BETA]
+Keep an eye on your live broadcasts directly from your dashboard, ensuring your stream is healthy and tracking viewer engagement.
+
+### Setup
+1. Add a **YouTube Live Stream Monitor** module to a tile.
+2. In the inspector, authenticate Relay with your Google/YouTube account.
+3. Once authenticated, use the broadcast picker to select your active or upcoming stream.
+
+### Features
+- **Live Statistics:** View real-time metrics including concurrent viewers, total likes, and chat activity.
+- **Stream Health:** Monitor the incoming video bitrate and overall connection quality to ensure your stream doesn't drop.
+- **Fast Loading:** The broadcast picker is optimized to load results quickly and automatically filters out streams that have already ended.
+- **Persistence:** Your previously selected broadcast will remain in the picker even if it momentarily drops from the active results list.

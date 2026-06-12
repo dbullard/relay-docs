@@ -7,19 +7,72 @@ icon: "waveform-lines"
 
 Relay provides deep audio integration for monitoring your production environment. These modules rely on inputs configured in your **Global Audio Settings**.
 
-## SPL Meter
-Displays sound level data from a Mac audio input. It supports A, C, or flat weighting, fast/slow response, and can record SPL history directly to CSV files when Live Mode is active.
+## <Icon icon="volume-high" /> SPL Meter
 
-## Real-Time Analyzer (RTA)
-A visual analysis module that shows frequency bands of your audio inputs in real-time. It features bar and filled-curve display modes, peak-hold capabilities, and adjustable resolution between 1-octave and 1/48-octave bands.
+The SPL Meter module displays sound level data from any Mac audio input.
 
-## Spectrograph
-A scrolling waterfall view that visualizes audio frequency distributions over time. It automatically utilizes the custom color you defined for the input in your global settings.
+### Setup
+1. Open the **Global Audio Settings** and configure an input in the **Measurement** tab.
+2. Add the SPL Meter module to a tile and select that measurement input.
+3. Select your desired weighting (A, C, or flat) and response time (Fast or slow).
 
-## DAW Transport
-Monitors and controls supported DAW (Digital Audio Workstation) transport workflows directly from the dashboard, keeping your playback in sync.
+### Features
+- **Calibration:** Apply an offset (in dB) within Global Audio Settings to match a known reference meter.
+- **SPL Logging:** Relay can record SPL data directly to CSV files when Live Mode is active, complete with a pulsing green indicator on your tiles.
+
+---
+
+## <Icon icon="chart-bar" /> Real-Time Analyzer (RTA)
+
+A visual analysis module that breaks down your audio inputs into discrete frequency bands in real-time.
+
+### Setup
+1. Configure a measurement input in **Global Audio Settings**.
+2. Add the RTA module to a tile and select the input.
+
+### Features
+- **Display Modes:** Choose between standard bar graphs or filled-curve display modes.
+- **High Resolution:** Adjust the analyzer resolution anywhere between 1-octave and 1/48-octave bands for highly detailed acoustic monitoring.
+- **Peak Hold:** Enable peak-hold to track the highest frequency levels over a period of time.
+
+---
+
+## <Icon icon="water" /> Spectrograph
+
+A scrolling waterfall view that visualizes audio frequency distributions over time, helping you spot persistent feedback frequencies or structural imbalances.
+
+### Setup
+1. Configure a measurement input and set a custom display color in **Global Audio Settings**.
+2. Add the Spectrograph module to a tile. 
+
+### Features
+- **Visual Heatmap:** Frequency intensity is displayed as color density over time.
+- **Color Syncing:** The module automatically utilizes the custom color you defined for that input in your global settings, making it easy to identify which mic you are looking at.
+
+---
+
+## <Icon icon="play-pause" /> DAW Transport
+
+Keep your dashboard in sync with your playback rigs by monitoring and controlling supported DAW (Digital Audio Workstation) transport workflows.
+
+### Features
+- **Transport Monitoring:** See exactly when your DAW is playing, stopped, or recording.
+- **Dashboard Control:** Send transport commands (Play, Stop, Record) directly from your Relay tiles without switching applications.
+
+---
 
 <Warning>BETA FEATURES</Warning>
 
-## Live Transcription [BETA]
-Converts a selected audio input into text on the dashboard. Transcription inputs are managed in the Global Audio Settings and feature auto-gain sensitivity, word substitutions, and profanity masking. This feature is currently beta-sensitive and should be thoroughly tested before live use.
+## <Icon icon="message-captions" /> Live Transcription [BETA]
+
+Converts a selected audio input into scrolling text on the dashboard. This is incredibly useful for providing live cues or context to operators without an intercom.
+
+### Setup
+1. Add inputs via the **Transcription** tab of your **Global Audio Settings**.
+2. Add the Live Transcription module to a tile and select the input.
+
+### Features
+- **Advanced Controls:** Fine-tune auto-gain sensitivity and engine preference per-input.
+- **Word Substitutions:** Easily filter or replace specific words on the fly (e.g., replacing a speaker's verbal tick).
+- **Profanity Controls:** Automatically mask or remove profanity from the transcript.
+- **Automation Triggers:** You can use word detection to trigger automation workflows!
