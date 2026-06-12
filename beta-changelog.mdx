@@ -6,16 +6,51 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
+## Version 1.1.3 (build 46) <a id="version-11346"></a>
+
+## What's New in Relay
+
+### New Features
+
+- **Global Transcription Inputs:** Transcription inputs are now managed globally in their own dedicated tab alongside other audio inputs.
+- **Redesigned Audio Settings:** The Audio Inputs configuration now features a sleek sidebar-and-detail split layout, making it much easier to manage your devices.
+- **Word Substitutions:** Easily filter or replace specific words on the fly during live transcriptions.
+- **Profanity Controls:** Profanity masking and removal controls are now built directly into the individual input settings.
+- **Per-Input Audio Settings:** Fine-tune auto-gain sensitivity and engine preference for each individual audio input from a dedicated settings panel.
+
+### Improvements
+
+- Existing transcription settings will automatically migrate to the new global system on your next launch.
+- Level meters have been relocated directly into the individual detail views for cleaner organization.
+
+### Bug Fixes
+
+- Fixed an issue where SPL Level logging could silently fail when saving to protected folders like Desktop, Documents, or Downloads. Relay will now correctly show an error banner if it needs you to grant folder access permissions.
+
 ## Version 1.1.2 (build 45) <a id="version-11245"></a>
 
-### New
+Relay Release Notes
 
-- **Real-Time Audio Analyzer** — See your audio levels in real-time with a detailed frequency analyzer. Perfect for monitoring microphones and audio inputs during services.
-- **Audio Spectrograph** — Visual representation of your audio across different frequencies, displayed as a scrolling waterfall for easy monitoring over time.
-- **SPL Logging** — Automatically record audio level data to files for later review and analysis. Start and stop recording with a single tap.
-- **Per-Input Audio Settings** — Fine-tune calibration for each individual audio input from a dedicated settings panel.
+    :root { color-scheme: light dark; }
+    body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
+    h1 { margin: 0 0 12px; font: -apple-system-headline; }
+    h2 { margin: 18px 0 8px; font: -apple-system-subheadline; }
+    ul { margin: 0 0 0 1.25em; padding: 0; }
+    li { margin: 6px 0; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+    a { color: -apple-system-link; }
+    .footer { margin-top: 20px; font-size: 0.9em; color: #666; }
 
-### Improved
+## What's New in Relay
+
+### New Features
+
+- **Real-Time Audio Analyzer:** See your audio levels in real-time with a detailed frequency analyzer. Perfect for monitoring microphones and audio inputs during services.
+- **Audio Spectrograph:** Visual representation of your audio across different frequencies, displayed as a scrolling waterfall for easy monitoring over time.
+- **SPL Logging:** Automatically record audio level data to files for later review and analysis. Start and stop recording with a single tap.
+- **Per-Input Audio Settings:** Fine-tune calibration for each individual audio input from a dedicated settings panel.
+
+### Improvements
 
 - Audio level calculations are now more accurate and responsive.
 - Settings changes take effect immediately without needing to restart.
@@ -23,7 +58,7 @@ Relay beta release notes are organized by version. Beta Sparkle update feeds can
 - Smoother performance when working with audio monitoring.
 - More reliable connection handling for wireless microphone systems.
 
-### Fixed
+### Bug Fixes
 
 - Fixed audio level display showing incorrect values in some cases.
 - Fixed calibration settings being applied twice to audio levels.
