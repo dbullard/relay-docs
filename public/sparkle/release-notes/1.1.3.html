@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relay 1.1.3 Release Notes</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
+    h1 { margin: 0 0 12px; font: -apple-system-headline; }
+    h2 { margin: 18px 0 8px; font: -apple-system-subheadline; }
+    ul { margin: 0 0 0 1.25em; padding: 0; }
+    li { margin: 6px 0; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+    a { color: -apple-system-link; }
+    .footer { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Relay 1.1.3</h1>
+  <h1>What's New in Relay</h1>
+
+<h2>New Features</h2>
+<ul>
+  <li><strong>Real-Time Analyzer (RTA):</strong> View frequency bands of your audio inputs in real-time with new bar and filled-curve display modes and peak-hold capabilities.</li>
+  <li><strong>Spectrograph:</strong> A new scrolling waterfall view for visualizing audio frequency distributions over time.</li>
+  <li><strong>Global Audio Settings:</strong> Manage all your audio inputs, transcription configurations, and per-input SPL calibration centrally.</li>
+  <li><strong>Advanced Transcription Controls:</strong> Fine-tune auto-gain sensitivity, apply word substitutions, and enable profanity masking on a per-input basis.</li>
+  <li><strong>SPL Input Logging:</strong> Record SPL data for specific inputs directly to CSV files, complete with a pulsing green indicator on your tiles when recording is active.</li>
+</ul>
+
+<h2>Improvements</h2>
+<ul>
+  <li><strong>Shure Overview Hub:</strong> A new centralized polling system for Shure wireless devices featuring dynamic METER_RATE tiers for greater efficiency.</li>
+  <li>Upgraded dashboard tile resizing with smart guides, a floating size HUD, and a consolidated resize layout for smoother editing.</li>
+  <li>Audio level calculations now use proper LAeq energy averaging for significantly greater accuracy.</li>
+  <li>Optimized performance by skipping redundant polling for METER_RATE-capable Shure wireless microphones.</li>
+  <li>Settings changes for audio inputs now take effect immediately without requiring restarts.</li>
+  <li>Existing module-specific transcription settings now automatically migrate to the new global system on launch.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed a crash related to the FFT calculations when selecting an input for the RTA or Spectrograph.</li>
+  <li>Corrected C-A audio level calculations and removed the double application of calibration offsets in the dB reader.</li>
+  <li>Fixed an issue where SPL Level logging could silently fail when saving to protected folders like Desktop, Documents, or Downloads. Relay will now correctly show an error banner requesting folder permissions.</li>
+  <li>Reduced unnecessary error reporting and diagnostics from Shure wireless connections.</li>
+</ul>
+  <p class="footer"><a href="https://help.ondeckapps.com/changelog">View the full Relay changelog</a></p>
+</body>
+</html>
