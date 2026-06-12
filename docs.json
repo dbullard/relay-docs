@@ -67,7 +67,9 @@
                 "pages": [
                   "dashboards/ndi-feed",
                   "dashboards/team-assignments",
-                  "dashboards/daw-transport"
+                  "dashboards/daw-transport",
+                  "dashboards/youtube-monitor",
+                  "dashboards/utility-modules"
                 ]
               }
             ]

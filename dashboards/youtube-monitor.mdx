@@ -1,0 +1,29 @@
+---
+title: "YouTube Live Stream Monitor"
+description: "Monitor the health and statistics of your YouTube Live broadcasts."
+sidebarTitle: "YouTube Monitor"
+icon: "youtube"
+---
+
+<Warning>The YouTube Live Stream Monitor is currently a beta feature introduced in Relay 1.1.1.</Warning>
+
+The YouTube Live Stream Monitor module lets you keep an eye on your live broadcasts directly from your dashboard, ensuring your stream is healthy and tracking viewer engagement.
+
+## Setup
+
+1. Add a **YouTube Live Stream Monitor** module to a tile.
+2. In the inspector, authenticate Relay with your Google/YouTube account.
+3. Once authenticated, use the broadcast picker to select your active or upcoming stream.
+
+## Features
+
+- **Live Statistics:** View real-time metrics including concurrent viewers, total likes, and chat activity.
+- **Stream Health:** Monitor the incoming video bitrate and overall connection quality to ensure your stream doesn't drop.
+- **Fast Loading:** The broadcast picker is optimized to load results quickly and automatically filters out streams that have already ended.
+- **Persistence:** Your previously selected broadcast will remain in the picker even if it momentarily drops from the active results list.
+
+## Troubleshooting
+
+- If the module fails to load data, double-check that your Google account authorization hasn't expired.
+- Ensure your Mac has an active internet connection to poll the YouTube API.
+- Since this is a beta feature, you may encounter occasional layout or connection quirks. Please report any consistent issues through the Help menu!
