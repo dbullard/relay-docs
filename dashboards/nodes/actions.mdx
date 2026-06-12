@@ -1,0 +1,33 @@
+---
+title: "Action & Destination Nodes"
+description: "Nodes that execute tasks, control software, and communicate with external hardware."
+sidebarTitle: "Actions"
+icon: "play"
+---
+
+Actions are the endpoints of your automation graphs. They receive signals from triggers and execute commands.
+
+## System & LAN Notifications
+- **System Notification:** Displays a standard macOS notification banner.
+- **LAN Notification:** Broadcasts a notification alert to other Relay instances connected on your local network.
+
+## HTTP Request
+Triggers any web endpoint or API. Useful for integrating with custom services, triggering webhooks, or controlling smart home devices.
+
+## ProPresenter Action
+Triggers specific actions in ProPresenter, such as firing a specific slide, clearing layers, or starting a timer.
+
+## Protocol Sends
+- **OSC Send:** Transmits an Open Sound Control message to a specific IP and port.
+- **MIDI Send:** Sends a MIDI note or control change message to a connected MIDI destination.
+
+## Console & Wireless Actions
+Send specific commands to connected audio consoles or wireless device receivers (e.g., muting a channel or recalling a snapshot).
+
+<Warning>BETA FEATURES</Warning>
+
+## Smart Light Control [BETA]
+Directly control smart lights from your automations. Set colors, brightness, and scenes as part of any trigger flow.
+
+## Vista Destination [BETA]
+Export or trigger supported Vista lighting console workflows directly from Relay.

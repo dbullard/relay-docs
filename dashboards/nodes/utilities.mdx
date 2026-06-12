@@ -1,0 +1,26 @@
+---
+title: "Utility Nodes"
+description: "Nodes that shape timing, branching, repetition, and hold values."
+sidebarTitle: "Utilities"
+icon: "sliders"
+---
+
+Utility nodes sit between triggers and actions. They help you build complex logic, manage timing, and route signals appropriately.
+
+## Flow Control
+- **Delay:** Pauses the signal for a specified amount of time before passing it to the next node.
+- **Repeater:** Takes a single incoming signal and fires it multiple times at a set interval.
+- **Sequence:** Steps through a list of outputs one at a time each time it receives a trigger.
+- **Merge:** Combines multiple incoming trigger signals into a single output path.
+
+## State Management
+- **Toggle:** Flips a boolean (on/off) value each time it's triggered.
+- **Counter:** Increments or resets a numerical count based on incoming triggers.
+- **Latch / Gate:** Holds a signal path open until explicitly released, or acts as a gate that only allows signals through when open.
+- **Current Time:** Injects the current system time as a value into your automation flow.
+
+<Warning>BETA FEATURES</Warning>
+
+## Conditionals and Variables [BETA]
+- **If / Else:** A conditional branch that routes the signal based on whether a specific condition is true or false.
+- **Set Variable / Variable:** Store text or inbound values and reuse them across different parts of your automation flow.

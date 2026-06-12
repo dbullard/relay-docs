@@ -65,10 +65,19 @@
               {
                 "group": "Module Guides",
                 "pages": [
-                  "dashboards/ndi-feed",
-                  "dashboards/team-assignments",
-                  "dashboards/daw-transport",
-                  "dashboards/utility-modules"
+                  "dashboards/modules/people-planning",
+                  "dashboards/modules/audio-visual",
+                  "dashboards/modules/video-presentation",
+                  "dashboards/modules/wireless",
+                  "dashboards/modules/utility"
+                ]
+              },
+              {
+                "group": "Automation Nodes",
+                "pages": [
+                  "dashboards/nodes/triggers",
+                  "dashboards/nodes/actions",
+                  "dashboards/nodes/utilities"
                 ]
               }
             ]

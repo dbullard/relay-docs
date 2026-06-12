@@ -1,0 +1,25 @@
+---
+title: "Audio & Visual Analysis Modules"
+description: "Modules for monitoring audio levels, visualizing frequencies, and transcribing speech."
+sidebarTitle: "Audio & Visual"
+icon: "waveform-lines"
+---
+
+Relay provides deep audio integration for monitoring your production environment. These modules rely on inputs configured in your **Global Audio Settings**.
+
+## SPL Meter
+Displays sound level data from a Mac audio input. It supports A, C, or flat weighting, fast/slow response, and can record SPL history directly to CSV files when Live Mode is active.
+
+## Real-Time Analyzer (RTA)
+A visual analysis module that shows frequency bands of your audio inputs in real-time. It features bar and filled-curve display modes, peak-hold capabilities, and adjustable resolution between 1-octave and 1/48-octave bands.
+
+## Spectrograph
+A scrolling waterfall view that visualizes audio frequency distributions over time. It automatically utilizes the custom color you defined for the input in your global settings.
+
+## DAW Transport
+Monitors and controls supported DAW (Digital Audio Workstation) transport workflows directly from the dashboard, keeping your playback in sync.
+
+<Warning>BETA FEATURES</Warning>
+
+## Live Transcription [BETA]
+Converts a selected audio input into text on the dashboard. Transcription inputs are managed in the Global Audio Settings and feature auto-gain sensitivity, word substitutions, and profanity masking. This feature is currently beta-sensitive and should be thoroughly tested before live use.
