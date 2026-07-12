@@ -6,15 +6,16 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
-## Version 1.1.4 (build 47) <a id="version-114"></a>
+## Version 1.1.4 (build 48) <a id="version-114"></a>
 
 #### Relay 1.1.4 (Beta)
 
 New
 
-- **Synced Tabs.** A whole new way to share your work across devices — pick a tab and keep it live-synced with your other Macs and iPads on the same network. Edit it anywhere and everyone sees the change instantly. This is different from Mirroring, which only lets you view another device's screen; Synced Tabs are fully editable and stay in step automatically, even if a device drops offline and reconnects later.
-- **Reworked Button module.** Fit more buttons per module, plus a wider set of new icons to choose from.
+- **Synced Tabs.** A whole new way to share your work across devices — pick a tab and keep it live-synced with your other Macs and iPads on the same network. Edit it anywhere and everyone sees the change instantly. This is different from Mirroring, which only lets you view another device's screen; Synced Tabs are fully editable and stay in step automatically, even if a device drops offline and reconnects later. Each device also keeps its own hardware and connection settings (ProPresenter, Shure, Sennheiser, NDI, audio inputs, etc.) — syncing a tab won't overwrite them with another device's setup.
+- **Reworked Button module.** Fit more buttons per module, plus a wider set of new icons to choose from, a bigger icon size range, and a one-click reset back to the default size.
 - **Approve devices before they connect.** When another device wants to sync or mirror with you, you'll now get a clear approval prompt — nothing connects without your say-so. You can also forget a device later if you no longer want it connected.
+- **Shure Summary module updates.** Choose card or list display, pick small/medium/large card sizes, and assign a person's name to each channel so summaries read at a glance.
 
 Improved
 
@@ -28,8 +29,9 @@ Fixed
 - Fixed duplicate results showing up when searching for icons.
 - Devices on your network are now found reliably, and reconnect faster when a synced tab's host comes back online.
 - Toolbar labels for Sync and Mirror no longer get cut off on Mac.
-- What's New won't pop back up after you've already seen it.
 - Selecting a mirrored tab now properly starts the pairing process instead of getting stuck.
+- Planning Center service and plan selections on synced tabs no longer get cleared if a device hasn't finished loading Planning Center data yet.
+- Cleaned up how Relay manages OSC network connections so it doesn't accumulate idle ones during long sessions.
 
 ## Version 1.1.3 (build 46) <a id="version-11346"></a>
 

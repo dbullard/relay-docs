@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relay 1.1.4 (build 47) Beta Release Notes</title>
+  <title>Relay 1.1.4 (build 48) Beta Release Notes</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
@@ -17,14 +17,15 @@
   </style>
 </head>
 <body>
-  <h1>Relay 1.1.4 (build 47) Beta</h1>
+  <h1>Relay 1.1.4 (build 48) Beta</h1>
   <h3>Relay 1.1.4 (Beta)</h3>
 
 <h4>New</h4>
 <ul>
-  <li><strong>Synced Tabs.</strong> A whole new way to share your work across devices — pick a tab and keep it live-synced with your other Macs and iPads on the same network. Edit it anywhere and everyone sees the change instantly. This is different from Mirroring, which only lets you view another device's screen; Synced Tabs are fully editable and stay in step automatically, even if a device drops offline and reconnects later.</li>
-  <li><strong>Reworked Button module.</strong> Fit more buttons per module, plus a wider set of new icons to choose from.</li>
+  <li><strong>Synced Tabs.</strong> A whole new way to share your work across devices — pick a tab and keep it live-synced with your other Macs and iPads on the same network. Edit it anywhere and everyone sees the change instantly. This is different from Mirroring, which only lets you view another device's screen; Synced Tabs are fully editable and stay in step automatically, even if a device drops offline and reconnects later. Each device also keeps its own hardware and connection settings (ProPresenter, Shure, Sennheiser, NDI, audio inputs, etc.) — syncing a tab won't overwrite them with another device's setup.</li>
+  <li><strong>Reworked Button module.</strong> Fit more buttons per module, plus a wider set of new icons to choose from, a bigger icon size range, and a one-click reset back to the default size.</li>
   <li><strong>Approve devices before they connect.</strong> When another device wants to sync or mirror with you, you'll now get a clear approval prompt — nothing connects without your say-so. You can also forget a device later if you no longer want it connected.</li>
+  <li><strong>Shure Summary module updates.</strong> Choose card or list display, pick small/medium/large card sizes, and assign a person's name to each channel so summaries read at a glance.</li>
 </ul>
 
 <h4>Improved</h4>
@@ -40,8 +41,9 @@
   <li>Fixed duplicate results showing up when searching for icons.</li>
   <li>Devices on your network are now found reliably, and reconnect faster when a synced tab's host comes back online.</li>
   <li>Toolbar labels for Sync and Mirror no longer get cut off on Mac.</li>
-  <li>What's New won't pop back up after you've already seen it.</li>
   <li>Selecting a mirrored tab now properly starts the pairing process instead of getting stuck.</li>
+  <li>Planning Center service and plan selections on synced tabs no longer get cleared if a device hasn't finished loading Planning Center data yet.</li>
+  <li>Cleaned up how Relay manages OSC network connections so it doesn't accumulate idle ones during long sessions.</li>
 </ul>
   <p class="footer"><a href="https://help.ondeckapps.com/beta-changelog#version-114">View the full Relay changelog</a></p>
 </body>
