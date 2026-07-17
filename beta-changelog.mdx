@@ -6,7 +6,36 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
-## Version 1.1.4 (build 50) <a id="version-114"></a>
+## Version 1.1.4 (build 51) <a id="version-114"></a>
+
+#### Relay 1.1.4 (Beta) — Build 51
+
+New
+
+- **Opt-in crash reporting and diagnostics.** Help make Relay better by choosing to share crash reports and basic usage data — nothing is collected unless you say yes, sensitive details are stripped out automatically, and you can turn it off anytime in Settings.
+- **Import your roster from CSV or Excel.** Bring your team roster in straight from a spreadsheet, with the option to replace your existing roster or just add to it.
+- **Selection toolbar on the canvas.** Select multiple tiles to get a floating toolbar for quick actions, including arranging them into quarters or other regions.
+- **Shure Summary audio activity display.** Choose how live audio shows per channel — a simple signal light, a meter, or hidden entirely — with a heads-up if meter mode starts taxing your Mac.
+- **Long-press to drag guides on iPad.**
+
+Improved
+
+- Automation now flags problems right on the canvas — condition and console nodes show a warning badge when something's misconfigured or a command fails to send, instead of failing silently.
+- Speech transcription is more reliable, with a fixed deadlock and clearer error reporting under the hood.
+- Pro Tools transport display is more stable during playback.
+- Cleaned up several unused screens and older code paths for a snappier app.
+- Shure Summary module is now available to try in beta builds.
+
+Fixed
+
+- Fixed the dashboard canvas resize handle showing the wrong cursor or feeling unresponsive.
+- Fixed guides getting stuck mid-drag or scaling incorrectly when zoomed in or out.
+- Fixed numeric fields (like sizes and positions) sometimes losing keystrokes while a live preview was updating.
+- Fixed the dashboard stealing keyboard focus away from embedded web content, like ProPresenter previews.
+- Fixed a rare race that could corrupt a roster import when switching rosters mid-import.
+- Fixed outdated help text in Planning Center account settings.
+- What's New no longer shows today's build number next to older past releases.
+- Stopped unnecessary background polling for Sennheiser channel names.
 
 #### Relay 1.1.4 (Beta) — Build 50
 
@@ -18,44 +47,30 @@ Fixed
 
 New
 
-- **General page in Tab Settings.** Canvas Size and Sync This Tab now live on a dedicated General page — first thing you see when you open Tab Settings — alongside a live list of devices currently viewing that synced tab.
-- **See who's watching, live.** The host now keeps track of exactly which paired devices have a synced tab open right now, and shares that list with everyone connected.
-- **Quit button on the home screen.** A proper Quit button now sits in the home screen sidebar.
-- **Know exactly which build you're on.** What's New now shows your distribution channel (Release/Beta/Debug) and build number right in the header of each release.
+- **General page in Tab Settings.** Canvas Size, Sync This Tab, and a live list of who's currently viewing that tab, all in one place.
+- Added a Quit button to the home screen, and What's New now shows your build number and channel.
 
 Fixed
 
-- Beta builds now correctly pull the beta release feed for What's New, instead of silently falling back to the release-channel notes.
-- What's New release dates now show as a real date instead of raw, unformatted text.
-- Quit and Close menu items now respond to a single click even while a settings sheet or dialog is open.
-- Starting a brand-new dashboard now gives you a truly empty canvas instead of one leftover empty tile.
-- Cancelling the Open File picker no longer leaves you stuck — it now properly returns you to the home screen.
-- Pressing a button now only notifies and triggers that specific button, not others nearby.
+- Beta builds now show the correct beta release notes, with properly formatted dates.
+- Quit/Close menu items, starting a new blank dashboard, cancelling Open File, and button-press targeting are all more reliable now.
 
 #### Relay 1.1.4 (Beta) — Build 48
 
 New
 
-- **Synced Tabs.** A whole new way to share your work across devices — pick a tab and keep it live-synced with your other Macs and iPads on the same network. Edit it anywhere and everyone sees the change instantly. This is different from Mirroring, which only lets you view another device's screen; Synced Tabs are fully editable and stay in step automatically, even if a device drops offline and reconnects later. Each device also keeps its own hardware and connection settings (ProPresenter, Shure, Sennheiser, NDI, audio inputs, etc.) — syncing a tab won't overwrite them with another device's setup.
-- **Reworked Button module.** Fit more buttons per module, plus a wider set of new icons to choose from, a bigger icon size range, and a one-click reset back to the default size.
-- **Approve devices before they connect.** When another device wants to sync or mirror with you, you'll now get a clear approval prompt — nothing connects without your say-so. You can also forget a device later if you no longer want it connected.
-- **Shure Summary module updates.** Choose card or list display, pick small/medium/large card sizes, and assign a person's name to each channel so summaries read at a glance.
+- **Synced Tabs.** Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Each device still keeps its own hardware/connection settings.
+- **Reworked Button module** with more buttons per module and a much bigger icon library to choose from.
+- **Device approval required** before any sync or mirror connection, with a way to forget devices later.
+- **Shure Summary module updates:** card/list display, sizes, and per-channel person names.
 
 Improved
 
-- Sync and Mirror settings are now organized into one clean page, so it's easier to see which devices are connected and reconnect with a single click.
-- Shure wireless devices run lighter on your Mac, especially during longer shows with lots of channels active.
-- Still working on full ANX4 and ADTD support — more to come in an upcoming beta.
+- Sync and Mirror settings consolidated into one page. Shure wireless devices run lighter on your Mac. Still finishing up ANX4 and ADTD support.
 
 Fixed
 
-- Button icons and sizing changes now apply instantly and stick, even when you're adjusting things quickly.
-- Fixed duplicate results showing up when searching for icons.
-- Devices on your network are now found reliably, and reconnect faster when a synced tab's host comes back online.
-- Toolbar labels for Sync and Mirror no longer get cut off on Mac.
-- Selecting a mirrored tab now properly starts the pairing process instead of getting stuck.
-- Planning Center service and plan selections on synced tabs no longer get cleared if a device hasn't finished loading Planning Center data yet.
-- Cleaned up how Relay manages OSC network connections so it doesn't accumulate idle ones during long sessions.
+- Icon search duplicates, device discovery/reconnect, toolbar label truncation, mirrored tab pairing, Planning Center selection preservation, and idle network connection cleanup — all more reliable now.
 
 ## Version 1.1.3 (build 46) <a id="version-11346"></a>
 

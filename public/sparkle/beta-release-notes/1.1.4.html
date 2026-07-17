@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relay 1.1.4 (build 50) Beta Release Notes</title>
+  <title>Relay 1.1.4 (build 51) Beta Release Notes</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
@@ -17,8 +17,40 @@
   </style>
 </head>
 <body>
-  <h1>Relay 1.1.4 (build 50) Beta</h1>
-  <h3>Relay 1.1.4 (Beta) — Build 50</h3>
+  <h1>Relay 1.1.4 (build 51) Beta</h1>
+  <h3>Relay 1.1.4 (Beta) — Build 51</h3>
+
+<h4>New</h4>
+<ul>
+  <li><strong>Opt-in crash reporting and diagnostics.</strong> Help make Relay better by choosing to share crash reports and basic usage data — nothing is collected unless you say yes, sensitive details are stripped out automatically, and you can turn it off anytime in Settings.</li>
+  <li><strong>Import your roster from CSV or Excel.</strong> Bring your team roster in straight from a spreadsheet, with the option to replace your existing roster or just add to it.</li>
+  <li><strong>Selection toolbar on the canvas.</strong> Select multiple tiles to get a floating toolbar for quick actions, including arranging them into quarters or other regions.</li>
+  <li><strong>Shure Summary audio activity display.</strong> Choose how live audio shows per channel — a simple signal light, a meter, or hidden entirely — with a heads-up if meter mode starts taxing your Mac.</li>
+  <li><strong>Long-press to drag guides on iPad.</strong></li>
+</ul>
+
+<h4>Improved</h4>
+<ul>
+  <li>Automation now flags problems right on the canvas — condition and console nodes show a warning badge when something's misconfigured or a command fails to send, instead of failing silently.</li>
+  <li>Speech transcription is more reliable, with a fixed deadlock and clearer error reporting under the hood.</li>
+  <li>Pro Tools transport display is more stable during playback.</li>
+  <li>Cleaned up several unused screens and older code paths for a snappier app.</li>
+  <li>Shure Summary module is now available to try in beta builds.</li>
+</ul>
+
+<h4>Fixed</h4>
+<ul>
+  <li>Fixed the dashboard canvas resize handle showing the wrong cursor or feeling unresponsive.</li>
+  <li>Fixed guides getting stuck mid-drag or scaling incorrectly when zoomed in or out.</li>
+  <li>Fixed numeric fields (like sizes and positions) sometimes losing keystrokes while a live preview was updating.</li>
+  <li>Fixed the dashboard stealing keyboard focus away from embedded web content, like ProPresenter previews.</li>
+  <li>Fixed a rare race that could corrupt a roster import when switching rosters mid-import.</li>
+  <li>Fixed outdated help text in Planning Center account settings.</li>
+  <li>What's New no longer shows today's build number next to older past releases.</li>
+  <li>Stopped unnecessary background polling for Sennheiser channel names.</li>
+</ul>
+
+<h3>Relay 1.1.4 (Beta) — Build 50</h3>
 
 <h4>Fixed</h4>
 <ul>
@@ -29,48 +61,34 @@
 
 <h4>New</h4>
 <ul>
-  <li><strong>General page in Tab Settings.</strong> Canvas Size and Sync This Tab now live on a dedicated General page — first thing you see when you open Tab Settings — alongside a live list of devices currently viewing that synced tab.</li>
-  <li><strong>See who's watching, live.</strong> The host now keeps track of exactly which paired devices have a synced tab open right now, and shares that list with everyone connected.</li>
-  <li><strong>Quit button on the home screen.</strong> A proper Quit button now sits in the home screen sidebar.</li>
-  <li><strong>Know exactly which build you're on.</strong> What's New now shows your distribution channel (Release/Beta/Debug) and build number right in the header of each release.</li>
+  <li><strong>General page in Tab Settings.</strong> Canvas Size, Sync This Tab, and a live list of who's currently viewing that tab, all in one place.</li>
+  <li>Added a Quit button to the home screen, and What's New now shows your build number and channel.</li>
 </ul>
 
 <h4>Fixed</h4>
 <ul>
-  <li>Beta builds now correctly pull the beta release feed for What's New, instead of silently falling back to the release-channel notes.</li>
-  <li>What's New release dates now show as a real date instead of raw, unformatted text.</li>
-  <li>Quit and Close menu items now respond to a single click even while a settings sheet or dialog is open.</li>
-  <li>Starting a brand-new dashboard now gives you a truly empty canvas instead of one leftover empty tile.</li>
-  <li>Cancelling the Open File picker no longer leaves you stuck — it now properly returns you to the home screen.</li>
-  <li>Pressing a button now only notifies and triggers that specific button, not others nearby.</li>
+  <li>Beta builds now show the correct beta release notes, with properly formatted dates.</li>
+  <li>Quit/Close menu items, starting a new blank dashboard, cancelling Open File, and button-press targeting are all more reliable now.</li>
 </ul>
 
 <h3>Relay 1.1.4 (Beta) — Build 48</h3>
 
 <h4>New</h4>
 <ul>
-  <li><strong>Synced Tabs.</strong> A whole new way to share your work across devices — pick a tab and keep it live-synced with your other Macs and iPads on the same network. Edit it anywhere and everyone sees the change instantly. This is different from Mirroring, which only lets you view another device's screen; Synced Tabs are fully editable and stay in step automatically, even if a device drops offline and reconnects later. Each device also keeps its own hardware and connection settings (ProPresenter, Shure, Sennheiser, NDI, audio inputs, etc.) — syncing a tab won't overwrite them with another device's setup.</li>
-  <li><strong>Reworked Button module.</strong> Fit more buttons per module, plus a wider set of new icons to choose from, a bigger icon size range, and a one-click reset back to the default size.</li>
-  <li><strong>Approve devices before they connect.</strong> When another device wants to sync or mirror with you, you'll now get a clear approval prompt — nothing connects without your say-so. You can also forget a device later if you no longer want it connected.</li>
-  <li><strong>Shure Summary module updates.</strong> Choose card or list display, pick small/medium/large card sizes, and assign a person's name to each channel so summaries read at a glance.</li>
+  <li><strong>Synced Tabs.</strong> Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Each device still keeps its own hardware/connection settings.</li>
+  <li><strong>Reworked Button module</strong> with more buttons per module and a much bigger icon library to choose from.</li>
+  <li><strong>Device approval required</strong> before any sync or mirror connection, with a way to forget devices later.</li>
+  <li><strong>Shure Summary module updates:</strong> card/list display, sizes, and per-channel person names.</li>
 </ul>
 
 <h4>Improved</h4>
 <ul>
-  <li>Sync and Mirror settings are now organized into one clean page, so it's easier to see which devices are connected and reconnect with a single click.</li>
-  <li>Shure wireless devices run lighter on your Mac, especially during longer shows with lots of channels active.</li>
-  <li>Still working on full ANX4 and ADTD support — more to come in an upcoming beta.</li>
+  <li>Sync and Mirror settings consolidated into one page. Shure wireless devices run lighter on your Mac. Still finishing up ANX4 and ADTD support.</li>
 </ul>
 
 <h4>Fixed</h4>
 <ul>
-  <li>Button icons and sizing changes now apply instantly and stick, even when you're adjusting things quickly.</li>
-  <li>Fixed duplicate results showing up when searching for icons.</li>
-  <li>Devices on your network are now found reliably, and reconnect faster when a synced tab's host comes back online.</li>
-  <li>Toolbar labels for Sync and Mirror no longer get cut off on Mac.</li>
-  <li>Selecting a mirrored tab now properly starts the pairing process instead of getting stuck.</li>
-  <li>Planning Center service and plan selections on synced tabs no longer get cleared if a device hasn't finished loading Planning Center data yet.</li>
-  <li>Cleaned up how Relay manages OSC network connections so it doesn't accumulate idle ones during long sessions.</li>
+  <li>Icon search duplicates, device discovery/reconnect, toolbar label truncation, mirrored tab pairing, Planning Center selection preservation, and idle network connection cleanup — all more reliable now.</li>
 </ul>
   <p class="footer"><a href="https://help.ondeckapps.com/beta-changelog#version-114">View the full Relay changelog</a></p>
 </body>
