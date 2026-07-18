@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mintlify-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["mint", "dev"],
+      "port": 3000
+    }
+  ]
+}

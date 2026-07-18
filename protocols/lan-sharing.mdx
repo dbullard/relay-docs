@@ -16,7 +16,7 @@ Relay can connect to other Relay clients on the same local network in three ways
 
 Browser view-only creates a stable local URL that mirrors the currently open tab on the source Mac.
 
-1. Open `Relay > Settings > Sync & Mirror`.
+1. Open `Relay > Settings`, then select <Icon icon="wifi" /> **Sync & Mirror**.
 2. Enable browser view-only.
 3. Confirm the port shown on the settings page — it defaults to `38475`.
 4. Copy the link and open it on any device on the same network — no pairing is required for this mode.
@@ -40,13 +40,13 @@ Mirror and Sync both require the two devices to be paired first. Relay does not 
 3. Tap **Approve** to let the connection proceed, or **Deny** to reject it. If there's no response within 30 seconds, the request times out.
 4. Once approved, the two devices trust each other going forward — no code to re-enter, and no separate approval step for future connections between them.
 
-You can review or revoke trust for any device at any time from `Relay > Settings > Sync & Mirror`, which lists every device Relay has discovered on the network along with a Paired / Not Paired status. Disabling a device there revokes its access if it was paired, or pre-blocks it from ever successfully requesting a pairing if it wasn't.
+You can review or revoke trust for any device at any time from `Relay > Settings` → <Icon icon="wifi" /> **Sync & Mirror**, which lists every device Relay has discovered on the network along with a Paired / Not Paired status. Disabling a device there revokes its access if it was paired, or pre-blocks it from ever successfully requesting a pairing if it wasn't.
 
 <Note>Browser view-only connections skip pairing entirely — they're covered by the separate "Allow view-only without pairing" toggle on the same settings page, since a browser link has no Relay identity to approve.</Note>
 
 ## Sync & Mirror settings
 
-`Relay > Settings > Sync & Mirror` is the single page for all LAN sharing:
+`Relay > Settings` → <Icon icon="wifi" /> **Sync & Mirror** is the single page for all LAN sharing:
 
 - **Browser View-Only Link** — the stable local URL described above.
 - **Enable LAN sharing** — the master toggle for whether this Mac or iPad is discoverable by other Relay clients at all.
