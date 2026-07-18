@@ -8,10 +8,7 @@
     "light": "#34C8EE",
     "dark": "#3B2FE0"
   },
-  "favicon": {
-    "light": "https://media.brand.dev/4f3699c0-f0f6-4f3f-9e6d-a05b91512d6f.svg",
-    "dark": "https://media.brand.dev/4f3699c0-f0f6-4f3f-9e6d-a05b91512d6f.svg"
-  },
+  "favicon": "/images/relay-mark.png",
   "logo": "/images/relay-mark.png",
   "icons": {
     "library": "lucide"
