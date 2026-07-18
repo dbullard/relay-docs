@@ -53,7 +53,7 @@
           {
             "product": "Building Dashboards",
             "icon": "layout-dashboard",
-            "description": "Create tiles, add modules, use Live Mode, and automate your workflow.",
+            "description": "Create tiles, add modules, and run your show in Live Mode.",
             "groups": [
               {
                 "group": "Building Dashboards",
@@ -62,8 +62,7 @@
                 "pages": [
                   "dashboards/tiles",
                   "dashboards/modules",
-                  "dashboards/live-mode",
-                  "dashboards/automation"
+                  "dashboards/live-mode"
                 ]
               },
               {
@@ -75,9 +74,18 @@
                   "dashboards/modules/wireless",
                   "dashboards/modules/utility"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "product": "Automation",
+            "icon": "workflow",
+            "description": "Build automations with triggers, actions, utility nodes, and sources.",
+            "groups": [
               {
-                "group": "Automation Nodes",
+                "group": "Automation",
+                "expanded": true,
+                "root": "dashboards/automation",
                 "pages": [
                   "dashboards/nodes/triggers",
                   "dashboards/nodes/actions",
@@ -88,9 +96,9 @@
             ]
           },
           {
-            "product": "Integrations",
+            "product": "Connections",
             "icon": "plug",
-            "description": "Connect Planning Center, ProPresenter, consoles, and wireless devices.",
+            "description": "Connect Planning Center, ProPresenter, consoles, wireless devices, and network protocols.",
             "groups": [
               {
                 "group": "Integrations",
@@ -102,16 +110,9 @@
                   "integrations/audio-consoles",
                   "integrations/wireless-devices"
                 ]
-              }
-            ]
-          },
-          {
-            "product": "Protocols & Devices",
-            "icon": "network",
-            "description": "Set up OSC, MIDI, LAN sharing, audio metering, and transcription tools.",
-            "groups": [
+              },
               {
-                "group": "Protocols & Devices",
+                "group": "Protocols",
                 "expanded": true,
                 "root": "protocols/overview",
                 "pages": [
