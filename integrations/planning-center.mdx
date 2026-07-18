@@ -15,6 +15,8 @@ Relay can use Planning Center for service and plan selection, rundown display, d
 5. Finish sign-in and approval in your browser.
 6. Return to Relay and confirm the connection is active.
 
+Relay requests the `services` and `people` OAuth scopes — enough to read plans, teams, and people, nothing more. Once connected, Relay refreshes your access token automatically using the stored refresh token, so you shouldn't need to reconnect unless the connection is explicitly revoked from your Planning Center account.
+
 ## Configure the active tab
 
 After connecting, the current tab still needs a service context:
@@ -46,6 +48,30 @@ Use it when you want a tile focused on staffing instead of the full rundown. It 
 
 This makes it easier to build dashboards that separate schedule context from operator-facing assignment views.
 
+## Person modules and assignments
+
+Person modules can be filled manually or linked to Planning Center positions:
+
+1. Add a Person module.
+2. Set the source to a Planning Center team.
+3. Choose the team and position.
+4. Pick an assignment when more than one person is available.
+
+If your team uses headshots, Relay can often match image files by name when a headshot folder is configured in general settings.
+
 ## Troubleshooting
 
-If Planning Center modules say setup is required, confirm both the account connection and the current tab setup are complete.
+### The module says setup is required
+
+Check both of these:
+
+- Planning Center is connected in settings
+- The active tab has a service, plan, and service time selected
+
+### No plan items appear
+
+Check whether the selected plan actually contains items for the selected service time.
+
+### Team assignments are missing
+
+Check whether team settings are configured on the tab, the selected plan contains assigned people, and the Person module is pointed at the correct team and position.

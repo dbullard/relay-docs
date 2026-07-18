@@ -34,8 +34,14 @@ Relay provides several utility modules that help you structure your dashboard, d
 - **Features:** Adds a visual break (horizontal or vertical line) to help you group related controls visually.
 
 ### Button
-- **Setup:** Add a Button module. In the inspector, customize its label and color.
-- **Features:** A simple push-button that can trigger in-app actions (like clearing transcriptions). Buttons can also be bound to Manual Triggers in Automation View to execute complex workflows.
+- **Setup:** Add a Button module, then add one or more buttons to it — a single Button module now holds a group of buttons sharing a common layout and style, not just one. Customize each button's label, icon, and color individually, and choose a grid layout for the group.
+- **Features:**
+  - **Interaction mode:** Momentary (fires while held) or Toggle (flips on/off).
+  - **Confirmation:** Optionally require a confirm step before the button fires, with a custom title and message — useful for anything destructive or hard to undo live.
+  - **Cooldown:** Set a minimum interval between presses to prevent accidental double-fires.
+  - **Availability:** Restrict a button to Live Mode only, Edit Mode only, or always available, and optionally disable it while its action is running or during its cooldown.
+  - **Feedback:** Animate on press, show a running indicator while the action executes, and show a result badge for a configurable duration afterward.
+  - Buttons can trigger in-app actions directly (like clearing transcriptions or SPL logs) or be bound to Manual Triggers in Automation View to kick off larger automated workflows.
 
 ### Picker
 - **Setup:** Add a Picker module and link it to a Roster or a static list of options.

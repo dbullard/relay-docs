@@ -22,6 +22,8 @@ The ProPresenter integration lets Relay talk directly to a running ProPresenter 
 4. Add a profile with the correct host, port, and credentials if needed.
 5. Save and confirm the connection succeeds.
 
+Credentials for a ProPresenter profile are stored in the macOS Keychain, not in the dashboard file itself — so a `.relay` file can be shared without exposing a saved password, but a profile's credentials won't automatically travel with it to another Mac.
+
 ## Add the ProPresenter module
 
 1. Select a tile.
@@ -29,6 +31,18 @@ The ProPresenter integration lets Relay talk directly to a running ProPresenter 
 3. Choose the saved profile.
 4. Set the display mode that matches the data you want to show.
 
+## Best practices
+
+- Name profiles clearly so operators know which machine they're targeting.
+- Confirm both apps are on the same network as the Mac running Relay.
+- Test the module view before relying on it in Live Mode.
+
 ## Troubleshooting
 
-If the module is blank, confirm the profile is selected, ProPresenter has an active presentation, and the chosen display mode matches what ProPresenter is currently providing.
+### ProPresenter will not connect
+
+Check the host or IP address, port, password or token if required, Local Network permission on macOS, and whether ProPresenter network control is enabled.
+
+### The ProPresenter module is blank
+
+Confirm the profile is selected, ProPresenter has an active presentation, and the chosen display mode matches what ProPresenter is currently providing.

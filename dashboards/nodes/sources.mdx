@@ -1,0 +1,43 @@
+---
+title: "Source Nodes"
+description: "Nodes that feed data into an automation graph, from a fixed value to imported console or wireless channel names."
+sidebarTitle: "Sources"
+icon: "arrow-down-circle"
+---
+
+Source nodes inject a value into your automation graph rather than starting a workflow. Connect a source's output into another node — an action, a Variable, or a Condition — anywhere that node needs a piece of data rather than just a signal to fire.
+
+## Current Time
+
+Injects the current system time as a data value.
+
+- **Setup:** Drop the node into your flow and choose a format: `HH:mm:ss`, `HH:mm`, seconds since midnight, or a Unix timestamp.
+- **Features:** Feed a live clock value into an HTTP Request, a text module variable, or anywhere else a timestamp is useful.
+
+## Static Label
+
+Injects a fixed piece of text you define yourself.
+
+- **Setup:** Add the node and enter either a single value, or a list of labels to cycle or choose from.
+- **Features:** Useful as a placeholder value while building a graph, or as a constant label you want to reuse in multiple places without retyping it.
+
+## Roster
+
+Injects a value from a Relay Roster.
+
+- **Setup:** Add the node and choose either a single column value or a whole column.
+- **Features:** Pull roster data into an automation without needing Planning Center — useful for teams running fully offline rosters.
+
+## Console Import
+
+Injects channel names imported from a connected audio console.
+
+- **Setup:** Select a console device, then choose a single channel or all channels.
+- **Features:** Keeps automation and downstream displays in sync with the actual channel names configured on the console, rather than names typed manually into Relay.
+
+## Wireless Import
+
+Injects channel names imported from a connected Shure or Sennheiser wireless system.
+
+- **Setup:** Select a wireless device brand, then choose a single channel or all channels.
+- **Features:** Same idea as Console Import, but for wireless channel names — handy for keeping labels consistent between the receiver's own channel naming and what Relay displays or sends elsewhere.

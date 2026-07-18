@@ -8,7 +8,7 @@ Relay requests a small set of macOS permissions for audio monitoring, live trans
 
 ## Review permissions inside Relay
 
-Open `Relay > Settings > Access` to see the status of each permission.
+Open `Relay > Settings > Access` to see the status of each permission. You can also review the same permissions directly in macOS under `System Settings > Privacy & Security`.
 
 ## Main permissions
 
@@ -32,8 +32,16 @@ Needed for:
 
 ### Screen and system audio capture
 
-May be required for system-audio transcription workflows depending on how audio is sourced.
+May be required for system-audio transcription workflows depending on how audio is sourced. Unlike the permissions above, this one doesn't have its own row in `Relay > Settings > Access` — check its status directly in macOS under `System Settings > Privacy & Security > Screen & System Audio Recording`.
 
 ## After changing a permission
 
 Quit and reopen Relay, then test again.
+
+## Usage diagnostics and the Relay Account heartbeat
+
+Separate from macOS permissions, `Relay > Settings > Access` also has a **Share Crash and Usage Diagnostics** toggle. The first time it comes up, Relay shows a one-time prompt so you can choose before anything is shared, and you can change your answer at any time from that same toggle.
+
+When enabled, Relay shares app version, platform, a random installation ID, active time, and technical crash or hang details. It does **not** include dashboard content, connected-device data, location, audio, your account email, or Relay network addresses.
+
+If you're signed in to Relay Account and diagnostics sharing is on, Relay also sends a lightweight heartbeat roughly every two minutes while the app is active, so your account can track which devices are currently in use. Settings shows a live status for this — for example, "Sign in to Relay Account to count this device as active" if you're signed out, or a normal running state once everything is connected.

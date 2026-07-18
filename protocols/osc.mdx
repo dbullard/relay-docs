@@ -17,9 +17,11 @@ Relay can receive and send OSC messages over the network.
 
 ## Use OSC in Relay
 
-- Use OSC Receive triggers in Automation View
-- Use OSC Send actions in Automation View
-- Use OSC from Button modules when configured
+- Use OSC Receive triggers in Automation View — set the address pattern you want to match (for example `/relay/trigger1`), and the trigger fires whenever a message arrives at that address.
+- Use OSC Send actions to transmit a message to a target IP and port (defaults to port `9000`) at an address you define.
+- Use OSC from Button modules when configured.
+
+Beyond the main OSC listener, Relay can run additional custom listening ports at the same time — useful if you want to keep OSC traffic for different purposes (say, a console integration vs. a lighting console) isolated on separate ports rather than sharing one.
 
 The `External Control` page also shows the current IP address, message counts, and the most recent OSC packet so you can validate traffic before wiring it into a graph.
 

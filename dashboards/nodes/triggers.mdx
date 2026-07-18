@@ -5,38 +5,74 @@ sidebarTitle: "Triggers"
 icon: "bolt"
 ---
 
-Trigger nodes are the starting points of your automation graphs. When a trigger condition is met, a signal is sent down the graph to execute actions.
+Trigger nodes are the starting points of your automation graphs. When a trigger condition is met, a signal is sent down the graph to execute actions. Most triggers include a **cooldown** setting (in seconds) that prevents the same trigger from firing again immediately after it just fired.
 
-## App State Trigger
-Fires when specific application events occur.
-- **Setup:** Add the node and select the state (e.g., App Launched, Live Mode Enabled, Tab Changed).
-- **Features:** Useful for resetting variables when entering Live Mode or sending initialization commands to consoles when Relay starts.
+## OSC Receive
 
-## PCO Plan Updated
-Triggers when your connected Planning Center plan changes.
-- **Setup:** Select your PCO Service Type and Plan.
-- **Features:** You can trigger on *any* update, or use the live item picker to filter for specific item changes (e.g., firing a lighting cue exactly when the "Sermon" item goes live).
+Fires when an OSC message arrives on Relay's OSC listener.
+
+- **Setup:** Set the address pattern to match. `Relay > Settings > External Control > OSC` must have the OSC listener turned on.
+- **Features:** Drives automation directly from show control systems, consoles, or any app that can send OSC.
+
+## MIDI Receive
+
+Fires when a MIDI message arrives on a selected MIDI input.
+
+- **Setup:** Choose the MIDI source and the message type to watch for. `Relay > Settings > External Control > MIDI` must have MIDI Input turned on.
+- **Features:** Works with Note On/Off, Program Change, Control Change, and SysEx messages, so you can trigger from a MIDI controller, DAW, or lighting console.
 
 ## Time
-Triggers based on the system clock.
-- **Setup:** Choose between a specific Time of Day or a recurring Interval (e.g., every 5 minutes).
-- **Features:** Great for automated health checks, network pings, or daily reset routines.
+
+Fires on a schedule or at specific times.
+
+- **Setup:** Choose a specific time of day or a recurring interval (e.g., every 5 minutes).
+- **Features:** Useful for automated health checks, network pings, or daily reset routines.
 
 ## dB Threshold
-Fires when an audio input crosses a specific decibel threshold.
-- **Setup:** Select a measurement input from your Global Audio Settings, set the target dB level, and choose whether to trigger when going *above* or *below* the threshold.
+
+Fires when a Measurement input crosses a set decibel level.
+
+- **Setup:** Select a Measurement input from Global Audio Settings, set the threshold in dB, and choose whether it fires when the level goes **above** or **below** that value. Cooldown defaults to 2 seconds so a level hovering near the threshold doesn't spam the graph.
 - **Features:** Useful for auto-muting channels, triggering visual alerts on the dashboard, or logging loud events.
 
+## Wireless Status
+
+Fires from Shure or Sennheiser wireless channel state — there's a separate trigger for each brand.
+
+- **Setup:** Pick a device and channel, then choose what to watch for: **Battery Below** a percentage, **RF Below** a signal level, **Audio Clip** detected, or **Disconnected**. Battery and RF need a threshold value; Audio Clip and Disconnected fire as soon as the condition occurs. Cooldown defaults to 60 seconds.
+- **Features:** Good for warning operators about a dying battery or a channel dropping out mid-service without watching the wireless tile constantly.
+
 ## Manual Trigger
+
 Fires when an operator interacts with the dashboard.
-- **Setup:** Add a Button module to a dashboard tile. Then, add a Manual Trigger node and link it to that specific button.
-- **Features:** Allows operators to manually launch complex automation sequences (like a "Pre-Service Setup" macro) with a single click.
 
----
+- **Setup:** Add a Button module to a dashboard tile, then add a Manual Trigger node and link it to that button.
+- **Features:** Lets operators manually launch complex automation sequences (like a "Pre-Service Setup" macro) with a single click. Also useful for firing a trigger on demand while you're testing a graph.
 
-<Warning>BETA FEATURES</Warning>
+## Keystroke Trigger
 
-## Word Triggers [BETA]
-Triggers an automation when a specific word or phrase is detected.
-- **Setup:** Requires the Live Transcription module to be active. Enter the specific trigger word in the node inspector.
-- **Features:** Allows for voice-activated workflows (e.g., triggering a slide advance when a speaker says a specific phrase).
+Fires when a Relay keyboard shortcut is pressed.
+
+- **Setup:** Add the node and assign a keystroke in the inspector.
+- **Features:** Lets an operator fire an automation from the keyboard without touching a tile at all — handy when hands are already on a console or keyboard shortcut workflow.
+
+## Word Trigger
+
+Fires when a specific word or phrase is detected in a live transcript.
+
+- **Setup:** Requires an active Live Transcription module. Add the node, link it to the transcription module, and enter the trigger word or phrase.
+- **Features:** Enables voice-activated workflows, like advancing a slide or firing a cue when a speaker says a specific phrase.
+
+## PCO Plan Updated
+
+Fires when your connected Planning Center plan is loaded or refreshed in Relay.
+
+- **Setup:** Select the PCO Service Type and Plan. An optional title filter limits the trigger to items whose title matches, so you can fire only when a specific item (like "Sermon") changes rather than any plan update. Cooldown defaults to 2 seconds.
+- **Features:** Useful for firing a lighting cue or notification exactly when a specific rundown item goes live, or resyncing a dashboard automatically whenever the plan changes.
+
+## App State Trigger
+
+Fires on application-level events.
+
+- **Setup:** Choose the event: **App Launch**, **Enter Live Mode**, **Exit Live Mode**, or **Tab Switch**.
+- **Features:** Useful for resetting variables when entering Live Mode, sending initialization commands to consoles when Relay starts, or running a different setup automation per tab.

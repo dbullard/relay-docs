@@ -1,53 +1,94 @@
 ---
-title: "Beta features in Relay"
-description: "Understand the actual beta-only tools, modules, and workflows currently exposed in Relay builds."
-sidebarTitle: "Beta Features"
+title: Beta Features
+description: Understand the actual beta-only tools, modules, and workflows currently exposed in Relay builds.
+sidebarTitle: Beta Features
+icon: "flask-conical"
 ---
 
-Relay exposes a few beta-only or beta-sensitive surfaces that should be tested carefully before you rely on them in a mission-critical workflow.
+## What beta means in Relay today
 
-## Release features vs beta features
+Beta features are early or evolving parts of Relay that are available for testing before they're considered stable for every user and every production environment. They may change faster than the rest of the app, receive UI or behavior updates between builds, and have rough edges or missing workflows.
 
-Relay `1.1.1` includes shipped features like the new home screen, startup file pinning, auto-save improvements, per-tab canvas sizing, and DiGiCo workflow upgrades.
+<Warning>Do not assume a beta feature is ready for a mission-critical show just because it appears in the app. Test it in your actual workflow first.</Warning>
 
-Those are part of the main release track.
+## Where beta shows up in the app
 
-Beta features stay separate. In the current `1.1.1` cycle, the biggest example is the **YouTube Live Stream Monitor**, which should still be treated as test-only until it moves into the main release set.
-
-## Where beta shows up
-
-- the `Beta` page in `Relay > Settings`
+- the `Beta` page in `Relay > Settings`, shown only in beta or debug builds
 - beta-badged modules in the module catalog
-- beta-only device or model support
-- beta-gated automation graph features
+- beta-badged devices or models in External Devices
 - beta or debug-only wireless diagnostics controls
 
-## Current beta-sensitive areas
+## Beta modules in the module picker
 
-- NDI Feed remains a beta-sensitive module and should be validated on the real production network
-- YouTube Live Stream Monitor is currently beta-only and should be tested with your real account, stream state, and dashboard persistence flow
-- Shure and Live Transcription modules carry beta sensitivity in current builds
-- Sennheiser module availability is limited to beta or debug builds
-- beta-only Shure models include `ANX4`, `ADTD`, and `ADTQ`
-- graph features like `If / Else`, `Variable`, and the `Vista` destination are beta-gated
-- text-module behavior and graph runtime behavior deserve extra validation in real-world testing
+The current module catalog marks these modules as beta:
+
+- **Sennheiser** — appears only in beta or debug builds
+- **YouTube Stream Monitor**
+- **NDI Feed**
+- **Shure Overview** — the multi-device wireless summary module, shown only in beta or debug builds
+
+<Note>The standalone **Shure** module and **Live Transcription** are no longer beta — both are part of the stable release. Only the multi-device **Shure Overview** summary module remains beta-gated.</Note>
+
+### YouTube Stream Monitor
+
+Keep an eye on your live broadcasts directly from your dashboard.
+
+**Setup:**
+1. Add a **YouTube Stream Monitor** module to a tile.
+2. In the inspector, authenticate Relay with your Google/YouTube account.
+3. Use the broadcast picker to select your active or upcoming stream.
+
+**Features:** live viewer/like/chat statistics, incoming bitrate and connection-quality monitoring, a broadcast picker that filters out ended streams, and persistence — your previously selected broadcast stays in the picker even if it momentarily drops from the active results list.
+
+## Beta device and model support
+
+Some device support is beta-only even when the surrounding feature area is already stable. Per current release notes, Shure `ANX4` and `ADTD` support is still being finished, with `ADTQ` grouped into the same rollout — treat these specific models as beta even though the standalone Shure module itself is stable.
+
+The External Devices area can also show beta badges for Sennheiser wireless devices and certain audio console models marked beta in the device model list.
 
 ## Beta tools in Settings
 
-The Beta settings page currently includes:
+The `Beta` settings page is only shown in beta or debug builds. It currently includes:
 
-- wireless diagnostics upload to Sentry
-- beta feedback submission
-- verbose wireless logging toggles for Shure and Sennheiser families
-- beta update visibility
+- **Wireless Diagnostics Logging** — verbose logging toggles for Shure and Sennheiser device families, each with a "Reset Defaults" button. Verbose tracing is only active in beta and debug builds; release builds always use non-verbose logging regardless of these toggles.
+- **Beta Updates** status — confirms the build always receives beta updates.
 
-## Best practices
+<Note>Earlier versions of this page described Sentry-based diagnostics upload and beta-feedback submission controls on this settings page. Those controls are not present in the current build — use `Relay > Settings > Help` to export logs or copy a diagnostic summary, and email `support@ondeckapps.com` directly for beta feedback.</Note>
 
-- isolate one beta variable at a time
-- test with the real device or service involved
-- validate behavior in both Canvas View and Live Mode
-- keep a fallback plan before using beta workflows live
+## Text module behavior to test carefully
 
-## Reporting beta issues
+The text module stores rich formatting inside the attributed content itself, while still decoding older legacy formatting fields for backward compatibility. Rendering paths differ between macOS rich-text display, standard text rendering, and LAN snapshot rendering (what a Mirror or browser view-only viewer sees). If you rely on text-heavy tiles — lyrics, notes, operator instructions — verify that formatting survives saving and reopening the dashboard, that older dashboards still render as expected, and that a mirrored or browser view stays close enough to the editable view.
 
-When a beta feature behaves incorrectly, document the expected behavior, the actual behavior, reproducible steps, and any available logs or screenshots, then send the report to `support@ondeckapps.com`.
+## Graph runtime behavior to test carefully
+
+Time triggers poll and fire based on in-memory runtime state, and wireless trigger conditions rely on live device state and cooldown behavior. Trigger firing order is deterministic, but still worth validating in real-world chains, especially when an automation controls consoles, wireless destinations, or other downstream production systems. When testing automation-heavy workflows, validate cooldown timing, repeated-trigger behavior, disconnect edge cases, action ordering, and whether reopening the dashboard changes behavior in subtle ways.
+
+## When to use beta features
+
+Beta features are a good fit when you want early access to a capability the team is still refining, you can test it ahead of a live event, and you're comfortable giving feedback when something feels unclear.
+
+They're a poor fit when the workflow is business-critical and cannot fail, there's no time to test before going live, or the feature sits in the middle of a complex automation or routing chain that would be hard to recover from quickly.
+
+## A safe testing workflow
+
+1. Test it on a non-critical dashboard first.
+2. Keep the rest of the dashboard simple while evaluating it.
+3. Verify its behavior in both Canvas View and Live Mode if relevant.
+4. Test with the real device, service, or data source it will depend on.
+5. Have a fallback plan before using it in production.
+
+<Tip>The safest way to roll out a beta feature is to isolate it. One beta variable at a time is much easier to evaluate than a whole chain of new behavior.</Tip>
+
+## Troubleshooting
+
+### A beta feature behaves inconsistently
+
+Check whether you're on a beta build, whether the feature depends on another connection, permission, or service, and whether the behavior is repeatable on demand or only occasional.
+
+### A beta feature is missing entirely
+
+Check whether it's gated to beta or debug builds, gated behind a beta-only device model, or only shown when the required hardware or integration is present — Sennheiser and beta-only Shure models are common examples.
+
+### I found a beta issue
+
+Document what you expected to happen, what actually happened, exact reproduction steps, whether it happens every time or only sometimes, and any screenshots, logs, or diagnostics — then send it to `support@ondeckapps.com`.

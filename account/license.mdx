@@ -4,7 +4,7 @@ description: "Activate, refresh, or link your Relay Pro access and understand ho
 sidebarTitle: "License"
 ---
 
-Relay for Mac uses a license or subscription to unlock Pro features. In `1.1.0`, Relay also adds a stronger `Relay Account` workflow for restoring entitlements and linking supported purchases across devices.
+Relay uses a license or subscription to unlock Pro features. In `1.1.0`, Relay also adds a stronger `Relay Account` workflow for restoring entitlements and linking supported purchases across devices.
 
 ## Review your current status
 
@@ -22,6 +22,12 @@ Relay for Mac uses a license or subscription to unlock Pro features. In `1.1.0`,
 - Refresh account entitlements
 - Link an App Store subscription to Relay Account when prompted
 
+## Free vs. Pro
+
+On the Free plan, most of Relay is fully usable — building dashboards, tiles, and most modules doesn't require Pro. Two settings pages are locked until you activate Pro: **External Devices** (audio consoles, wireless receivers) and **External Control** (OSC/MIDI). If a settings page shows as locked, that's why.
+
+Each license also has an **activation limit** — the number of Macs it can be active on at once, shown alongside your current activation count in the license popover. If you've moved to a new Mac and licensing won't activate, you may need to deactivate an old device first.
+
 ## Relay Account
 
 Relay Account can be used to:
@@ -30,7 +36,11 @@ Relay Account can be used to:
 - link supported App Store subscriptions
 - keep account-backed licensing clearer across devices
 
-If Relay asks you to sign in, it uses an email magic-link flow.
+If Relay asks you to sign in, it uses an email magic-link flow — enter your email, then follow the link Relay sends you to finish signing in.
+
+### Linking an App Store subscription
+
+If Relay detects a pending App Store purchase that isn't yet linked to a Relay Account, it shows a card with the product and transaction details and a prompt to connect an email. Enter your email, wait for the sign-in link (you can request another after a short cooldown if it doesn't arrive), and follow it to finish linking — the purchase then shows as connected to that email going forward.
 
 ## Troubleshooting
 

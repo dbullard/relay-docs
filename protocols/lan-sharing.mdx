@@ -1,27 +1,57 @@
 ---
-title: "LAN Sharing and browser view-only links in Relay"
-description: "Share Relay dashboard tabs with other Relay clients or open a stable browser view-only link."
+title: "LAN Sharing: Mirror and Sync tabs across Relay devices"
+description: "Share a dashboard tab with other Relay clients as a read-only Mirror, keep it live-editable across devices with Sync, or open a browser view-only link."
 sidebarTitle: "LAN Sharing"
 ---
 
-Relay can share dashboard tabs with other devices on the same local network. There are two main modes: browser view-only links and Relay-to-Relay sharing.
+Relay can connect to other Relay clients on the same local network in three ways: browser view-only links, Mirror, and Sync.
+
+| Mode | Direction | Editable | Typical use |
+| --- | --- | --- | --- |
+| Browser view-only | One-way | No | Show a tab in any browser on the network, no Relay install required |
+| Mirror | One-way | No | View another Mac or iPad's tab live inside Relay |
+| Sync | Two-way | Yes | Keep a tab live and editable across multiple Macs and iPads at once |
 
 ## Browser view-only
 
 Browser view-only creates a stable local URL that mirrors the currently open tab on the source Mac.
 
-1. Open `Relay > Settings > LAN`.
+1. Open `Relay > Settings > Sync & Mirror`.
 2. Enable browser view-only.
-3. Confirm the port.
-4. Copy the link and open it on another device on the same network.
+3. Confirm the port shown on the settings page — it defaults to `38475`.
+4. Copy the link and open it on any device on the same network — no pairing is required for this mode.
 
-## Relay-to-Relay sharing
+## Mirror
 
-Relay-to-Relay sharing lets other Relay clients discover, mirror, and import shared tabs.
+Mirror lets another Relay device view your tab in real time, read-only. Select a discovered peer's tab from the Sync & Mirror settings and choose Mirror to start viewing it. The source device controls the content; the viewer only watches.
 
-1. Enable LAN sharing.
-2. Optionally require pairing.
-3. Share the pairing code if pairing is enabled.
+## Sync
+
+Synced Tabs are fully editable across every device that joins them. Pick a tab, turn on Sync, and it stays live-synced with your other Macs and iPads on the same network — edit it from any joined device and the change appears on the others automatically, even if a device drops offline and reconnects later. Each device still keeps its own hardware and connection settings (a console or wireless device configured on one Mac isn't assumed to exist on another).
+
+If two devices edit the same tab at nearly the same moment, the most recent edit wins; Relay does not merge conflicting changes.
+
+## Pairing
+
+Mirror and Sync both require the two devices to be paired first. Relay does not use a shared pairing code — pairing is approval-based, similar to pairing a Bluetooth or AirPlay device:
+
+1. On the joining device, select the tab you want to Mirror or Sync and start the connection.
+2. On the host device, an approval prompt appears showing the requesting device's name and what it's asking for (for example, "wants to join a Synced Tab").
+3. Tap **Approve** to let the connection proceed, or **Deny** to reject it. If there's no response within 30 seconds, the request times out.
+4. Once approved, the two devices trust each other going forward — no code to re-enter, and no separate approval step for future connections between them.
+
+You can review or revoke trust for any device at any time from `Relay > Settings > Sync & Mirror`, which lists every device Relay has discovered on the network along with a Paired / Not Paired status. Disabling a device there revokes its access if it was paired, or pre-blocks it from ever successfully requesting a pairing if it wasn't.
+
+<Note>Browser view-only connections skip pairing entirely — they're covered by the separate "Allow view-only without pairing" toggle on the same settings page, since a browser link has no Relay identity to approve.</Note>
+
+## Sync & Mirror settings
+
+`Relay > Settings > Sync & Mirror` is the single page for all LAN sharing:
+
+- **Browser View-Only Link** — the stable local URL described above.
+- **Enable LAN sharing** — the master toggle for whether this Mac or iPad is discoverable by other Relay clients at all.
+- **Allow view-only without pairing** — lets browser view-only connections through without going via the approval flow.
+- **Devices** — one row per device Relay has discovered on the network, showing its pairing status, how many tabs are mirrored or synced with it, and a switch to enable or revoke it.
 
 ## SPL Meter and Live Transcription
 
@@ -35,4 +65,14 @@ Live Transcription can:
 
 ## Troubleshooting
 
-If peers or browser links are not reachable, confirm both devices are on the same network, Relay has Local Network permission, and the correct port or pairing code is being used.
+### Peers or browser links are not reachable
+
+Confirm both devices are on the same network, Relay has Local Network permission, and Enable LAN sharing is turned on for the device you're trying to reach.
+
+### The approval prompt never appears on the host
+
+Confirm the host device is on and reachable on the network. If a request was recently denied or timed out from the same device, it enters a short cooldown before it can trigger another approval prompt — wait a few seconds and try again. Also check the Devices list in Sync & Mirror settings to make sure the requesting device hasn't been disabled there.
+
+### A device that used to work now shows Not Paired
+
+Trust doesn't carry over automatically after certain updates, or it can be revoked from the Devices list. Reconnect using Mirror or Sync as normal — approving the request once re-establishes trust.

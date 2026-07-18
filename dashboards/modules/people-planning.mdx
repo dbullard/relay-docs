@@ -48,6 +48,7 @@ If you aren't using Planning Center, Relay's built-in Rosters let you build your
 ### Features
 - **Local Control:** Manage your teams entirely offline without relying on external APIs.
 - **Dynamic Updates:** Changes to the Roster are immediately reflected on the dashboard.
+- **Import:** Instead of entering members by hand, import a CSV, plain text, or (on Mac) Excel `.xlsx` file from the Rosters Manager's Import button. Choose **Replace** to overwrite the current roster or **Append** to add to it. Imports are capped at 12 columns and 250 rows per roster.
 
 ---
 
@@ -60,5 +61,9 @@ The Person module is a flexible tile that displays a specific role or individual
 2. Manually assign a person, or link the module to a Picker for dynamic assignment.
 
 ### Features
-- **Dynamic Roles:** Perfect for assigning specific headsets, beltpacks, or static positions (e.g., "Camera 1 Operator") to different people each week.
+- **Dynamic Roles:** Perfect for static positions (e.g., "Camera 1 Operator") that change hands week to week.
+- **Wireless linking:** A person's assignment can carry a direct link to a specific wireless channel — not just a label. The assignment stores the wireless vendor (Shure or Sennheiser), the device, and the exact channel index, so the Person tile and the wireless channel it's tied to stay in sync automatically as assignments change.
+- **PCO fields:** When sourced from Planning Center, a Person tile can show the assignment's position name, team name, and assignment slot — the team name and a small PCO badge can each be toggled on or off independently.
+- **Photo styling:** Show or hide the photo background entirely, offset it within the tile, and set an overlay opacity so name/role text stays readable over a photo.
+- **Header position:** Place the name/role/initials block at the top of the tile (default) or as a footer at the bottom.
 - **Automation Ready:** You can update the person displayed in this module via automation workflows.

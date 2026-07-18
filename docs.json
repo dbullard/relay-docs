@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Relay",
-  "description": "Documentation for Relay - a Mac dashboard app for live production teams.",
+  "description": "Documentation for Relay - a Mac and iPad dashboard app for live production teams.",
   "colors": {
     "primary": "#3C63EF",
     "light": "#34C8EE",
@@ -44,7 +44,8 @@
                 "root": "introduction",
                 "pages": [
                   "quickstart",
-                  "core-concepts"
+                  "core-concepts",
+                  "guides/first-dashboard"
                 ]
               }
             ]
@@ -80,7 +81,8 @@
                 "pages": [
                   "dashboards/nodes/triggers",
                   "dashboards/nodes/actions",
-                  "dashboards/nodes/utilities"
+                  "dashboards/nodes/utilities",
+                  "dashboards/nodes/sources"
                 ]
               }
             ]

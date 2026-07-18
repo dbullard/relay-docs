@@ -9,11 +9,13 @@ Relay can connect to supported digital mixing consoles over your network, turnin
 ## What audio console integration provides
 
 - Channel-name sync
-- Scene and snapshot recall
+- Scene and snapshot recall on supported models — DiGiCo is the one notable exception; see below
 - Planning Center assignments to console channels
 - Rundown cues and snapshots
 - MIDI-based scene mapping on supported models
 - Automation destinations
+
+<Note>Exactly which of these a given console supports depends on the model — see [Console actions](/dashboards/nodes/actions#console) for the full per-brand breakdown of what each integration can actually do.</Note>
 
 ## Add an audio console
 
@@ -28,20 +30,20 @@ Relay can connect to supported digital mixing consoles over your network, turnin
 ## Common model notes
 
 - X32/M32: OSC-based workflows, channel-name sync, cue or snippet sending
-- Allen and Heath Qu: MIDI over TCP/IP
-- dLive and Avantis: MixRack or Surface target selection
-- Yamaha: MIDI input and output plus Program Change mappings
-- DiGiCo: show RTF import for channel mapping when needed, plus Relay `1.1.1` adds direct OSC channel-name sync, DiGiCo automation actions, and a clearer Brand/Model split in console settings
+- Allen and Heath Qu: MIDI over TCP/IP, with 11 distinct automation action kinds (scene recall, soft key, channel/group/send/FX levels and mutes) — see [Console actions](/dashboards/nodes/actions#console)
+- Allen and Heath SQ, dLive, and Avantis: MixRack or Surface target selection
+- Yamaha: MIDI input and output plus Program Change mappings, across DM7, RIVAGE PM, and CL/QL model families
+- DiGiCo: show RTF import for channel mapping when needed, plus direct OSC channel-name sync, DiGiCo automation actions, and a clearer Brand/Model split in console settings
 
-## DiGiCo in Relay 1.1.1
+## DiGiCo
 
-Relay `1.1.1` expands DiGiCo workflows in a few practical ways:
+DiGiCo workflows include:
 
-- sync channel names from the console directly into Relay
-- use DiGiCo trigger actions in the automation graph for macros and OSC commands
-- pick channels by name across supported channel types
+- syncing channel names from the console directly into Relay over OSC ("Sync from DiGiCo")
+- Mute, Solo, Fader, and Recall Macro automation actions across input, aux, group, matrix, and control-group channel types
+- picking channels by name across all of those channel types
 
-If you already use Relay for console-linked dashboard cues, `1.1.1` makes DiGiCo setup and automation much easier to maintain.
+<Warning>DiGiCo consoles don't support true scene recall over this integration — snapshot actions can only create or rename a snapshot, not fire one. If your workflow depends on recalling a stored scene, plan around that limitation rather than around the "Scene and snapshot recall" feature listed above.</Warning>
 
 ## Troubleshooting
 

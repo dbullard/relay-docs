@@ -17,11 +17,11 @@ Relay can receive and send MIDI on Mac.
 
 ## Use MIDI in Relay
 
-- MIDI Receive triggers in Automation View
-- MIDI Send actions in Automation View
-- MIDI-based scene recall workflows
-- Timecode display workflows
-- DAW Transport module workflows
+- MIDI Receive triggers in Automation View — matches Note On/Off, Program Change, Control Change, or SysEx messages, depending on what you're triggering from.
+- MIDI Send actions in Automation View — sends the same message kinds to a connected MIDI destination.
+- MIDI-based scene recall workflows — Yamaha consoles in particular map incoming MIDI Program Change numbers to named console scenes, organized into scene banks, so a MIDI Send action can recall a specific named scene rather than just firing a raw Program Change number.
+- Timecode display workflows — Relay includes a built-in MIDI timecode parser for the Timecode module and DAW Transport's timecode display mode.
+- DAW Transport module workflows.
 
 The `External Control` page also shows message counts and the last received MIDI event, which makes it much easier to verify routing before you build an automation.
 
