@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relay 1.1.4 (build 51) Beta Release Notes</title>
+  <title>Relay 1.1.4 (build 52) Beta Release Notes</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
@@ -17,8 +17,26 @@
   </style>
 </head>
 <body>
-  <h1>Relay 1.1.4 (build 51) Beta</h1>
-  <h3>Relay 1.1.4 (Beta) — Build 51</h3>
+  <h1>Relay 1.1.4 (build 52) Beta</h1>
+  <h3>Relay 1.1.4 (Beta) — Build 52</h3>
+
+<h4>New</h4>
+<ul>
+  <li><strong>ProPresenter State trigger (beta).</strong> A new automation trigger that fires when ProPresenter's live state changes — slide advances, timers, and more — with a cooldown setting and a warning if no ProPresenter profile is set up. Available in beta and debug builds for now.</li>
+  <li><strong>Paused state for DAW Transport.</strong> The transport status now clearly shows Paused instead of lumping it in with stale or disconnected.</li>
+  <li><strong>Reconnect for auth-failed sync devices.</strong> If a paired device fails to authenticate, you can now reconnect it directly from Settings instead of having to forget and re-pair.</li>
+  <li>The automation canvas now warns you when a trigger node has nothing wired downstream, making it easier to spot automations that won't actually do anything.</li>
+</ul>
+
+<h4>Fixed</h4>
+<ul>
+  <li>Fixed incorrect frequency and amplitude readings in the RTA and Spectrograph analyzers.</li>
+  <li>Fixed DAW Transport's display and timecode not resetting when switching DAW types, plus a paused-state duplication bug.</li>
+  <li>Fixed sync devices not being correctly flagged and re-authenticated after an authentication failure.</li>
+  <li>Cleaned up duplicate ProPresenter slide/group ID handling and removed a dead Sennheiser code stub.</li>
+</ul>
+
+<h3>Relay 1.1.4 (Beta) — Build 51</h3>
 
 <h4>New</h4>
 <ul>
@@ -50,45 +68,15 @@
   <li>Stopped unnecessary background polling for Sennheiser channel names.</li>
 </ul>
 
-<h3>Relay 1.1.4 (Beta) — Build 50</h3>
+<h3>Relay 1.1.4 (Beta) — Builds 48–50</h3>
 
-<h4>Fixed</h4>
+<h4>Highlights</h4>
 <ul>
-  <li>Restored the Shure Summary module's Display Style (list/cards), Card Size (small/medium/large), and channel-to-person name assignments — these had been accidentally dropped by an unrelated code cleanup and are now back to working as expected.</li>
-</ul>
-
-<h3>Relay 1.1.4 (Beta) — Build 49</h3>
-
-<h4>New</h4>
-<ul>
-  <li><strong>General page in Tab Settings.</strong> Canvas Size, Sync This Tab, and a live list of who's currently viewing that tab, all in one place.</li>
-  <li>Added a Quit button to the home screen, and What's New now shows your build number and channel.</li>
-</ul>
-
-<h4>Fixed</h4>
-<ul>
-  <li>Beta builds now show the correct beta release notes, with properly formatted dates.</li>
-  <li>Quit/Close menu items, starting a new blank dashboard, cancelling Open File, and button-press targeting are all more reliable now.</li>
-</ul>
-
-<h3>Relay 1.1.4 (Beta) — Build 48</h3>
-
-<h4>New</h4>
-<ul>
-  <li><strong>Synced Tabs.</strong> Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Each device still keeps its own hardware/connection settings.</li>
-  <li><strong>Reworked Button module</strong> with more buttons per module and a much bigger icon library to choose from.</li>
-  <li><strong>Device approval required</strong> before any sync or mirror connection, with a way to forget devices later.</li>
-  <li><strong>Shure Summary module updates:</strong> card/list display, sizes, and per-channel person names.</li>
-</ul>
-
-<h4>Improved</h4>
-<ul>
-  <li>Sync and Mirror settings consolidated into one page. Shure wireless devices run lighter on your Mac. Still finishing up ANX4 and ADTD support.</li>
-</ul>
-
-<h4>Fixed</h4>
-<ul>
-  <li>Icon search duplicates, device discovery/reconnect, toolbar label truncation, mirrored tab pairing, Planning Center selection preservation, and idle network connection cleanup — all more reliable now.</li>
+  <li><strong>Synced Tabs.</strong> Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Devices must now approve each other before syncing or mirroring can start.</li>
+  <li><strong>Reworked Button module</strong> with more buttons per module and a much bigger icon library.</li>
+  <li><strong>Shure Summary module</strong> gained card/list display, sizes, and per-channel person names — briefly broken by a refactor, then restored.</li>
+  <li><strong>Tab Settings General page</strong> for Canvas Size, Sync This Tab, and a live list of who's viewing.</li>
+  <li>Broad reliability fixes across icon search, device discovery/reconnect, and Sync/Mirror settings.</li>
 </ul>
   <p class="footer"><a href="https://help.ondeckapps.com/beta-changelog#version-114">View the full Relay changelog</a></p>
 </body>

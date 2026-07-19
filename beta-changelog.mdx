@@ -6,7 +6,23 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
-## Version 1.1.4 (build 51) <a id="version-114"></a>
+## Version 1.1.4 (build 52) <a id="version-114"></a>
+
+#### Relay 1.1.4 (Beta) — Build 52
+
+New
+
+- **ProPresenter State trigger (beta).** A new automation trigger that fires when ProPresenter's live state changes — slide advances, timers, and more — with a cooldown setting and a warning if no ProPresenter profile is set up. Available in beta and debug builds for now.
+- **Paused state for DAW Transport.** The transport status now clearly shows Paused instead of lumping it in with stale or disconnected.
+- **Reconnect for auth-failed sync devices.** If a paired device fails to authenticate, you can now reconnect it directly from Settings instead of having to forget and re-pair.
+- The automation canvas now warns you when a trigger node has nothing wired downstream, making it easier to spot automations that won't actually do anything.
+
+Fixed
+
+- Fixed incorrect frequency and amplitude readings in the RTA and Spectrograph analyzers.
+- Fixed DAW Transport's display and timecode not resetting when switching DAW types, plus a paused-state duplication bug.
+- Fixed sync devices not being correctly flagged and re-authenticated after an authentication failure.
+- Cleaned up duplicate ProPresenter slide/group ID handling and removed a dead Sennheiser code stub.
 
 #### Relay 1.1.4 (Beta) — Build 51
 
@@ -37,40 +53,15 @@ Fixed
 - What's New no longer shows today's build number next to older past releases.
 - Stopped unnecessary background polling for Sennheiser channel names.
 
-#### Relay 1.1.4 (Beta) — Build 50
+#### Relay 1.1.4 (Beta) — Builds 48–50
 
-Fixed
+Highlights
 
-- Restored the Shure Summary module's Display Style (list/cards), Card Size (small/medium/large), and channel-to-person name assignments — these had been accidentally dropped by an unrelated code cleanup and are now back to working as expected.
-
-#### Relay 1.1.4 (Beta) — Build 49
-
-New
-
-- **General page in Tab Settings.** Canvas Size, Sync This Tab, and a live list of who's currently viewing that tab, all in one place.
-- Added a Quit button to the home screen, and What's New now shows your build number and channel.
-
-Fixed
-
-- Beta builds now show the correct beta release notes, with properly formatted dates.
-- Quit/Close menu items, starting a new blank dashboard, cancelling Open File, and button-press targeting are all more reliable now.
-
-#### Relay 1.1.4 (Beta) — Build 48
-
-New
-
-- **Synced Tabs.** Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Each device still keeps its own hardware/connection settings.
-- **Reworked Button module** with more buttons per module and a much bigger icon library to choose from.
-- **Device approval required** before any sync or mirror connection, with a way to forget devices later.
-- **Shure Summary module updates:** card/list display, sizes, and per-channel person names.
-
-Improved
-
-- Sync and Mirror settings consolidated into one page. Shure wireless devices run lighter on your Mac. Still finishing up ANX4 and ADTD support.
-
-Fixed
-
-- Icon search duplicates, device discovery/reconnect, toolbar label truncation, mirrored tab pairing, Planning Center selection preservation, and idle network connection cleanup — all more reliable now.
+- **Synced Tabs.** Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Devices must now approve each other before syncing or mirroring can start.
+- **Reworked Button module** with more buttons per module and a much bigger icon library.
+- **Shure Summary module** gained card/list display, sizes, and per-channel person names — briefly broken by a refactor, then restored.
+- **Tab Settings General page** for Canvas Size, Sync This Tab, and a live list of who's viewing.
+- Broad reliability fixes across icon search, device discovery/reconnect, and Sync/Mirror settings.
 
 ## Version 1.1.3 (build 46) <a id="version-11346"></a>
 
