@@ -6,7 +6,18 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
-## Version 1.1.4 (build 52) <a id="version-114"></a>
+## Version 1.1.4 (build 53) <a id="version-114"></a>
+
+#### Relay 1.1.4 (Beta) — Build 53
+
+New
+
+- **ANX4, ADTD, and ADTQ device support.** These Shure Axient models now connect over their full TCP command protocol instead of a limited fallback, and Relay automatically detects your licensed channel count (in addition to the existing manual override in Settings).
+
+Fixed
+
+- Fixed a signal-strength (RSSI) reading bug for ANX4/ADTD/ADTQ devices.
+- Fixed channel counts for licensed Shure devices being silently capped too low instead of matching what you're actually licensed for — this now shows correctly everywhere: automation, Shure Summary, Planning Center team assignments, and tile editing.
 
 #### Relay 1.1.4 (Beta) — Build 52
 
@@ -24,44 +35,16 @@ Fixed
 - Fixed sync devices not being correctly flagged and re-authenticated after an authentication failure.
 - Cleaned up duplicate ProPresenter slide/group ID handling and removed a dead Sennheiser code stub.
 
-#### Relay 1.1.4 (Beta) — Build 51
-
-New
-
-- **Opt-in crash reporting and diagnostics.** Help make Relay better by choosing to share crash reports and basic usage data — nothing is collected unless you say yes, sensitive details are stripped out automatically, and you can turn it off anytime in Settings.
-- **Import your roster from CSV or Excel.** Bring your team roster in straight from a spreadsheet, with the option to replace your existing roster or just add to it.
-- **Selection toolbar on the canvas.** Select multiple tiles to get a floating toolbar for quick actions, including arranging them into quarters or other regions.
-- **Shure Summary audio activity display.** Choose how live audio shows per channel — a simple signal light, a meter, or hidden entirely — with a heads-up if meter mode starts taxing your Mac.
-- **Long-press to drag guides on iPad.**
-
-Improved
-
-- Automation now flags problems right on the canvas — condition and console nodes show a warning badge when something's misconfigured or a command fails to send, instead of failing silently.
-- Speech transcription is more reliable, with a fixed deadlock and clearer error reporting under the hood.
-- Pro Tools transport display is more stable during playback.
-- Cleaned up several unused screens and older code paths for a snappier app.
-- Shure Summary module is now available to try in beta builds.
-
-Fixed
-
-- Fixed the dashboard canvas resize handle showing the wrong cursor or feeling unresponsive.
-- Fixed guides getting stuck mid-drag or scaling incorrectly when zoomed in or out.
-- Fixed numeric fields (like sizes and positions) sometimes losing keystrokes while a live preview was updating.
-- Fixed the dashboard stealing keyboard focus away from embedded web content, like ProPresenter previews.
-- Fixed a rare race that could corrupt a roster import when switching rosters mid-import.
-- Fixed outdated help text in Planning Center account settings.
-- What's New no longer shows today's build number next to older past releases.
-- Stopped unnecessary background polling for Sennheiser channel names.
-
-#### Relay 1.1.4 (Beta) — Builds 48–50
+#### Relay 1.1.4 (Beta) — Builds 48–51
 
 Highlights
 
 - **Synced Tabs.** Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Devices must now approve each other before syncing or mirroring can start.
 - **Reworked Button module** with more buttons per module and a much bigger icon library.
-- **Shure Summary module** gained card/list display, sizes, and per-channel person names — briefly broken by a refactor, then restored.
+- **Shure Summary module** gained card/list display, sizes, per-channel person names, and a choice of signal light/meter/hidden for live audio activity.
 - **Tab Settings General page** for Canvas Size, Sync This Tab, and a live list of who's viewing.
-- Broad reliability fixes across icon search, device discovery/reconnect, and Sync/Mirror settings.
+- **Opt-in crash reporting and diagnostics**, plus CSV/Excel roster import and a multi-select canvas toolbar.
+- Broad reliability fixes across icon search, device discovery/reconnect, Sync/Mirror settings, and canvas guides.
 
 ## Version 1.1.3 (build 46) <a id="version-11346"></a>
 

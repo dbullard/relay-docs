@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relay 1.1.4 (build 52) Beta Release Notes</title>
+  <title>Relay 1.1.4 (build 53) Beta Release Notes</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
@@ -17,8 +17,21 @@
   </style>
 </head>
 <body>
-  <h1>Relay 1.1.4 (build 52) Beta</h1>
-  <h3>Relay 1.1.4 (Beta) — Build 52</h3>
+  <h1>Relay 1.1.4 (build 53) Beta</h1>
+  <h3>Relay 1.1.4 (Beta) — Build 53</h3>
+
+<h4>New</h4>
+<ul>
+  <li><strong>ANX4, ADTD, and ADTQ device support.</strong> These Shure Axient models now connect over their full TCP command protocol instead of a limited fallback, and Relay automatically detects your licensed channel count (in addition to the existing manual override in Settings).</li>
+</ul>
+
+<h4>Fixed</h4>
+<ul>
+  <li>Fixed a signal-strength (RSSI) reading bug for ANX4/ADTD/ADTQ devices.</li>
+  <li>Fixed channel counts for licensed Shure devices being silently capped too low instead of matching what you're actually licensed for — this now shows correctly everywhere: automation, Shure Summary, Planning Center team assignments, and tile editing.</li>
+</ul>
+
+<h3>Relay 1.1.4 (Beta) — Build 52</h3>
 
 <h4>New</h4>
 <ul>
@@ -36,47 +49,16 @@
   <li>Cleaned up duplicate ProPresenter slide/group ID handling and removed a dead Sennheiser code stub.</li>
 </ul>
 
-<h3>Relay 1.1.4 (Beta) — Build 51</h3>
-
-<h4>New</h4>
-<ul>
-  <li><strong>Opt-in crash reporting and diagnostics.</strong> Help make Relay better by choosing to share crash reports and basic usage data — nothing is collected unless you say yes, sensitive details are stripped out automatically, and you can turn it off anytime in Settings.</li>
-  <li><strong>Import your roster from CSV or Excel.</strong> Bring your team roster in straight from a spreadsheet, with the option to replace your existing roster or just add to it.</li>
-  <li><strong>Selection toolbar on the canvas.</strong> Select multiple tiles to get a floating toolbar for quick actions, including arranging them into quarters or other regions.</li>
-  <li><strong>Shure Summary audio activity display.</strong> Choose how live audio shows per channel — a simple signal light, a meter, or hidden entirely — with a heads-up if meter mode starts taxing your Mac.</li>
-  <li><strong>Long-press to drag guides on iPad.</strong></li>
-</ul>
-
-<h4>Improved</h4>
-<ul>
-  <li>Automation now flags problems right on the canvas — condition and console nodes show a warning badge when something's misconfigured or a command fails to send, instead of failing silently.</li>
-  <li>Speech transcription is more reliable, with a fixed deadlock and clearer error reporting under the hood.</li>
-  <li>Pro Tools transport display is more stable during playback.</li>
-  <li>Cleaned up several unused screens and older code paths for a snappier app.</li>
-  <li>Shure Summary module is now available to try in beta builds.</li>
-</ul>
-
-<h4>Fixed</h4>
-<ul>
-  <li>Fixed the dashboard canvas resize handle showing the wrong cursor or feeling unresponsive.</li>
-  <li>Fixed guides getting stuck mid-drag or scaling incorrectly when zoomed in or out.</li>
-  <li>Fixed numeric fields (like sizes and positions) sometimes losing keystrokes while a live preview was updating.</li>
-  <li>Fixed the dashboard stealing keyboard focus away from embedded web content, like ProPresenter previews.</li>
-  <li>Fixed a rare race that could corrupt a roster import when switching rosters mid-import.</li>
-  <li>Fixed outdated help text in Planning Center account settings.</li>
-  <li>What's New no longer shows today's build number next to older past releases.</li>
-  <li>Stopped unnecessary background polling for Sennheiser channel names.</li>
-</ul>
-
-<h3>Relay 1.1.4 (Beta) — Builds 48–50</h3>
+<h3>Relay 1.1.4 (Beta) — Builds 48–51</h3>
 
 <h4>Highlights</h4>
 <ul>
   <li><strong>Synced Tabs.</strong> Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Devices must now approve each other before syncing or mirroring can start.</li>
   <li><strong>Reworked Button module</strong> with more buttons per module and a much bigger icon library.</li>
-  <li><strong>Shure Summary module</strong> gained card/list display, sizes, and per-channel person names — briefly broken by a refactor, then restored.</li>
+  <li><strong>Shure Summary module</strong> gained card/list display, sizes, per-channel person names, and a choice of signal light/meter/hidden for live audio activity.</li>
   <li><strong>Tab Settings General page</strong> for Canvas Size, Sync This Tab, and a live list of who's viewing.</li>
-  <li>Broad reliability fixes across icon search, device discovery/reconnect, and Sync/Mirror settings.</li>
+  <li><strong>Opt-in crash reporting and diagnostics</strong>, plus CSV/Excel roster import and a multi-select canvas toolbar.</li>
+  <li>Broad reliability fixes across icon search, device discovery/reconnect, Sync/Mirror settings, and canvas guides.</li>
 </ul>
   <p class="footer"><a href="https://help.ondeckapps.com/beta-changelog#version-114">View the full Relay changelog</a></p>
 </body>
