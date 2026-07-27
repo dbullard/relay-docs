@@ -6,7 +6,17 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
-## Version 1.1.4 (build 53) <a id="version-114"></a>
+## Version 1.1.4 (build 54) <a id="version-114"></a>
+
+#### Relay 1.1.4 (Beta) — Build 54
+
+Improved
+
+- **"Auto" transport mode for ANX4/ADTD/ADTQ now actually auto-detects.** Previously Auto silently always used the older connection method — you had to manually pick "TCP Only" to get Build 53's improvements. Now Auto briefly checks whether your device supports the newer protocol and switches automatically.
+
+Fixed
+
+- Fixed a bug where, once Auto had settled on the newer connection type, Relay would needlessly disconnect and re-check it on every reconnect attempt.
 
 #### Relay 1.1.4 (Beta) — Build 53
 
@@ -19,23 +29,7 @@ Fixed
 - Fixed a signal-strength (RSSI) reading bug for ANX4/ADTD/ADTQ devices.
 - Fixed channel counts for licensed Shure devices being silently capped too low instead of matching what you're actually licensed for — this now shows correctly everywhere: automation, Shure Summary, Planning Center team assignments, and tile editing.
 
-#### Relay 1.1.4 (Beta) — Build 52
-
-New
-
-- **ProPresenter State trigger (beta).** A new automation trigger that fires when ProPresenter's live state changes — slide advances, timers, and more — with a cooldown setting and a warning if no ProPresenter profile is set up. Available in beta and debug builds for now.
-- **Paused state for DAW Transport.** The transport status now clearly shows Paused instead of lumping it in with stale or disconnected.
-- **Reconnect for auth-failed sync devices.** If a paired device fails to authenticate, you can now reconnect it directly from Settings instead of having to forget and re-pair.
-- The automation canvas now warns you when a trigger node has nothing wired downstream, making it easier to spot automations that won't actually do anything.
-
-Fixed
-
-- Fixed incorrect frequency and amplitude readings in the RTA and Spectrograph analyzers.
-- Fixed DAW Transport's display and timecode not resetting when switching DAW types, plus a paused-state duplication bug.
-- Fixed sync devices not being correctly flagged and re-authenticated after an authentication failure.
-- Cleaned up duplicate ProPresenter slide/group ID handling and removed a dead Sennheiser code stub.
-
-#### Relay 1.1.4 (Beta) — Builds 48–51
+#### Relay 1.1.4 (Beta) — Builds 48–52
 
 Highlights
 
@@ -43,7 +37,8 @@ Highlights
 - **Reworked Button module** with more buttons per module and a much bigger icon library.
 - **Shure Summary module** gained card/list display, sizes, per-channel person names, and a choice of signal light/meter/hidden for live audio activity.
 - **Tab Settings General page** for Canvas Size, Sync This Tab, and a live list of who's viewing.
-- **Opt-in crash reporting and diagnostics**, plus CSV/Excel roster import and a multi-select canvas toolbar.
+- **Opt-in crash reporting and diagnostics**, CSV/Excel roster import, and a multi-select canvas toolbar.
+- **ProPresenter State trigger (beta)** for automation, a distinct Paused state for DAW Transport, and a Reconnect option for sync devices that fail authentication.
 - Broad reliability fixes across icon search, device discovery/reconnect, Sync/Mirror settings, and canvas guides.
 
 ## Version 1.1.3 (build 46) <a id="version-11346"></a>

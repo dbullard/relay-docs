@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relay 1.1.4 (build 53) Beta Release Notes</title>
+  <title>Relay 1.1.4 (build 54) Beta Release Notes</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; padding: 16px; font: -apple-system-body; line-height: 1.45; }
@@ -17,8 +17,20 @@
   </style>
 </head>
 <body>
-  <h1>Relay 1.1.4 (build 53) Beta</h1>
-  <h3>Relay 1.1.4 (Beta) — Build 53</h3>
+  <h1>Relay 1.1.4 (build 54) Beta</h1>
+  <h3>Relay 1.1.4 (Beta) — Build 54</h3>
+
+<h4>Improved</h4>
+<ul>
+  <li><strong>"Auto" transport mode for ANX4/ADTD/ADTQ now actually auto-detects.</strong> Previously Auto silently always used the older connection method — you had to manually pick "TCP Only" to get Build 53's improvements. Now Auto briefly checks whether your device supports the newer protocol and switches automatically.</li>
+</ul>
+
+<h4>Fixed</h4>
+<ul>
+  <li>Fixed a bug where, once Auto had settled on the newer connection type, Relay would needlessly disconnect and re-check it on every reconnect attempt.</li>
+</ul>
+
+<h3>Relay 1.1.4 (Beta) — Build 53</h3>
 
 <h4>New</h4>
 <ul>
@@ -31,25 +43,7 @@
   <li>Fixed channel counts for licensed Shure devices being silently capped too low instead of matching what you're actually licensed for — this now shows correctly everywhere: automation, Shure Summary, Planning Center team assignments, and tile editing.</li>
 </ul>
 
-<h3>Relay 1.1.4 (Beta) — Build 52</h3>
-
-<h4>New</h4>
-<ul>
-  <li><strong>ProPresenter State trigger (beta).</strong> A new automation trigger that fires when ProPresenter's live state changes — slide advances, timers, and more — with a cooldown setting and a warning if no ProPresenter profile is set up. Available in beta and debug builds for now.</li>
-  <li><strong>Paused state for DAW Transport.</strong> The transport status now clearly shows Paused instead of lumping it in with stale or disconnected.</li>
-  <li><strong>Reconnect for auth-failed sync devices.</strong> If a paired device fails to authenticate, you can now reconnect it directly from Settings instead of having to forget and re-pair.</li>
-  <li>The automation canvas now warns you when a trigger node has nothing wired downstream, making it easier to spot automations that won't actually do anything.</li>
-</ul>
-
-<h4>Fixed</h4>
-<ul>
-  <li>Fixed incorrect frequency and amplitude readings in the RTA and Spectrograph analyzers.</li>
-  <li>Fixed DAW Transport's display and timecode not resetting when switching DAW types, plus a paused-state duplication bug.</li>
-  <li>Fixed sync devices not being correctly flagged and re-authenticated after an authentication failure.</li>
-  <li>Cleaned up duplicate ProPresenter slide/group ID handling and removed a dead Sennheiser code stub.</li>
-</ul>
-
-<h3>Relay 1.1.4 (Beta) — Builds 48–51</h3>
+<h3>Relay 1.1.4 (Beta) — Builds 48–52</h3>
 
 <h4>Highlights</h4>
 <ul>
@@ -57,7 +51,8 @@
   <li><strong>Reworked Button module</strong> with more buttons per module and a much bigger icon library.</li>
   <li><strong>Shure Summary module</strong> gained card/list display, sizes, per-channel person names, and a choice of signal light/meter/hidden for live audio activity.</li>
   <li><strong>Tab Settings General page</strong> for Canvas Size, Sync This Tab, and a live list of who's viewing.</li>
-  <li><strong>Opt-in crash reporting and diagnostics</strong>, plus CSV/Excel roster import and a multi-select canvas toolbar.</li>
+  <li><strong>Opt-in crash reporting and diagnostics</strong>, CSV/Excel roster import, and a multi-select canvas toolbar.</li>
+  <li><strong>ProPresenter State trigger (beta)</strong> for automation, a distinct Paused state for DAW Transport, and a Reconnect option for sync devices that fail authentication.</li>
   <li>Broad reliability fixes across icon search, device discovery/reconnect, Sync/Mirror settings, and canvas guides.</li>
 </ul>
   <p class="footer"><a href="https://help.ondeckapps.com/beta-changelog#version-114">View the full Relay changelog</a></p>
