@@ -6,7 +6,25 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
-## Version 1.1.4 (build 54) <a id="version-114"></a>
+## Version 1.1.4 (build 55) <a id="version-114"></a>
+
+#### Relay 1.1.4 (Beta) — Build 55
+
+New
+
+- **Standard console actions.** Automation can now send common audio-console commands like scene recall, channel mute, level, and pan on supported X32/M32 and Yamaha DM7/Rivage systems.
+- **More beta audio console integrations.** Added Behringer WING support with network discovery and Avid VENUE S6L support with VENUE OSC connection settings.
+
+Improved
+
+- **Smoother canvas editing.** Pan, zoom, resize, distribute, and dragged-tile rendering are more stable, with tab and tile edits resolved by stable identities instead of stale positions.
+- **Better device recovery and setup.** Shure devices now show reconnecting status and recover more cleanly, dead console connections are rebuilt before sending, and external device type lists are alphabetized for easier scanning.
+
+Fixed
+
+- Fixed several strict-concurrency and transport-state issues across helper, OSC, shape, and integration code paths.
+- Fixed remaining tab mutations that could target a stale position instead of the intended tab.
+- Fixed Sennheiser wireless using a different category icon than Shure wireless in external device settings.
 
 #### Relay 1.1.4 (Beta) — Build 54
 
@@ -18,28 +36,18 @@ Fixed
 
 - Fixed a bug where, once Auto had settled on the newer connection type, Relay would needlessly disconnect and re-check it on every reconnect attempt.
 
-#### Relay 1.1.4 (Beta) — Build 53
-
-New
-
-- **ANX4, ADTD, and ADTQ device support.** These Shure Axient models now connect over their full TCP command protocol instead of a limited fallback, and Relay automatically detects your licensed channel count (in addition to the existing manual override in Settings).
-
-Fixed
-
-- Fixed a signal-strength (RSSI) reading bug for ANX4/ADTD/ADTQ devices.
-- Fixed channel counts for licensed Shure devices being silently capped too low instead of matching what you're actually licensed for — this now shows correctly everywhere: automation, Shure Summary, Planning Center team assignments, and tile editing.
-
-#### Relay 1.1.4 (Beta) — Builds 48–52
+#### Relay 1.1.4 (Beta) — Builds 49–53
 
 Highlights
 
-- **Synced Tabs.** Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Devices must now approve each other before syncing or mirroring can start.
+- **Expanded Shure support.** Added ANX4, ADTD, and ADTQ support with TCP control, automatic licensed channel-count detection, RSSI fixes, and correct licensed channel counts across automation, Shure Summary, Planning Center team assignments, and tile editing.
+- **Synced Tabs.** Keep a tab live and editable across your devices on the same network — different from Mirroring, which is view-only. Devices must approve each other before syncing or mirroring can start.
 - **Reworked Button module** with more buttons per module and a much bigger icon library.
 - **Shure Summary module** gained card/list display, sizes, per-channel person names, and a choice of signal light/meter/hidden for live audio activity.
 - **Tab Settings General page** for Canvas Size, Sync This Tab, and a live list of who's viewing.
-- **Opt-in crash reporting and diagnostics**, CSV/Excel roster import, and a multi-select canvas toolbar.
+- **CSV/Excel roster import and opt-in diagnostics**, plus multi-select canvas tools and broader crash-reporting controls.
 - **ProPresenter State trigger (beta)** for automation, a distinct Paused state for DAW Transport, and a Reconnect option for sync devices that fail authentication.
-- Broad reliability fixes across icon search, device discovery/reconnect, Sync/Mirror settings, and canvas guides.
+- Broad reliability fixes across icon search, device discovery/reconnect, Sync/Mirror settings, dashboard guides, and numeric settings fields.
 
 ## Version 1.1.3 (build 46) <a id="version-11346"></a>
 
