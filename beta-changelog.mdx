@@ -6,6 +6,51 @@ sidebarTitle: "Beta Changelog"
 
 Relay beta release notes are organized by version. Beta Sparkle update feeds can link to each version directly using the per-version anchors on this page.
 
+## Version 1.2 (build 56) <a id="version-12"></a>
+
+#### Relay 1.2 (Beta) — Build 56
+
+New
+
+- **Synced Tabs (Pro).** Share one live, editable dashboard across every Mac and iPad on your network in real time — no cloud required. Device-specific connections (ProPresenter, consoles, Shure/Sennheiser, DAW/MIDI, audio inputs) always stay local to each machine. Hosting requires Relay Pro; joining is free.
+- **Universal Automation.** Promote any automation graph to Universal and run it across your whole show instead of one tab.
+- **Standard Console Actions.** Automation can trigger scene recall, mute, level, and pan directly on X32/M32, Yamaha DM7/Rivage, and Allen & Heath consoles.
+- **Tile Distribute Tools.** Select multiple tiles and arrange them instantly with distribute and grid-distribute controls, including one-click fill-window layouts.
+
+Beta Preview
+
+Ahead of the general release, this build also includes:
+
+- **ProPresenter State trigger.** Fire automations off ProPresenter slide, presentation, message, or timer changes.
+- **Smart Light Control.** New automation node to trigger Govee and Philips Hue scenes, color, and brightness.
+- **Expanded DAW Transport protocols.** Logic Pro, Reaper (HUI and MCU), and Cubase/Nuendo join Pro Tools HUI and Generic HUI as selectable transport types.
+
+Improved
+
+- Dashboard tiles resize down to 44&times;44pt (previously 160&times;120pt) for denser button layouts.
+- Canvas panning, zooming, and tile dragging are noticeably smoother on busy dashboards; trackpad pan/zoom no longer gets captured by scrollable content inside a module.
+- Word Trigger nodes support per-rule output ports, so each matched phrase can route to its own downstream action.
+- Redesigned button icon picker: a searchable popover across roughly 340 SF Symbols.
+- New in-app "What's New" screen with full update history and an auto-popup after updating.
+- Real Quit button on the home screen sidebar; Quit/Close now respond even while a sheet is open.
+- Settings polish: Save/Cancel on the General tab, alphabetized device lists, no more flickering numeric fields.
+- RTA/Spectrograph tiles show a clear empty state instead of a blank tile when no input is selected.
+- New opt-in consent screen for diagnostics and crash reporting.
+- CSV/Excel roster import built directly into the Rosters Manager.
+
+Fixed
+
+- Shure wireless receivers now reconnect automatically after a network drop, showing "Reconnecting" instead of silently sitting offline — previously required toggling Live Mode twice.
+- "Auto" transport mode for Shure ANX4/ADTD/ADTQ now actually detects the best connection type instead of defaulting to one.
+- Fixed Overview polling adding redundant traffic that could destabilize some receivers' connections.
+- Fixed Live Mode unexpectedly exiting when tapping two different interactive tiles in quick succession.
+- Fixed dashboard resize handles intermittently failing to respond, showing the wrong cursor, or falling through to a move-drag.
+- Fixed multi-tile group resizing occasionally snapping a follower tile to the wrong height on release.
+- Fixed dashboard edits being silently dropped when made immediately after reordering or removing a tab.
+- Fixed a crash and hang when upgrading to Relay Pro from the home screen.
+- Fixed a crash when switching tabs while an automation graph was open.
+- Fixed a reappeared horizontal scrollbar under the tab strip and other horizontal lists.
+
 ## Version 1.1.4 (build 55) <a id="version-114"></a>
 
 #### Relay 1.1.4 (Beta) — Build 55
