@@ -2,6 +2,12 @@
   "baseUrl": "https://help.ondeckapps.com",
   "releases": [
     {
+      "version": "1.2.1",
+      "app_version": "1.2.1",
+      "build": "57",
+      "html": "<h3>Relay 1.2.1 (Beta)</h3>\n\n<h4>Shure Updates</h4>\n<ul>\n  <li>Fixed Shure Overview presence-refresh gaps for channels that don't have an open tile.</li>\n  <li>Corrected Axient presence and RF accuracy, switched ANX4 to default to TCP, and fixed a polling starvation issue in Overview.</li>\n  <li>Improved AD4Q and Axient RF meter reliability, fixed a battery display gap, and polished the Shure Overview UX.</li>\n  <li>Stuck Shure UDP and TCP connections in a waiting state now escalate into the automatic reconnect path.</li>\n</ul>\n\n<h4>UI & Bug Fixes</h4>\n<ul>\n  <li>Added a Close Home button on the launch screen to dismiss it back to the dashboard without restarting the app.</li>\n  <li>What's New entries are now gated by installed app version so you only see what applies to your build.</li>\n</ul>"
+    },
+    {
       "version": "1.2",
       "app_version": "1.2",
       "build": "56",
