@@ -2,6 +2,12 @@
   "baseUrl": "https://help.ondeckapps.com",
   "releases": [
     {
+      "version": "1.2.2",
+      "app_version": "1.2.2",
+      "build": "58",
+      "html": "<h2>Relay v1.2.2 <small>(Beta)</small></h2>\n<ul>\n  <li><strong>New Setup Wizard:</strong> Guided onboarding now helps configure connections, devices, audio inputs, starter tiles, and dashboard layout.</li>\n  <li><strong>Improved OSC automation:</strong> Build more expressive action graphs with validated, typed OSC send arguments.</li>\n  <li><strong>Spectera monitoring:</strong> Added Sennheiser Spectera connection, state monitoring, diagnostics logging, and secure credential storage.</li>\n  <li><strong>Faster dashboard setup:</strong> Option-drag tiles now preview and snap into dashboard regions during drag-and-drop.</li>\n  <li><strong>Wireless device improvements:</strong> Enhanced Shure telemetry and improved external-device discovery reliability.</li>\n  <li><strong>Mobile and accessibility refinements:</strong> Improved platform-specific copy, toolbar labels, settings flows, upgrade prompts, and iPad document actions.</li>\n</ul>"
+    },
+    {
       "version": "1.2.1",
       "app_version": "1.2.1",
       "build": "57",
