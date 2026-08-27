@@ -4,8 +4,8 @@
     {
       "version": "1.2.2",
       "app_version": "1.2.2",
-      "build": "59",
-      "html": "<h2>Relay v1.2.2 <small>(Beta)</small></h2>\n\n<h3>Build 58</h3>\n<ul>\n  <li><strong>Guided Setup Wizard:</strong> Configure connections, devices, audio inputs, starter tiles, and dashboard layout through a redesigned onboarding flow.</li>\n  <li><strong>Enhanced OSC Automation:</strong> Create more expressive automation graphs with improved OSC actions and validated typed send arguments.</li>\n  <li><strong>Spectera Monitoring:</strong> Monitor Sennheiser Spectera systems with live state updates, diagnostics logging, and secure connection storage.</li>\n  <li><strong>Faster Tile Layout:</strong> Preview and snap dashboard tiles into canvas regions while dragging with Option-drag.</li>\n  <li><strong>Wireless Device Updates:</strong> Improved Shure wireless telemetry and strengthened external-device discovery reliability.</li>\n  <li><strong>Mobile Refinements:</strong> Improved mobile navigation, accessibility labels, platform-specific copy, settings flows, and iPad document actions.</li>\n</ul>\n\n<h3>Build 59</h3>\n<ul>\n  <li><strong>Planning Center Sync:</strong> Position assignment candidates now stay synchronized with live Planning Center data.</li>\n</ul>"
+      "build": "60",
+      "html": "<h2>Relay v1.2.2 <small>(Beta)</small></h2>\n\n<h3>Build 58</h3>\n<ul>\n  <li>Added the guided Setup Wizard, enhanced OSC automation, Spectera monitoring, tile snapping, wireless-device improvements, and mobile refinements.</li>\n</ul>\n\n<h3>Build 59</h3>\n<ul>\n  <li>Improved Planning Center synchronization so position assignment candidates stay current with live data.</li>\n</ul>\n\n<h3>Build 60</h3>\n<ul>\n  <li>Improved Spectera compatibility, certificate diagnostics, and pinned-certificate trust.</li>\n</ul>"
     },
     {
       "version": "1.2.1",
